@@ -1,0 +1,84 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using Vaultaria.Content.Items.Materials;
+using System.Collections.Generic;
+using Vaultaria.Common.Utilities;
+
+namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
+{
+    public class Shredifier : ElementalItem
+    {
+        protected override Utilities.Sounds[] ItemSounds => [];
+
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 1;
+        }
+
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            // Visual properties
+            Item.Size = new Vector2(99, 29);
+            Item.scale = 1f;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.rare = ItemRarityID.Yellow;
+
+            // Gun properties
+            Item.noMelee = true;
+            Item.shootSpeed = 30;
+            Item.shoot = ProjectileID.Bullet;
+            Item.useAmmo = AmmoID.Bullet;
+
+            // Combat properties
+            Item.knockBack = 2.3f;
+            Item.damage = 35;
+            Item.crit = 21;
+            Item.DamageType = DamageClass.Ranged;
+
+            Item.useTime = 5;
+            Item.useAnimation = 5;
+            Item.reuseDelay = 0;
+            Item.autoReuse = true;
+
+            // Other properties
+            Item.value = Item.buyPrice(gold: 4);
+            Utilities.SetItemSound(Item, Utilities.Sounds.VladofAR, 60);
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Projectile.NewProjectile(source, position - new Vector2(0, -7), velocity, type, damage, knockback, player.whoAmI);
+
+            return true;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<Eridium>(50)
+                .AddIngredient(ItemID.ChlorophyteBar, 25)
+                .AddIngredient(ItemID.ChainGun, 1)
+                .AddIngredient(ItemID.SoulofNight, 25)
+                .AddIngredient(ItemID.IllegalGunParts, 2)
+                .AddTile(ModContent.TileType<Tiles.VendingMachines.MarcusVendingMachine>())
+                .Register();
+        }
+
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-20f, 0f);
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            Utilities.MultiShotText(tooltips, Item, 2);
+            Utilities.Text(tooltips, Mod);
+            Utilities.Text(tooltips, Mod, "Tooltip2", "+100% Fire rate", Utilities.VaultarianColours.Information);
+            Utilities.RedText(tooltips, Mod, "Speed kills.");
+        }
+    }
+}

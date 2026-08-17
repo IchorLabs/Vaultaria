@@ -1,0 +1,109 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.DataStructures;
+using Microsoft.Xna.Framework;
+using Vaultaria.Content.Items.Materials;
+using System.Collections.Generic;
+using Vaultaria.Common.Utilities;
+using Vaultaria.Content.Items.Weapons.Ammo;
+using Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue;
+using Vaultaria.Content.Prefixes.Weapons;
+using Humanizer;
+
+namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
+{
+    public class Flakker : ElementalItem
+    {
+        protected override Utilities.Sounds[] ItemSounds => [];
+
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 1;
+        }
+
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+            // Visual properties
+            Item.Size = new Vector2(80, 32);
+            Item.scale = 1f;
+            Item.useStyle = ItemUseStyleID.Shoot;
+            Item.rare = ItemRarityID.Yellow;
+
+            // Gun properties
+            Item.noMelee = true;
+            Item.shootSpeed = 10;
+            Item.shoot = ModContent.ProjectileType<Flak>();
+            Item.useAmmo = ModContent.ItemType<ShotgunAmmo>();
+
+            // Combat properties
+            Item.knockBack = 0f;
+            Item.damage = 20;
+            Item.crit = 6;
+            Item.DamageType = DamageClass.Ranged;
+
+            Item.useTime = 20;
+            Item.useAnimation = 20;
+            Item.reuseDelay = 30;
+            Item.autoReuse = true;
+
+            // Other properties
+            Item.value = Item.buyPrice(gold: 2);
+            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 120);
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            int area = 100;
+            Rectangle mouse = new Rectangle((int)Main.MouseWorld.X, (int)Main.MouseWorld.Y, area, area);
+
+            for(int i = 0; i < 6; i++)
+            {
+                float flakShotX = Main.rand.NextFloat(mouse.BottomLeft().X, mouse.BottomLeft().X + area);
+                float flakShotY = Main.rand.NextFloat(mouse.TopLeft().Y, mouse.TopLeft().Y + area);
+                Vector2 flakShotZone = new Vector2(flakShotX, flakShotY);
+
+                Vector2 randomVel = new Vector2(Main.rand.NextFloat(-1f, 1f), Main.rand.NextFloat(-1f, 1f));
+
+                Projectile projectile = Projectile.NewProjectileDirect(source, flakShotZone, randomVel, type, damage, knockback, player.whoAmI, ai0: i);
+
+                projectile.usesLocalNPCImmunity = true;
+                projectile.localNPCHitCooldown = 30;
+            }
+
+            Projectile.NewProjectileDirect(source, position, velocity, ProjectileID.Volcano, damage, knockback, player.whoAmI);
+            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 120);
+            
+            return false;
+        }
+
+        public override bool CanConsumeAmmo(Item ammo, Player player)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                player.ConsumeItem(ammo.type, false);
+            }
+
+            return true;
+        }
+
+        public override Vector2? HoldoutOffset()
+        {
+            return new Vector2(-16f, 0f);
+        }
+
+        public override bool AllowPrefix(int pre)
+        {
+            return pre != ModContent.PrefixType<MagicTrickshot>();
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            Utilities.MultiShotText(tooltips, Item, 6);
+            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 5 Shotgun Ammo per shot");
+            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots a chain of random Explosive Projectiles", Utilities.VaultarianColours.Explosive);
+            Utilities.RedText(tooltips, Mod, "Flak the world.");
+        }
+    }
+}

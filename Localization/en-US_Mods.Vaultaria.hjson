@@ -1,0 +1,1603 @@
+Tiles: {
+	ZedVendingMachine.MapEntry: Zed's Vending Machine
+	MarcusVendingMachine.MapEntry: Marcus's Vending Machine
+	Vault1.MapEntry: Vault1
+	Pedestal.MapEntry: Pedestal
+	PedestalTile.MapEntry: Pedestal Tile
+	BossSummoner.MapEntry: Boss Summoner
+	Vault1BossSummoner.MapEntry: Vault Boss Rush
+	Vault2BossSummoner.MapEntry: Vault Boss Rush
+	PedestalTile2.MapEntry: Vault of the Destroyer
+	PedestalTile1.MapEntry: Vault of the Warrior
+	Eridium.MapEntry: Eridium
+}
+
+Items: {
+	MarcusVendingMachine: {
+		DisplayName: Marcus's Vending Machine
+		Tooltip: ""
+	}
+
+	ZedVendingMachine: {
+		DisplayName: Zed's Vending Machine
+		Tooltip: ""
+	}
+
+	AssaultRifleAmmo: {
+		DisplayName: Assault Rifle Ammo
+		Tooltip: ""
+	}
+
+	PistolAmmo: {
+		DisplayName: Pistol Ammo
+		Tooltip: ""
+	}
+
+	Shredifier: {
+		DisplayName: Shredifier
+		Tooltip: ""
+	}
+
+	UnkemptHarold: {
+		DisplayName: Unkempt Harold
+		Tooltip: ""
+	}
+
+	Fibber: {
+		DisplayName: Fibber
+		Tooltip: ""
+	}
+
+	Eridium: {
+		DisplayName: Eridium
+		Tooltip: ""
+	}
+
+	TheBee: {
+		DisplayName: The Bee
+		Tooltip: ""
+	}
+
+	GrogNozzle: {
+		DisplayName: Grog Nozzle
+		Tooltip: ""
+	}
+
+	BuzzAxe: {
+		DisplayName: Krieg's Buzz Axe
+		Tooltip: ""
+	}
+
+	BricksFists: {
+		DisplayName: Brick's Berserker Fists
+		Tooltip: ""
+	}
+
+	Law: {
+		DisplayName: Law
+		Tooltip: ""
+	}
+
+	Order: {
+		DisplayName: Order
+		Tooltip: ""
+	}
+
+	HideOfTerramorphous: {
+		DisplayName: Hide Of Terramorphous
+		Tooltip: ""
+	}
+
+	FlameOfTheFirehawk: {
+		DisplayName: Flame Of The Firehawk
+		Tooltip: ""
+	}
+
+	Antagonist: {
+		DisplayName: Antagonist
+		Tooltip: ""
+	}
+
+	Evolution: {
+		DisplayName: Evolution
+		Tooltip: ""
+	}
+
+	Impaler: {
+		DisplayName: Impaler
+		Tooltip: ""
+	}
+
+	SabreTurret: {
+		DisplayName: Axton's Sabre Turret
+		Tooltip: ""
+	}
+
+	Fastball: {
+		DisplayName: Fastball
+		Tooltip: ""
+	}
+
+	MagicMissile: {
+		DisplayName: Magic Missile
+		Tooltip: ""
+	}
+
+	MagicMissileEpic: {
+		DisplayName: Magic Missile
+		Tooltip: ""
+	}
+
+	MagicMissileRare: {
+		DisplayName: Magic Missile
+		Tooltip: ""
+	}
+
+	BreathOfTerramorphous: {
+		DisplayName: Breath Of Terramorphous
+		Tooltip: ""
+	}
+
+	FireBee: {
+		DisplayName: Fire Bee
+		Tooltip: ""
+	}
+
+	Orc: {
+		DisplayName: Orc
+		Tooltip: ""
+	}
+
+	Infinity: {
+		DisplayName: Infinity
+		Tooltip: ""
+	}
+
+	Hail: {
+		DisplayName: Hail
+		Tooltip: ""
+	}
+
+	SubmachineGunAmmo: {
+		DisplayName: SMG Ammo
+		Tooltip: ""
+	}
+
+	Florentine: {
+		DisplayName: Florentine
+		Tooltip: ""
+	}
+
+	CloudKill: {
+		DisplayName: Cloud Kill
+		Tooltip: ""
+	}
+
+	LightShow: {
+		DisplayName: Light Show
+		Tooltip: ""
+	}
+
+	Maggie: {
+		DisplayName: Maggie
+		Tooltip: ""
+	}
+
+	Rapier: {
+		DisplayName: Rapier
+		Tooltip: ""
+	}
+
+	Ogre: {
+		DisplayName: Ogre
+		Tooltip: ""
+	}
+
+	Butcher: {
+		DisplayName: Butcher
+		Tooltip: ""
+	}
+
+	HeartBreaker: {
+		DisplayName: Heart Breaker
+		Tooltip: ""
+	}
+
+	ShotgunAmmo: {
+		DisplayName: Shotgun Ammo
+		Tooltip: ""
+	}
+
+	RocketAmmo: {
+		DisplayName: Rocket Ammo
+		Tooltip: ""
+	}
+
+	LauncherAmmo: {
+		DisplayName: Launcher Ammo
+		Tooltip: ""
+	}
+
+	WorldBurn: {
+		DisplayName: World Burn
+		Tooltip: ""
+	}
+
+	Nukem: {
+		DisplayName: Nukem
+		Tooltip: ""
+	}
+
+	AsteroidBelt: {
+		DisplayName: Asteroid Belt
+		Tooltip: ""
+	}
+
+	StopGap: {
+		DisplayName: Stop-Gap
+		Tooltip: ""
+	}
+
+	SuperSoldier: {
+		DisplayName: Super Soldier
+		Tooltip: ""
+	}
+
+	OttoIdol: {
+		DisplayName: Otto Idol
+		Tooltip: ""
+	}
+
+	DeathRattle: {
+		DisplayName: Death Rattle
+		Tooltip: ""
+	}
+
+	LuckCannon: {
+		DisplayName: Luck Cannon
+		Tooltip: ""
+	}
+
+	SniperAmmo: {
+		DisplayName: Sniper Ammo
+		Tooltip: ""
+	}
+
+	Lyuda: {
+		DisplayName: Lyuda
+		Tooltip: ""
+	}
+
+	LeadStorm: {
+		DisplayName: Lead Storm
+		Tooltip: ""
+	}
+
+	Sawbar: {
+		DisplayName: Sawbar
+		Tooltip: ""
+	}
+
+	Norfleet: {
+		DisplayName: Norfleet
+		Tooltip: ""
+	}
+
+	Hive: {
+		DisplayName: Hive
+		Tooltip: ""
+	}
+
+	StarterShield: {
+		DisplayName: Starter Shield
+		Tooltip: ""
+	}
+
+	BasicRepeater: {
+		DisplayName: Basic Repeater
+		Tooltip: ""
+	}
+
+	Hornet: {
+		DisplayName: Hornet
+		Tooltip: ""
+	}
+
+	Zim: {
+		DisplayName: Zim
+		Tooltip: ""
+	}
+
+	CommanderPlanetoid: {
+		DisplayName: Commander Planetoid
+		Tooltip: ""
+	}
+
+	Badaboom: {
+		DisplayName: Badaboom
+		Tooltip: ""
+	}
+
+	BasicGrenade: {
+		Tooltip: ""
+		DisplayName: Basic Grenade
+	}
+
+	Sham: {
+		Tooltip: ""
+		DisplayName: Sham
+	}
+
+	LogansGun: {
+		DisplayName: Logans Gun
+		Tooltip: ""
+	}
+
+	RocketJumper: {
+		DisplayName: Rocket Jumper
+		Tooltip: ""
+	}
+
+	Aequitas: {
+		DisplayName: Aequitas
+		Tooltip: ""
+	}
+
+	Shockblast: {
+		DisplayName: Shockblast
+		Tooltip: ""
+	}
+
+	BlightTiger: {
+		Tooltip: ""
+		DisplayName: Blight Tiger
+	}
+
+	ColdHearted: {
+		DisplayName: Cold Hearted
+		Tooltip: ""
+	}
+
+	CorruptedSpirit: {
+		DisplayName: Corrupted Spirit
+		Tooltip: ""
+	}
+
+	MindBlown: {
+		DisplayName: Mind Blown
+		Tooltip: ""
+	}
+
+	Shockra: {
+		DisplayName: Shockra
+		Tooltip: ""
+	}
+
+	SoulFire: {
+		DisplayName: Soul Fire
+		Tooltip: ""
+	}
+
+	NuclearArms: {
+		Tooltip: ""
+		DisplayName: Nuclear Arms
+	}
+
+	Prototype2599: {
+		DisplayName: Prototype 2599
+		Tooltip: ""
+	}
+
+	FacePuncher: {
+		Tooltip: ""
+		DisplayName: Face Puncher
+	}
+
+	ZerosSword: {
+		Tooltip: ""
+		DisplayName: Zero's Sword
+	}
+
+	Deception: {
+		Tooltip: ""
+		DisplayName: Deception
+	}
+
+	A: {
+		DisplayName: A
+		Tooltip: ""
+	}
+
+	Hellfire: {
+		Tooltip: ""
+		DisplayName: Hellfire
+	}
+
+	Deliverance: {
+		Tooltip: ""
+		DisplayName: Deliverance
+	}
+
+	BabyMaker: {
+		Tooltip: ""
+		DisplayName: Baby Maker
+	}
+
+	PhaselockSpell: {
+		Tooltip: ""
+		DisplayName: Phaselock Spell
+	}
+
+	VaultHuntersRelic: {
+		Tooltip: ""
+		DisplayName: Vault Hunter's Relic
+	}
+
+	GearboxRenegade: {
+		DisplayName: Gearbox Renegade
+		Tooltip: ""
+	}
+
+	GearboxProjectileConvergence: {
+		DisplayName: Gearbox Projectile Convergence
+		Tooltip: ""
+	}
+
+	GearboxMuckamuck: {
+		DisplayName: Gearbox Muckamuck
+		Tooltip: ""
+	}
+
+	DeceptionPotion: {
+		Tooltip: ""
+		DisplayName: Deception Potion
+	}
+
+	Gub: {
+		DisplayName: Gub
+		Tooltip: ""
+	}
+
+	WarriorsTail: {
+		Tooltip: ""
+		DisplayName: The Tail of the Warrior
+	}
+
+	DestroyersEye: {
+		Tooltip: ""
+		DisplayName: The Eye of the Destroyer
+	}
+
+	Vault1: {
+		Tooltip: ""
+		DisplayName: Vault1
+	}
+
+	Vault1BossSummoner: {
+		Tooltip: ""
+		DisplayName: Vault of the Warrior Boss Summoner
+	}
+
+	Pedestal1: {
+		DisplayName: Vault of the Warrior Pedestal
+		Tooltip: ""
+	}
+
+	VaultFragment6: {
+		Tooltip: ""
+		DisplayName: Destroyer's Vault Fragment
+	}
+
+	VaultFragment5: {
+		Tooltip: ""
+		DisplayName: Destroyer's Vault Fragment
+	}
+
+	VaultFragment4: {
+		Tooltip: ""
+		DisplayName: Destroyer's Vault Fragment
+	}
+
+	VaultFragment3: {
+		Tooltip: ""
+		DisplayName: Warrior's Vault Fragment
+	}
+
+	VaultFragment2: {
+		Tooltip: ""
+		DisplayName: Warrior's Vault Fragment
+	}
+
+	VaultFragment1: {
+		Tooltip: ""
+		DisplayName: Warrior's Vault Fragment
+	}
+
+	Pedestal2: {
+		DisplayName: Vault of the Destroyer Pedestal
+		Tooltip: ""
+	}
+
+	Vault2BossSummoner: {
+		DisplayName: Vault of the Destroyer Boss Summoner
+		Tooltip: ""
+	}
+
+	VaultKey1: {
+		DisplayName: Warrior Vault Key
+		Tooltip: ""
+	}
+
+	VaultKey2: {
+		DisplayName: Destroyer Vault Key
+		Tooltip: ""
+	}
+
+	CopperAmmo: {
+		DisplayName: Copper Ammo
+		Tooltip: ""
+	}
+
+	TinAmmo: {
+		DisplayName: Tin Ammo
+		Tooltip: ""
+	}
+
+	LumpyRoot: {
+		DisplayName: Lumpy Root
+		Tooltip: ""
+	}
+
+	Aegis: {
+		DisplayName: Aegis
+		Tooltip: ""
+	}
+
+	Handgun: {
+		DisplayName: Handgun
+		Tooltip: ""
+	}
+
+	Skatergun: {
+		DisplayName: Skatergun
+		Tooltip: ""
+	}
+
+	SmoothFox: {
+		DisplayName: Smooth Fox
+		Tooltip: ""
+	}
+
+	Quad: {
+		DisplayName: Quad
+		Tooltip: ""
+	}
+
+	Lascaux: {
+		DisplayName: Lascaux
+		Tooltip: ""
+	}
+
+	NightSniper: {
+		DisplayName: Night Sniper
+		Tooltip: ""
+	}
+
+	InspiringTransaction: {
+		DisplayName: Inspiring Transaction
+		Tooltip: ""
+	}
+
+	Carbine: {
+		DisplayName: Carbine
+		Tooltip: ""
+	}
+
+	FlushRifle: {
+		DisplayName: Flush Rifle
+		Tooltip: ""
+	}
+
+	ThreeWayHulk: {
+		DisplayName: Three Way Hulk
+		Tooltip: ""
+	}
+
+	Revenant: {
+		DisplayName: Revenant
+		Tooltip: ""
+	}
+
+	Snider: {
+		DisplayName: Snider
+		Tooltip: ""
+	}
+
+	Pimpernel: {
+		DisplayName: Pimpernel
+		Tooltip: ""
+	}
+
+	CopperBullet: {
+		DisplayName: Copper Bullet
+		Tooltip: ""
+	}
+
+	TinBullet: {
+		Tooltip: ""
+		DisplayName: Tin Bullet
+	}
+
+	AkumasDemise: {
+		DisplayName: Akuma's Demise
+		Tooltip: ""
+	}
+
+	LadyFist: {
+		DisplayName: Lady Fist
+		Tooltip: ""
+	}
+
+	Trespasser: {
+		Tooltip: ""
+		DisplayName: Trespasser
+	}
+
+	Blackout: {
+		DisplayName: Blackout
+		Tooltip: ""
+	}
+
+	Oracle: {
+		DisplayName: Oracle
+		Tooltip: ""
+	}
+
+	Striker: {
+		DisplayName: Striker
+		Tooltip: ""
+	}
+
+	OrphanMaker: {
+		DisplayName: Orphan Maker
+		Tooltip: ""
+	}
+
+	Seraphim: {
+		DisplayName: Seraphim
+		Tooltip: ""
+	}
+
+	Boomacorn: {
+		DisplayName: Boomacorn
+		Tooltip: ""
+	}
+
+	TooScoops: {
+		Tooltip: ""
+		DisplayName: Too Scoops
+	}
+
+	Deathless: {
+		Tooltip: ""
+		DisplayName: Deathless
+	}
+
+	ElectricBanjo: {
+		Tooltip: ""
+		DisplayName: Electric Banjo
+	}
+
+	EridianFabricator: {
+		Tooltip: ""
+		DisplayName: Eridian Fabricator
+	}
+
+	GhastCall: {
+		Tooltip: ""
+		DisplayName: Ghast Call
+	}
+
+	PlasmaCoil: {
+		Tooltip: ""
+		DisplayName: Plasma Coil
+	}
+
+	MoonlightSaga: {
+		DisplayName: Moonlight Saga
+		Tooltip: ""
+	}
+
+	SwordSplosion: {
+		DisplayName: SWORDSPLOSION
+		Tooltip: ""
+	}
+
+	FabledTortoise: {
+		Tooltip: ""
+		DisplayName: Fabled Tortoise
+	}
+
+	NightHawkin: {
+		DisplayName: Night Hawkin
+		Tooltip: ""
+	}
+
+	Bane: {
+		Tooltip: ""
+		DisplayName: Bane
+	}
+
+	Cobra: {
+		DisplayName: Cobra
+		Tooltip: ""
+	}
+
+	Volcano: {
+		Tooltip: ""
+		DisplayName: Volcano
+	}
+
+	OlPainful: {
+		DisplayName: Ol Painful
+		Tooltip: ""
+	}
+
+	CatONineTails: {
+		Tooltip: ""
+		DisplayName: Cat o' Nine Tails
+	}
+
+	Skullmasher: {
+		Tooltip: ""
+		DisplayName: Skullmasher
+	}
+
+	DestroyerTrophy: {
+		Tooltip: ""
+		DisplayName: Destroyer Trophy
+	}
+
+	LaserDisker: {
+		DisplayName: Laser Disker
+		Tooltip: ""
+	}
+
+	Wombat: {
+		DisplayName: Wombat
+		Tooltip: ""
+	}
+
+	AgilityRelic: {
+		Tooltip: ""
+		DisplayName: Agility Relic
+	}
+
+	Bloodwing: {
+		Tooltip: ""
+		DisplayName: Bloodwing
+	}
+
+	MordecaiRakkAle: {
+		DisplayName: Mordecai's Rakk Ale
+		Tooltip: ""
+	}
+
+	GammaBurstPotion: {
+		DisplayName: Gamma Burst Potion
+		Tooltip: ""
+	}
+
+	DigiClone: {
+		Tooltip: ""
+		DisplayName: Zane's Digi Clone Clicker
+	}
+
+	WilhelmsCombatDrones: {
+		Tooltip: ""
+		DisplayName: Wilhelm's Combat Drones
+	}
+
+	ScorpioTurret: {
+		Tooltip: ""
+		DisplayName: Roland's Scorpio Turret
+	}
+
+	TerminationProtocols: {
+		Tooltip: ""
+		DisplayName: Termination Protocols
+	}
+
+	Taser: {
+		DisplayName: T4s-R
+		Tooltip: ""
+	}
+
+	Bloodsplosion: {
+		DisplayName: Bloodsplosion
+		Tooltip: ""
+	}
+
+	Bore: {
+		DisplayName: B0re
+		Tooltip: ""
+	}
+
+	Fleet: {
+		DisplayName: Fleet
+		Tooltip: ""
+	}
+
+	FollowThrough: {
+		DisplayName: F0ll0wthr0ugh
+		Tooltip: ""
+	}
+
+	Grit: {
+		DisplayName: Grit
+		Tooltip: ""
+	}
+
+	TwoFang: {
+		Tooltip: ""
+		DisplayName: Two Fang
+	}
+
+	Backstab: {
+		DisplayName: Backstab
+		Tooltip: ""
+	}
+
+	Incite: {
+		DisplayName: Incite
+		Tooltip: ""
+	}
+
+	Killer: {
+		DisplayName: Killer
+		Tooltip: ""
+	}
+
+	KillingBlow: {
+		DisplayName: Killing Blow
+		Tooltip: ""
+	}
+
+	LegendaryNinja: {
+		DisplayName: Legendary Ninja
+		Tooltip: ""
+	}
+
+	Resurgence: {
+		DisplayName: Resurgence
+		Tooltip: ""
+	}
+
+	Salvation: {
+		DisplayName: Salvation
+		Tooltip: ""
+	}
+
+	PersonalSpace: {
+		Tooltip: ""
+		DisplayName: Personal Space
+	}
+
+	HuntersEye: {
+		DisplayName: Hunter's Eye
+		Tooltip: ""
+	}
+
+	PackTactics: {
+		DisplayName: Pack Tactics
+		Tooltip: ""
+	}
+
+	TheFastAndTheFurryous: {
+		Tooltip: ""
+		DisplayName: The Fast And The Furryous
+	}
+
+	DesperateMeasures: {
+		Tooltip: ""
+		DisplayName: Desperate Measures
+	}
+
+	BrainFreeze: {
+		Tooltip: ""
+		DisplayName: Brain Freeze
+	}
+
+	Refreshment: {
+		Tooltip: ""
+		DisplayName: Refreshment
+	}
+
+	ViolentMomentum: {
+		Tooltip: ""
+		DisplayName: Violent Momentum
+	}
+
+	ViolentSpeed: {
+		Tooltip: ""
+		DisplayName: Violent Speed
+	}
+
+	Antifreeze: {
+		Tooltip: ""
+		DisplayName: Antifreeze
+	}
+
+	Ringleader: {
+		Tooltip: ""
+		DisplayName: Ringleader
+	}
+
+	Innervate: {
+		Tooltip: ""
+		DisplayName: Innervate
+	}
+
+	OutOfBubblegum: {
+		Tooltip: ""
+		DisplayName: Out Of Bubblegum
+	}
+
+	JustGotReal: {
+		DisplayName: Just Got Real
+		Tooltip: ""
+	}
+
+	Wreck: {
+		DisplayName: Wreck
+		Tooltip: ""
+	}
+
+	Accelerate: {
+		DisplayName: Accelerate
+		Tooltip: ""
+	}
+
+	Foresight: {
+		Tooltip: ""
+		DisplayName: Foresight
+	}
+
+	Reaper: {
+		Tooltip: ""
+		DisplayName: Reaper
+	}
+
+	Immolate: {
+		DisplayName: Immolate
+		Tooltip: ""
+	}
+
+	Banshee: {
+		DisplayName: Banshee
+		Tooltip: ""
+	}
+
+	LegendarySiren: {
+		Tooltip: ""
+		DisplayName: Legendary Siren
+	}
+
+	QuickCharge: {
+		Tooltip: ""
+		DisplayName: Quick Charge
+	}
+
+	Impact: {
+		Tooltip: ""
+		DisplayName: Impact
+	}
+
+	MetalStorm: {
+		DisplayName: Metal Storm
+		Tooltip: ""
+	}
+
+	LegendaryRanger: {
+		Tooltip: ""
+		DisplayName: Legendary Ranger
+	}
+
+	Onslaught: {
+		DisplayName: Onslaught
+		Tooltip: ""
+	}
+
+	Ranger: {
+		Tooltip: ""
+		DisplayName: Ranger
+	}
+
+	Headshot: {
+		DisplayName: Headshot
+		Tooltip: ""
+	}
+
+	LegendaryKiller: {
+		DisplayName: Legendary Killer
+		Tooltip: ""
+	}
+
+	Velocity: {
+		DisplayName: Velocity
+		Tooltip: ""
+	}
+
+	CloudOfLead: {
+		Tooltip: ""
+		DisplayName: Cloud Of Lead
+	}
+
+	Redistribution: {
+		Tooltip: ""
+		DisplayName: Redistribution
+	}
+
+	HiddenMachine: {
+		DisplayName: Hidden Machine
+		Tooltip: ""
+	}
+
+	Inconceivable: {
+		DisplayName: Inconceivable
+		Tooltip: ""
+	}
+
+	LegendaryTrainer: {
+		Tooltip: ""
+		DisplayName: Legendary Tr4iner
+	}
+
+	Leech: {
+		DisplayName: Leech
+		Tooltip: ""
+	}
+
+	Flakker: {
+		DisplayName: Flakker
+		Tooltip: ""
+	}
+
+	FirstBlood: {
+		Tooltip: ""
+		DisplayName: First Blood
+	}
+
+	MysteriousAmulet: {
+		DisplayName: Mysterious Amulet
+		Tooltip: ""
+	}
+
+	LobbedSingularity: {
+		Tooltip: ""
+		DisplayName: Lobbed Singularity
+	}
+
+	Moonstone: {
+		Tooltip: ""
+		DisplayName: Moonstone
+	}
+
+	Vault2Bag: {
+		Tooltip: ""
+		DisplayName: Treasure Bag (Vault Of The Destroyer)
+	}
+
+	Vault1Bag: {
+		Tooltip: ""
+		DisplayName: Treasure Bag (Vault Of The Warrior)
+	}
+
+	HandsomeJackMask: {
+		DisplayName: Handsome Jack's Mask
+		Tooltip: ""
+	}
+
+	PsychoMask: {
+		Tooltip: ""
+		DisplayName: Psycho Mask
+	}
+
+	PsychoMask1: {
+		Tooltip: ""
+		DisplayName: Psycho Mask1
+	}
+
+	RedPsychoMask: {
+		Tooltip: ""
+		DisplayName: Red Psycho Mask
+	}
+
+	BluePsychoMask: {
+		Tooltip: ""
+		DisplayName: Blue Psycho Mask
+	}
+}
+
+Projectiles: {
+	ShredifierBullet.DisplayName: Shredifier
+	UHBullet.DisplayName: Unkempt Harold
+	FibberBullet.DisplayName: Fibber
+	GrogBullet.DisplayName: Grog
+	BuzzAxeBombardier.DisplayName: Buzz Axe Bombardier
+	BricksFists.DisplayName: Bricks Fists
+	BerserkerFists.DisplayName: Berserker Fists
+	FireNova.DisplayName: Fire Nova
+	HomingSlagBall.DisplayName: Homing Slag Ball
+	ImpalerSpike.DisplayName: Impaler Spike
+	Turret.DisplayName: Sabre Turret
+	HomingRocket.DisplayName: Homing Rocket
+	FastBallModule.DisplayName: FastBall
+	Breath.DisplayName: Breath Of Terramorphous
+	FireBeeSpray.DisplayName: Fire Bee
+	HailBullet.DisplayName: Hail
+	FlorentineBullet.DisplayName: Florentine
+	CloudBullet.DisplayName: Cloud
+	OgreBullet.DisplayName: Ogre
+	HeartBreakerBullet.DisplayName: Heart Breaker
+	WorldBurnRocket.DisplayName: World Burn
+	NukemRocket.DisplayName: Nukem
+	Meteor.DisplayName: Meteor
+	LuckCannonBullet.DisplayName: Luck Cannon
+	LyudaBullet.DisplayName: Lyuda
+	LeadStormBullet.DisplayName: Lead Storm
+	SawbarBullet.DisplayName: Sawbar
+	NorfleetRocket.DisplayName: Norfleet
+	HiveRocket.DisplayName: Hive
+	HornetBullet.DisplayName: Hornet
+	ZimBullet.DisplayName: Zim
+	BadaboomRocket.DisplayName: Badaboom
+	LoganBullet.DisplayName: Logan's Gun
+	BasicModule.DisplayName: Basic Grenade
+	ShockblastBullet.DisplayName: Shockblast
+	ShockblastElBullet.DisplayName: Shockblast
+	ShockblastExBullet.DisplayName: Shockblast
+	Prototype2599Bullet.DisplayName: Prototype2599
+	HellfireBullet.DisplayName: Hellfire Bullet
+	HomingDeliverance.DisplayName: Homing Deliverance
+	BabyMakerGrenade.DisplayName: Baby Maker Grenade
+	PhaselockBubble.DisplayName: Phaselock Bubble
+	GubBullet.DisplayName: Gub Bullet
+	WarriorLaserHoldout.DisplayName: Warrior Laser Holdout
+	WarriorLaserBeam.DisplayName: Warrior Laser Beam
+	DestroyerLaserHoldout.DisplayName: Destroyer Laser Holdout
+	DestroyerLaserBeam.DisplayName: Destroyer Laser Beam
+	Asd.DisplayName: Asd
+	CopperBullet.DisplayName: Copper Bullet
+	TinBullet.DisplayName: Tin Bullet
+	LumpyBullet.DisplayName: Lumpy Bullet
+	AegisBullet.DisplayName: Aegis Bullet
+	HandgunGrenade.DisplayName: Handgun Grenade
+	RevenantBullet.DisplayName: Revenant Bullet
+	PimpernelBullet.DisplayName: Pimpernel Bullet
+	HulkBullet.DisplayName: Hulk Bullet
+	SniderBullet.DisplayName: Snider Bullet
+	BlackoutBullet.DisplayName: Blackout Bullet
+	SeraphimBullet.DisplayName: Seraphim Bullet
+	BoomacornBullet.DisplayName: Boomacorn Bullet
+	TooScoopsBullet.DisplayName: Too Scoops Bullet
+	GhastCallModule.DisplayName: Ghast Call Module
+	PlasmaCoilBullet.DisplayName: Plasma Coil Bullet
+	SwordSplosionKnife.DisplayName: Sword Splosion Knife
+	AspisShield.DisplayName: Aspis Shield
+	CobraBullet.DisplayName: Cobra Bullet
+	VolcanoBullet.DisplayName: Volcano Bullet
+	RadiationPlasmaCoilBullet.DisplayName: Radiation Plasma Coil Bullet
+	CryoPlasmaCoilBullet.DisplayName: Cryo Plasma Coil Bullet
+	PimpernelChildBullet.DisplayName: Pimpernel Child Bullet
+	LaserDiskerBullet.DisplayName: Laser Disker Bullet
+	LaserDiskerGrenade.DisplayName: Laser Disker Grenade
+	WombatBullet.DisplayName: Wombat Bullet
+	BloodwingMinion.DisplayName: Bloodwing Minion
+	Turret1.DisplayName: Turret1
+	Clone.DisplayName: Clone
+	Wolf.DisplayName: Wolf
+	Saint.DisplayName: Saint
+	RolandTurret.DisplayName: Roland Turret
+	AxtonTurret.DisplayName: Axton Turret
+	TaserLaser.DisplayName: Taser Laser
+	LeechModule.DisplayName: Leech Module
+	Flak.DisplayName: Flak
+	SingularityModule.DisplayName: Singularity Module
+	TinProjectile.DisplayName: Tin Projectile
+	CopperProjectile.DisplayName: Copper Projectile
+	EProjectile.DisplayName: E Projectile
+	ExplosiveProjectile.DisplayName: Explosive Projectile
+	SlagProjectile.DisplayName: Slag Projectile
+	ShockProjectile.DisplayName: Shock Projectile
+	RadiationProjectile.DisplayName: Radiation Projectile
+	IncendiaryProjectile.DisplayName: Incendiary Projectile
+	CryoProjectile.DisplayName: Cryo Projectile
+	CorrosiveProjectile.DisplayName: Corrosive Projectile
+	IncendiaryNova.DisplayName: Incendiary Nova
+	SlagExplosion.DisplayName: Slag Explosion
+	ShockExplosion.DisplayName: Shock Explosion
+	RadiationExplosion.DisplayName: Radiation Explosion
+	IncendiaryExplosion.DisplayName: Incendiary Explosion
+	CryoExplosion.DisplayName: Cryo Explosion
+	CorrosiveExplosion.DisplayName: Corrosive Explosion
+}
+
+Buffs: {
+	DrunkEffect: {
+		DisplayName: Drunk Effect
+		Description: Increases projectile count by 5 but decreases fire rate by 50%
+	}
+
+	IncendiaryBuff: {
+		DisplayName: Burnt
+		Description: Take Fire damage over time
+	}
+
+	ShockBuff: {
+		DisplayName: Shocked
+		Description: Take Shock damage over time
+	}
+
+	CorrosiveBuff: {
+		DisplayName: Corroded
+		Description: Take Corrosive damage over time
+	}
+
+	ExplosiveBuff: {
+		DisplayName: Exploding
+		Description: EXPLOSIONS!!!
+	}
+
+	SlagBuff: {
+		DisplayName: Slagged
+		Description: Take increased damage
+	}
+
+	OrcEffect: {
+		DisplayName: Orc Effect
+		Description: Increases projectile count, fire rate, damage & makes your projectiles Trickshot
+	}
+
+	CryoBuff: {
+		DisplayName: Cryoed
+		Description: Take Cryo damage over time
+	}
+
+	DeathEffect: {
+		DisplayName: Death Effect
+		Description: If under 20% health, the next hits against you restore you to full health
+	}
+
+	RadiationBuff: {
+		DisplayName: Irradiated
+		Description: Take Radiation damage over time and Explode on death
+	}
+
+	DeceptionBuff: {
+		DisplayName: Deception
+		Description: And I disappear / A ghost amidst the combat / Preparing to strike.
+	}
+
+	Phaselocked: {
+		Description: Stuck in a bubble
+		DisplayName: Phaselocked
+	}
+
+	Bloodwing: {
+		Description: Bloodwing will fight for you
+		DisplayName: Bloodwing
+	}
+
+	GammaBurstBuff: {
+		DisplayName: Gamma Burst
+		Description: Makes minions irradiated
+	}
+
+	WolfAndSaint: {
+		Description: Wolf And Saint will fight for you
+		DisplayName: Wolf And Saint
+	}
+
+	FollowThroughKillSkill: {
+		DisplayName: F0ll0wthr0ugh
+		Description: Killing an enemy increases your Damage and Movement Speed for a short time
+	}
+
+	FleetPassive: {
+		DisplayName: Fleet
+		Description: While under 30% health you gain increased Movement Speed
+	}
+
+	IncitePassive: {
+		DisplayName: Incite
+		Description: Taking enemy damage increases your Movement Speed and Fire Rate for a short time
+	}
+
+	KillerKillSkill: {
+		DisplayName: Killer
+		Description: Killing an enemy increases your Crit Damage and Fire Rate for a short time
+	}
+
+	SalvationKillSkill: {
+		DisplayName: Salvation
+		Description: Killing an enemy, grants you Gun Damage Lifesteal for a short time
+	}
+
+	TheFastAndTheFurryousPassiveSkill: {
+		DisplayName: The Fast And The Furryous
+		Description: While above 50% Health, you gain increased Whip Damage, Summon Damage, and Movement Speed
+	}
+
+	ViolentSpeedKillSkill: {
+		DisplayName: Violent Speed
+		Description: Killing an enemy increases your Movement Speed for a short time
+	}
+
+	InnervatePassiveSkill: {
+		DisplayName: Innervate
+		Description: While Decepti0n is active you gain increased Ranged Damage, Movement Speed, and Health Regeneration
+	}
+
+	OutOfBubblegumPassiveSkill: {
+		DisplayName: Out Of Bubblegum
+		Description: While under 40% Health, you gain increased Fire Rate
+	}
+
+	WreckPassiveSkill: {
+		DisplayName: Wreck
+		Description: While an enemy is Phaselocked you gain increased Fire Rate and Damage for Magic weapons
+	}
+
+	ImmolatePassiveSkill: {
+		Description: While under 20% health, your magic attacks deal bonus Incendiary Damage
+		DisplayName: Immolate
+	}
+
+	QuickChargeKillSkill: {
+		DisplayName: Quick Charge
+		Description: Killing an enemy grants you Health Regeneration for a short time
+	}
+
+	MetalStormKillSkill: {
+		Description: Killing an enemy increases your Ranged Fire Rate for a short time
+		DisplayName: Metal Storm
+	}
+
+	OnslaughtKillSkill: {
+		DisplayName: Onslaught
+		Description: Killing an enemy increases your Ranged Damage and Movement Speed for a short time
+	}
+
+	RedistributionPassiveSkill: {
+		DisplayName: Redistribution
+		Description: Scoring a Critical Hit with a Ranged weapon grants Health and Ammo Regeneration for that weapon for a short time
+	}
+
+	DeceptionCooldownBuff: {
+		DisplayName: Deception Cooldown
+		Description: Cannot go into Deception
+	}
+
+	GammaBurstCooldownBuff: {
+		DisplayName: Gamma Burst Cooldown
+		Description: Cannot activate Gamma Burst
+	}
+}
+
+Prefixes: {
+	Inflammable.DisplayName: Inflammable
+	Incendiary.DisplayName: Incendiary
+	Shock.DisplayName: Shock
+	Grounded.DisplayName: Grounded
+	Alkaline.DisplayName: Alkaline
+	BlastProof.DisplayName: Blast Proof
+	Corrosive.DisplayName: Corrosive
+	Evolved.DisplayName: Evolved
+	Explosive.DisplayName: Explosive
+	Slag.DisplayName: Slag
+	DoublePenetrating.DisplayName: Double Penetrating
+	Trickshot.DisplayName: Trickshot
+	Cryo.DisplayName: Cryo
+	Thermo.DisplayName: Thermo
+	MagicDP.DisplayName: Double Penetrating
+	MagicTrickshot.DisplayName: Trickshot
+	RangerDP.DisplayName: Double Penetrating
+	RangerTrickshot.DisplayName: Trickshot
+	Radiation.DisplayName: Radiation
+	MagicMasher.DisplayName: Masher
+	Masher.DisplayName: Masher
+	RangerMasher.DisplayName: Masher
+	RedSuit.DisplayName: Red Suit
+}
+
+NPCs: {
+	Destroyer: {
+		DisplayName: The Destroyer
+		Bestiary.Destroyer_1: What is the Destroyer? It is a mouth with endless appetite. It is hate that never cools. It is the long shadow cast by our universe against the mouldering sun of time. It will never truly be contained. Merely made to wait until its chains slip - or are slipped for it.
+	}
+
+	DestroyerMinion: {
+		DisplayName: Destroyer Minion
+		Bestiary.DestroyerMinion_1: What is the Destroyer? It is a mouth with endless appetite. It is hate that never cools. It is the long shadow cast by our universe against the mouldering sun of time. It will never truly be contained. Merely made to wait until its chains slip - or are slipped for it.
+	}
+
+	Claptrap: {
+		DisplayName: Hyperion Steward Bot
+		DeathMessage: Claptrap is finally dead. Good Riddance.
+		DeathMessageAlt: Shadowtrap is dead. The world is safe.
+
+		Buttons: {
+			Shop: Gearbox Premiere Club
+			Vaultaria: Vaultaria
+			MainMenu: Main Menu
+			Back: Back
+			Eridium: Eridium
+			Incendiary: Incendiary
+			Shock: Shock
+			Corrosive: Corrosive
+			Explosive: Explosive
+			Slag: Slag
+			Cryo: Cryo
+			Radiation: Radiation
+			DoublePenetrating: Double Penetrating
+			Trickshot: Trickshot
+			Accessories: Accessories
+			Ammo: Ammo
+			Vaults: Vaults
+		}
+
+		VaultarianInfo: {
+			Vaultaria: Attention, Meatbag! I, CL4P-TP, your humble (and totally amazing) guide, will help drop some knowledge bombs about Vaultaria's mechanics, so that you learn everything you need to not explode instantly in Vaultaria. (PS - If you haven't already installed the Quite Enough Recipes mod onto your EchoNet, then do so now, it will help out a bunch)
+			Eridium: Whoa, look at the shiny stuff! Eridium is the universe's greatest resource, period! There's a rare chance for you to get tiny bits from every loser you kill, but BIG, beautiful stacks from bosses. You need it to craft EVERYTHING here! Start farming Vault Hunter, I'm not doing it for you!
+			Incendiary: BURN BABY BURN! Defeat the Eye Of Cthulhu and unleash the FIRE! This prefix lights those psychos up with a powerful Burning DOT! Wanna be an arsonist? Grab the Attunement, it drops rarely from the pathetic losers in The Underworld.
+			Shock: ZAP! You get this electric power after kicking the Martian Saucer's metal butt! This bad boy Electrifies foes and summons a stationary Shock Ring for extra pain! Find the Attunement accessory where the weirdos hang out: Space, or during a Rain / Martian Invasion!
+			Corrosive: Time to melt some faces! Beat Your World Evil's Boss (you know, the Worm or the Brain, ugh gross) to unlock this goop. I'd personally never touch the stuff, Corrosion is a nasty thing to deal with. It inflicts Venom debuffs, poisoning them good! The Attunement accessory is hiding somewhere with the creepy crawlies in the Hardmode Jungle.
+			Explosive: EXPLOSIONSS!!!! I SAID EXPLOSIONS!!! You unlock Mr. Torgue's favorite prefix by defeating Captain Scarlett's friends! Creates an explosion, dealing massive AOE damage and shatters enemy armor. Get the Attunement during the Pirate Invasion or the Old One's Army. Aw Jeez I think I hear Torgue coming, *THAT SENTENCE HAD TOO MANY SYLLABLES! APOLOGIZE!*. Sorry Torgue.
+			Slag: Congratulations! You beat the Wall Of Flesh and unlocked this purple goodness. Slag reduces enemy defense and makes them take increased damage from EVERYTHING else! It’s the Ultimate Vault Hunter way to fight. Find the Attunement from the spooky guys in the Hardmode Dungeon.
+			Cryo: Sprinkle a bit of the Windshear Waste wherever you go by beating those freaky Ice Golems. This prefix applies a nasty Frostburn DOT and has a chance to FREEZE enemies solid. Which means NO DANCING, definitely my least favorite thing to be hit with. Look for the Attunement in the chilly Hardmode Snow Biome or during the Frost Moon/Frost Legion.
+			Radiation: RADIATION! This advanced science is obtained by defeating The Twins (which is like totally easy for me, maybe hard for you though). It reduces enemy defense and gives them Cursed Inferno DOT. Best part? When the irradiated guy dies, he EXPLODES and spreads the pain! Pick up the Attunement from those disgusting creatures in the Hardmode Corruption / Crimson Biome.
+			DoublePenetrating: If any nimrod has ever told you that less is more, then IGNORE THEM! MORE IS MORE HERE! Beat Deerclops to get this incredible prefix. It doubles your projectiles, making you twice as cool! WARNING: It doubles your ammo cost! Still worth it. TRUST ME.
+			Trickshot: The first prefix available. You get this one just for existing! Trickshot is great for you losers who have terrible aim, as this lets your bullets ricochet off surfaces, ensuring you eventually hit something (something that I'd never need).
+			Accessories: Listen up! You have four glorious new equipment types to play with: Shields, Relics, Skills, and Attunements; and you can wear one of each (I know, mind-blowing). These gizmos grant special abilities to help you, the Vault Hunter, bring peace to the land (And by peace, I mean DEATH TO EVERYONE WHO DARES CROSS ME!).
+			Ammo: Ha! Terrarian ammo is pathetic! Some of the BEST weapons need my superior Ammo from the Borderlands. It drops from any marauder you kill. However if you wanna be a lazy squire, you can buy it from the Arms Dealer.
+			Vaults: There are TWO of 'em in your world! Just two! Don't look for a third! I counted! To get inside, you need a Vault Key. Duh! What, did you think they'd let just anyone waltz in? You gotta build the key yourself! Vault Fragments are scattered around the map, tucked away in chests! Go find 'em! Once you crack that Vault open, you'll have to fight against a rush of Raid Bosses. It's going to be brutal! But don't worry, I'll be here... far, far away! If you don't die and actually win, you get a reward of unimaginable power!
+		}
+
+		Dialogue: {
+			PartyGirlDialogue1: Not sure what happened to Claptrap, but he no longer wants to dance anymore.
+			UVHM: If the squishy enemies here are making you yawn. Access your trusty EchoNet (your config settings) and crank that Vault Hunter Mode dial up to either 2 or 3.
+			StandardDialogue1: Greetings, traveler! I am the finest CL4P-TP unit Hyperion has ever produced. Now bow before your superior!
+			StandardDialogue2: I hope there aren't any stairs here.
+			StandardDialogue3: Look at me everybody, I'm dancing, IM DANCIN'.
+			StandardDialogue4: Wub wub wub wub wub wub.
+			StandardDialogue5: So, this one time, I went to a party, and there was a beautiful subatomic particle accelerator there. Our circuits locked across the room and... I don't remember what happened next. I mean, I can't. We coulda gotten married and had gadgets together, but now, I'll never know.
+			StandardDialogue6: MINION! HEY! OVER HERE! Listen up, because I'm only gonna say this once, and it’s gonna be fantastic! If you've got some brilliant ideas, or if you find a bug, fast travel over to the Vaultaria Discord server and tell us about it! The link is just sitting there on the Steam page, waiting for a trigger-happy vault hunter like you to click it! GO! GO! GO!
+			CommonDialogue: I've learned to count! One! Two! Five! You get the picture. Counting is hard.
+			RareDialogue: You wanna know a secret, I can actually go up stairs.
+			TalkALot: You're such a good listener Squire.
+			ShimmerPartyGirlDialogue1: Not sure what happened to Claptrap, but he no longer wants to dance anymore.
+			ShimmerStandardDialogue1: You've made a mistake, a big mistake.
+			ShimmerStandardDialogue2: This Galaxy will be mine for the taking.
+			ShimmerStandardDialogue3: You will all bend to my will.
+			ShimmerStandardDialogue4: I'll grind you to paste
+			ShimmerRareDialogue: MINION, I'M STILL IN HERE, HELP ME SQUIRE. SHIMMER MY BODY AND BRING ME BACK.
+		}
+
+		TownNPCMood: {
+			Content:
+				'''
+				Stay a while, and listen. Oh god, please -- PLEASE! -- stay a while.
+				Unrelated mumbling.
+				'''
+			NoHome: MINION! Build a home for your Master this instance!
+			FarFromHome: We're a long way from Sanctuary now... I wander if anyone's noticed I'm gone.
+			LoveSpace: Look at all this room to dance, I LOVE IT.
+			DislikeCrowded: I love a good party, but there's only so much room on the dance floor, we need more space.
+			HateCrowded: HAVE U NO ARCHITECTURAL SENSE MINION! THIS PLACE IS TOO CROWDED!
+			LoveBiome: I love {BiomeName}.
+			LikeBiome: I like {BiomeName}.
+			DislikeNPC: I dislike {NPCName}.
+			HateNPC: I hate {NPCName}.
+			LoveNPC: I love {NPCName}.
+			LikeNPC: I like {NPCName}.
+			LikeNPC_Princess: I like {NPCName}.
+			Princess_LovesNPC: I like {NPCName}.
+		}
+
+		Bestiary: {
+			Claptrap_1: A highly annoying but surprisingly useful Hyperion CL4P-TP unit that decided to settle down.
+			Claptrap_2: The constant chatter and questionable dance moves are a small price to pay for access to Vaultarian knowledge.
+		}
+
+		Census.SpawnCondition: Conditions unknown
+	}
+}
+
+Configs: {
+	VaultariaConfig: {
+		EnableOldSawbarExplosion: {
+			Label: Enable Old Sawbar Explosion
+			Tooltip: Enabling this makes the Sawbar create tighter explosions
+		}
+
+		EridiumDropRateMultiplier: {
+			Label: Eridium Drop Rate Multiplier
+			Tooltip: Multiplies the Eridium drop rate from bosses
+		}
+
+		SlagDamageMultiplier: {
+			Label: Slag Damage Multiplier
+			Tooltip: The amount of additional damage taken by Slagged enemies (3 would make an enemy take 3x as much damage)
+		}
+
+		DisplayName: Vaultaria Config
+
+		GetRuinFirst: {
+			Label: Get Ruin First
+			Tooltip: If enabled, Ruin is gained after defeating the Wall of Flesh instead of Sub-Sequence
+		}
+
+		KeepMinionSizeTheSameWhenGammaBursting: {
+			Label: Keep Minion Size The Same When Gamma Bursting
+			Tooltip: If enabled, then your minion's size won't be doubled when gamma-ed
+		}
+
+		KeepBossSizeTheSameWhenBossRushing: {
+			Label: Keep Boss Size The Same When Boss Rushing
+			Tooltip: If enabled, then the boss's sizes inside the vaults won't be increased
+		}
+
+		VaultHunterMode: {
+			Label: Vault Hunter Mode
+			Tooltip: The amount of additional health that NPC's have (1 is no change (NVHM), 2 is double (TVHM), 3 is triple (UVHM))
+		}
+
+		DisableMilkshakeVoiceLine: {
+			Label: Disable Milkshake Voice Line
+			Tooltip: Stops Handsome Jack from imitating Roland when consuming a Milkshake
+		}
+
+		ChubbySpawnChance: {
+			Label: Chubby Spawn Chance
+			Tooltip: Alters the spawn rate of Chubbies and Tubbies
+		}
+
+		InfernumModEnabled: {
+			Label: Infernum Mod Enabled
+			Tooltip: If you are playing with the Calamity Infernum mod, enable this (should be done before creating the world)
+		}
+
+		ExecuteSoundEffect: {
+			Label: Execute Sound Effect
+			Tooltip: Enable this to have the swoosh sound effect play when in Deception
+		}
+	}
+
+	VaultariaConfig2: {
+		DisplayName: Vaultaria Config2
+
+		DisableMilkshakeVoiceLine: {
+			Label: Disable Milkshake Voice Line
+			Tooltip: ""
+		}
+	}
+}
+
+Mods: {
+	Vaultaria: {
+		Subworlds: {
+			Vault1Subworld.DisplayName: Vault Of The Warrior
+			Vault2Subworld.DisplayName: Vault Of The Destroyer
+		}
+	}
+}
+
+BossChecklistIntegration: {
+	VaultOfTheWarrior.EntryName: Vault Of The Warrior
+	VaultOfTheDestroyer.EntryName: Vault Of The Destroyer
+	VaultWarriorDisplayName: Vault Of The Warrior
+	VaultDestroyerDisplayName: Vault Of The Destroyer
+	VaultWarriorSpawnInfo: Activate the Pedestal in the {0} Vault using the {1} Vault Key {2}.
+	VaultDestroyerSpawnInfo: Activate the Pedestal in the {0} Vault using the {1} Vault Key {2}.
+}
