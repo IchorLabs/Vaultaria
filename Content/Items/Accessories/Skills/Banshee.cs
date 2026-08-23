@@ -21,15 +21,15 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(20f, 0.1f);
-            int bonusSpeed = Utilities.DisplaySkillBonusText(27f, 0.1f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(20f, 0.1f);
+            int bonusSpeed = SkillUtilities.DisplaySkillBonusText(27f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "While under 20% health, your magic attacks deal bonus Incendiary Damage", Utilities.VaultarianColours.Incendiary);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "While under 30% health you gain increased Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusDamage}% Incendiary Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusSpeed}% Movement Speed");
-            Utilities.RedText(tooltips, Mod, "Rawr.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "While under 20% health, your magic attacks deal bonus Incendiary Damage", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "While under 30% health you gain increased Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusDamage}% Incendiary Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusSpeed}% Movement Speed");
+            ItemText.RedText(tooltips, Mod, "Rawr.");
         }
 
         public override void AddRecipes()

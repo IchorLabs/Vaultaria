@@ -165,7 +165,7 @@ namespace Vaultaria.Common.Globals
             {
                 if(item.type == ItemID.RodofDiscord || item.type == ItemID.RodOfHarmony)
                 {
-                    Utilities.Utilities.Text(tooltips, Mod, "vault", "This item is unusable when inside either Vault");
+                    Utilities.ItemText.Text(tooltips, Mod, "vault", "This item is unusable when inside either Vault");
                 }
             }
         }

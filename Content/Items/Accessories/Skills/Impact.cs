@@ -21,13 +21,13 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusRanged = Utilities.DisplaySkillBonusText(80f, 0.05f);
-            int bonusMelee = Utilities.DisplaySkillBonusText(100f, 0.05f);
+            int bonusRanged = SkillUtilities.DisplaySkillBonusText(80f, 0.05f);
+            int bonusMelee = SkillUtilities.DisplaySkillBonusText(100f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged and Melee Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip2", $"+{bonusRanged}% Ranged Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusMelee}% Melee Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged and Melee Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip2", $"+{bonusRanged}% Ranged Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusMelee}% Melee Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

@@ -9,6 +9,7 @@ using Terraria.ModLoader;
 using Vaultaria.Content.Items.Consumables.Bags;
 using Terraria.Localization;
 using Vaultaria.Common.Networking;
+using Vaultaria.Common.Systems.GenPasses.Chests;
 
 namespace Vaultaria.Common.Systems.GenPasses.Vaults
 {
@@ -144,7 +145,7 @@ namespace Vaultaria.Common.Systems.GenPasses.Vaults
 			int maxItems = Main.chest.Length;
 			int chest = 44;
 
-            Utilities.Utilities.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
+            ChestFiller.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
         }
 
 		// private void DestroyPressurePlate()

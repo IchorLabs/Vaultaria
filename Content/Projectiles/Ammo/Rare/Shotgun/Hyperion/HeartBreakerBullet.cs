@@ -38,7 +38,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Shotgun.Hyperion
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(3, Projectile); 
+            ItemEffects.FrameRotator(3, Projectile); 
         }
 
         public override void OnKill(int timeLeft)
@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Shotgun.Hyperion
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            Utilities.HealOnNPCHit(target, damageDone, 0.3f, Projectile);
+            ItemEffects.HealOnNPCHit(target, damageDone, 0.3f, Projectile);
 
             if (SetElementalChance(elementalChance))
             {
@@ -63,7 +63,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Shotgun.Hyperion
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            Utilities.HealOnPlayerHit(target, info.SourceDamage, 0.3f, Projectile);
+            ItemEffects.HealOnPlayerHit(target, info.SourceDamage, 0.3f, Projectile);
 
             if (SetElementalChance(elementalChance))
             {

@@ -62,8 +62,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Has a slight downward arc when thrown and deals high explosive damage on impact", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Forgot the curveball Ricky, give him the heater.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Has a slight downward arc when thrown and deals high explosive damage on impact", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Forgot the curveball Ricky, give him the heater.");
         }
     }
 }

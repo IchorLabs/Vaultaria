@@ -73,8 +73,8 @@ namespace Vaultaria.Content.Items.Weapons.Melee
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Throws a flurry of fists");
-            Utilities.RedText(tooltips, Mod, "SLAB... Did you... Did you just jump of the BUZZARD'S NEST?!\nGOD DAMN YOU MAKE ME PROUD!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Throws a flurry of fists");
+            ItemText.RedText(tooltips, Mod, "SLAB... Did you... Did you just jump of the BUZZARD'S NEST?!\nGOD DAMN YOU MAKE ME PROUD!");
         }
     }
 }

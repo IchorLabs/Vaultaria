@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "Thermo", "Grants immunity to Cryo damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Cryo.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Cryo.GetVaultarianColor()
             };
         }
 	}

@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Bandit
 {
-    public class Orc : ElementalItem
+    public class Orc : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditSMG, 60);
+            SetItemSound(Item, Sounds.BanditSMG, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -82,9 +82,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses any normal bullet type as ammo\nHolding the Orc has a chance to buff its wielder for 10 seconds.\nThe buff grants the following effects:");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "\t+1 Projectile\n\t+20% Damage\n\t+50% Fire Rate\n\tProjectiles ricochet", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Have I achieved worth yet?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses any normal bullet type as ammo\nHolding the Orc has a chance to buff its wielder for 10 seconds.\nThe buff grants the following effects:");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "\t+1 Projectile\n\t+20% Damage\n\t+50% Fire Rate\n\tProjectiles ricochet", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Have I achieved worth yet?");
         }
     }
 }

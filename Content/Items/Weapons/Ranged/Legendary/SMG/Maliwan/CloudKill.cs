@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 {
-    public class CloudKill : ElementalItem
+    public class CloudKill : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSMG, 60);
+            SetItemSound(Item, Sounds.MaliwanSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -57,9 +57,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Corrosive clouds", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "Now, you will rise.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Corrosive clouds", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "Now, you will rise.");
         }
     }
 }

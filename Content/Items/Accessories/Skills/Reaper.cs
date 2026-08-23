@@ -22,12 +22,12 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(35f, 0.05f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(35f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "You deal increased Magic Damage to enemies above 50% Health");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Magic Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Locked Shadow Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "You deal increased Magic Damage to enemies above 50% Health");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Magic Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Locked Shadow Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

@@ -21,14 +21,14 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusHealth = Utilities.DisplaySkillBonusText(150f, 0.05f);
-            int bonusDamage = Utilities.DisplaySkillBonusText(88f, 0.05f);
+            int bonusHealth = SkillUtilities.DisplaySkillBonusText(150f, 0.05f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(88f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Maximum Health and your Summon Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusHealth}% Maximum Health");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusDamage}% Summon Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip5", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Maximum Health and your Summon Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusHealth}% Maximum Health");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusDamage}% Summon Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip5", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Potions
 {
-    public class DeceptionPotion : ElementalItem
+    public class DeceptionPotion : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -44,7 +44,7 @@ namespace Vaultaria.Content.Items.Potions
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.Deception, 500);
+            SetItemSound(Item, Sounds.Deception, 500);
         }
 
         public override bool? UseItem(Player player)
@@ -69,8 +69,8 @@ namespace Vaultaria.Content.Items.Potions
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+50% Increased Ranged Damage & +75% increased Melee Damage while in Deception\n+100% Increased Melee Damage while holding Zero's Sword", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Your eyes deceive you\nAn illusion fools you all\nI move for the kill.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+50% Increased Ranged Damage & +75% increased Melee Damage while in Deception\n+100% Increased Melee Damage while holding Zero's Sword", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Your eyes deceive you\nAn illusion fools you all\nI move for the kill.");
         }
     }
 }

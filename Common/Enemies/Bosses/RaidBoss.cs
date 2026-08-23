@@ -3,17 +3,20 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Vaultaria.Common.Systems.GenPasses.Vaults;
 
-public class RaidBoss : GlobalNPC
+namespace Vaultaria.Common.Enemies.Bosses
 {
-    public override void ModifyTypeName(NPC npc, ref string typeName)
+    public class RaidBoss : GlobalNPC
     {
-        base.ModifyTypeName(npc, ref typeName);
-
-        if(SubworldLibrary.SubworldSystem.IsActive<Vault1Subworld>() || SubworldLibrary.SubworldSystem.IsActive<Vault2Subworld>())
+        public override void ModifyTypeName(NPC npc, ref string typeName)
         {
-            if(npc.boss || npc.type == NPCID.Pumpking || npc.type == NPCID.IceQueen)
+            base.ModifyTypeName(npc, ref typeName);
+
+            if(SubworldLibrary.SubworldSystem.IsActive<Vault1Subworld>() || SubworldLibrary.SubworldSystem.IsActive<Vault2Subworld>())
             {
-                typeName = $"{typeName} The Invincible";
+                if(npc.boss || npc.type == NPCID.Pumpking || npc.type == NPCID.IceQueen)
+                {
+                    typeName = $"{typeName} The Invincible";
+                }
             }
         }
     }

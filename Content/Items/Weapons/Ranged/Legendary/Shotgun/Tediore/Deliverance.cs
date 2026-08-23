@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Tediore;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
 {
-    public class Deliverance : ElementalItem
+    public class Deliverance : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         private bool altFireMode = false;
         public static bool thrown = false;
@@ -50,7 +50,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
 
             // Other properties
             Item.value = Item.buyPrice(gold: 3);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TedioreShotgun, 60);
+            SetItemSound(Item, Sounds.TedioreShotgun, 60);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -92,7 +92,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TedioreShotgunThrow, 120);
+                SetItemSound(Item, Sounds.TedioreShotgunThrow, 120);
                 thrown = true;
             }
             else // Shoot
@@ -113,7 +113,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TedioreShotgun, 60);
+                SetItemSound(Item, Sounds.TedioreShotgun, 60);
             }
 
             return base.CanUseItem(player);
@@ -123,7 +123,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
         {
             if (altFireMode == false)
             {
-                Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 2, 10);
+                ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 2, 10);
             }
             else
             {
@@ -144,10 +144,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 8);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw a homing shotgun that shoots at enemies");
-            Utilities.RedText(tooltips, Mod, "Kiki got a shotgun!");
+            ItemText.MultiShotText(tooltips, Item, 8);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw a homing shotgun that shoots at enemies");
+            ItemText.RedText(tooltips, Mod, "Kiki got a shotgun!");
         }
     }
 }

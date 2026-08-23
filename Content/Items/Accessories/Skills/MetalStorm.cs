@@ -21,11 +21,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusFireRate = Utilities.DisplaySkillBonusText(20f, 0.1f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(20f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Fire Rate for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Fire Rate for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate");
         }
     }
 }

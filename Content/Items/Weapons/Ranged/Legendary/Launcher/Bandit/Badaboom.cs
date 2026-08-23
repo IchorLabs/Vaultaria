@@ -11,9 +11,9 @@ using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Bandit
 {
-    public class Badaboom : ElementalItem
+    public class Badaboom : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 4);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditLauncher, 120);
+            SetItemSound(Item, Sounds.BanditLauncher, 120);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5);
 
             return false;
         }
@@ -80,10 +80,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 6);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Allows for rocket jumping", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Multi-kill.\nYoooo, the skip dude.");
+            ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Allows for rocket jumping", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Multi-kill.\nYoooo, the skip dude.");
         }
     }
 }

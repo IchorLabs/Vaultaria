@@ -11,9 +11,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 {
-    public class Fibber : ElementalItem
+    public class Fibber : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionPistol, 60);
+            SetItemSound(Item, Sounds.HyperionPistol, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -75,12 +75,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "+50% Love");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "+3000% Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Firing Increases Accuracy");
-            Utilities.Text(tooltips, Mod, "Tooltip5", "On tile collision, the initial Projectile splits into 10 Projectiles", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Would I lie to you?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "+50% Love");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "+3000% Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Firing Increases Accuracy");
+            ItemText.Text(tooltips, Mod, "Tooltip5", "On tile collision, the initial Projectile splits into 10 Projectiles", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Would I lie to you?");
         }
 
         public override bool AllowPrefix(int pre)

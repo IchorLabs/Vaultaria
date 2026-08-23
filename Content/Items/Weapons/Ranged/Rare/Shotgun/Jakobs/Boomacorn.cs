@@ -12,9 +12,9 @@ using Vaultaria.Content.Projectiles.Ammo.Rare.Shotgun.Jakobs;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 {
-    public class Boomacorn : ElementalItem
+    public class Boomacorn : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.Boomacorn, 120);
+            SetItemSound(Item, Sounds.Boomacorn, 120);
         }
 
         public override bool CanUseItem(Player player)
@@ -64,7 +64,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 5, 4, 6);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 5, 4, 6);
 
             return false;
         }
@@ -76,18 +76,18 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 7);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots every element", Utilities.VaultarianColours.Information);
+            ItemText.MultiShotText(tooltips, Item, 7);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots every element", ItemText.VaultarianColours.Information);
 
             if(!Main.hardMode)
             {
-                Utilities.Text(tooltips, Mod, "Tooltip3", "Can only be used in Hardmode", Utilities.VaultarianColours.Information);
+                ItemText.Text(tooltips, Mod, "Tooltip3", "Can only be used in Hardmode", ItemText.VaultarianColours.Information);
             }
 
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Skyware Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Skyware Chests", ItemText.VaultarianColours.Information);
 
-            Utilities.RedText(tooltips, Mod, "Always, I want to be with you.");
+            ItemText.RedText(tooltips, Mod, "Always, I want to be with you.");
         }
     }
 }

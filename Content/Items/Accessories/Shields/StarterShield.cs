@@ -20,8 +20,8 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+10 HP\n+2 Defense");
-            Utilities.RedText(tooltips, Mod, "Your ability to walk short distances without dying\nwill surely be Handsome Jack's downfall!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+10 HP\n+2 Defense");
+            ItemText.RedText(tooltips, Mod, "Your ability to walk short distances without dying\nwill surely be Handsome Jack's downfall!");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

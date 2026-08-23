@@ -10,9 +10,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 {
-    public class LuckCannon : ElementalItem
+    public class LuckCannon : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 4);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -57,9 +57,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Fires Explosive rounds", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Better lucky than good!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Fires Explosive rounds", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Better lucky than good!");
         }
     }
 }

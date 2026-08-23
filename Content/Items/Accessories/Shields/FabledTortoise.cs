@@ -21,9 +21,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+320 HP\n+5 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "While above 50% HP, movement speed is reduced by 80%\nBut once below 50% HP, movement speed is increased by 50%", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Win by a hare.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+320 HP\n+5 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "While above 50% HP, movement speed is reduced by 80%\nBut once below 50% HP, movement speed is increased by 50%", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Win by a hare.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

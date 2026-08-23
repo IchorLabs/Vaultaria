@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Radiation", "20% Chance to deal 20% bonus Radiation damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Radiation.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Radiation.GetVaultarianColor()
             };
         }
 	}

@@ -40,7 +40,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Launcher.Maliwan
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
 
             if (Projectile.timeLeft == 900)
             {

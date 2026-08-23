@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 {
-    public class Rapier : ElementalItem
+    public class Rapier : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.VladofAR, 60);
+            SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -81,7 +81,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
                 Item.shootSpeed = 12;
                 Item.shoot = ProjectileID.Bullet;
                 Item.useAmmo = AmmoID.Bullet;
-                Utilities.SetItemSound(Item, Utilities.Sounds.VladofAR, 60);
+                SetItemSound(Item, Sounds.VladofAR, 60);
 
                 Item.damage = 40;
                 Item.crit = 0;
@@ -120,11 +120,11 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "ToolTip2", "+200% Melee Damage");
-            Utilities.Text(tooltips, Mod, "ToolTip3", "Right-Click to do a melee attack");
-            Utilities.RedText(tooltips, Mod, "As I end the refrain, thrust home.");
-            Utilities.CursedText(tooltips, Mod, "Curse of the Porcelain Fist!\n(Take 3x more damage)");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "ToolTip2", "+200% Melee Damage");
+            ItemText.Text(tooltips, Mod, "ToolTip3", "Right-Click to do a melee attack");
+            ItemText.RedText(tooltips, Mod, "As I end the refrain, thrust home.");
+            ItemText.CursedText(tooltips, Mod, "Curse of the Porcelain Fist!\n(Take 3x more damage)");
         }
     }
 }

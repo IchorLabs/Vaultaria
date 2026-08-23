@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5);
 
             return false;
         }
@@ -64,8 +64,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Throws 3 Corrosive homing skulls", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "To you I am past, a story to tell.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Throws 3 Corrosive homing skulls", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "To you I am past, a story to tell.");
         }
     }
 }

@@ -6,16 +6,19 @@ using Terraria.ID;
 using Vaultaria.Common.Utilities;
 using Microsoft.Xna.Framework.Graphics;
 
-public class RadiationGlobalNPC : GlobalNPC
+namespace Vaultaria.Common.Enemies.Mobs
 {
-    public override void HitEffect(NPC npc, NPC.HitInfo hit)
+    public class RadiationGlobalNPC : GlobalNPC
     {
-        base.HitEffect(npc, hit);
-
-        if(npc.life <= 2 && npc.HasBuff(ElementalID.RadiationBuff))
+        public override void HitEffect(NPC npc, NPC.HitInfo hit)
         {
-            ElementalProjectile.BloodSplode(npc, hit, 1, ElementalID.RadiationExplosion, ElementalID.RadiationBuff, 240);
-            ElementalProjectile.BloodSplodeNearbyNPCs(npc, hit, ElementalID.RadiationProjectile, ElementalID.RadiationBuff);
+            base.HitEffect(npc, hit);
+
+            if(npc.life <= 2 && npc.HasBuff(ElementalID.RadiationBuff))
+            {
+                ElementalProjectile.BloodSplode(npc, hit, 1, ElementalID.RadiationExplosion, ElementalID.RadiationBuff, 240);
+                ElementalProjectile.BloodSplodeNearbyNPCs(npc, hit, ElementalID.RadiationProjectile, ElementalID.RadiationBuff);
+            }
         }
     }
 }

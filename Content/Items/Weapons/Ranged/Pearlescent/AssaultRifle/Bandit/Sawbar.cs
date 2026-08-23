@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Pearlescent.AssaultRifle.Bandit;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.AssaultRifle.Bandit
 {
-    public class Sawbar : ElementalItem
+    public class Sawbar : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.AssaultRifle.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditAR, 60);
+            SetItemSound(Item, Sounds.BanditAR, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -74,9 +74,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.AssaultRifle.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "tooltip1", "Uses Assault Rifle Ammo");
-            Utilities.Text(tooltips, Mod, "tooltip2", "Shoots bullets that create Fiery explosions", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "Suppressing fires!");
+            ItemText.Text(tooltips, Mod, "tooltip1", "Uses Assault Rifle Ammo");
+            ItemText.Text(tooltips, Mod, "tooltip2", "Shoots bullets that create Fiery explosions", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "Suppressing fires!");
         }
     }
 }

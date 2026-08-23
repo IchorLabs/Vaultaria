@@ -22,7 +22,7 @@ namespace Vaultaria.Content.Items.Accessories.Attunements
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Adds 20% Incendiary damage to all attacks", Utilities.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Adds 20% Incendiary damage to all attacks", ItemText.VaultarianColours.Incendiary);
         }
     }
 }

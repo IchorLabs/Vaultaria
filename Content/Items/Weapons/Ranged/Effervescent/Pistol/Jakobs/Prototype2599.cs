@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
 {
-    public class Prototype2599 : ElementalItem
+    public class Prototype2599 : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         private bool altFireMode = false;
 
@@ -51,7 +51,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         // public override bool AltFunctionUse(Player player)
@@ -92,7 +92,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         //         Item.useTurn = false;
 
         //         // Item.UseSound = SoundID.Item31;
-        //         Utilities.SetItemSound(Item, Utilities.Sounds.DahlPistolBurst, 60);
+        //         SetItemSound(Item, Sounds.DahlPistolBurst, 60);
         //     }
         //     else // Quad Shot (normal)
         //     {
@@ -112,7 +112,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         //         Item.autoReuse = true;
         //         Item.useTurn = false;
 
-        //         Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+        //         SetItemSound(Item, Sounds.JakobsPistol, 60);
         //     }
 
         //     return base.CanUseItem(player);
@@ -122,12 +122,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         {
             if(Utilities.Randomizer(25f))
             {
-                Utilities.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 2, 10, 4, 8);
+                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 2, 10, 4, 8);
             }
 
             if (altFireMode == false)
             {
-                Utilities.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 4, 5, 4, 8);
+                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 4, 5, 4, 8);
 
                 return false;
             }
@@ -154,9 +154,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 4);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo\nFires as fast as you can pull the trigger... but not too fast");
-            Utilities.RedText(tooltips, Mod, "An ode to Maxine");
+            ItemText.MultiShotText(tooltips, Item, 4);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo\nFires as fast as you can pull the trigger... but not too fast");
+            ItemText.RedText(tooltips, Mod, "An ode to Maxine");
         }
     }
 }

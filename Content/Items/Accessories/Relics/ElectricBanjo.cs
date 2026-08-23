@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Attacks have a chance to chain Shock damage to nearby enemies", Utilities.VaultarianColours.Shock);
-            Utilities.RedText(tooltips, Mod, "We never could have foreseen the success.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Attacks have a chance to chain Shock damage to nearby enemies", ItemText.VaultarianColours.Shock);
+            ItemText.RedText(tooltips, Mod, "We never could have foreseen the success.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

@@ -54,7 +54,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Pistol.Hyperion
                 Dust.NewDustPerfect(Projectile.Center, DustID.OrangeTorch).noGravity = false;
             }
 
-            Utilities.RocketJump(Projectile, ModContent.ItemType<LogansGun>(), 0.5f, 2f);
+            ItemEffects.RocketJump(Projectile, ModContent.ItemType<LogansGun>(), 0.5f, 2f);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

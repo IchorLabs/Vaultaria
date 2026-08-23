@@ -24,9 +24,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+30 HP\n+3 Defense\nRegenerates health");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "When under 10% health, become immune to all damage for 5 seconds\nMust have full health before immunity can be used again");
-            Utilities.RedText(tooltips, Mod, "The process is called 'living'");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+30 HP\n+3 Defense\nRegenerates health");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "When under 10% health, become immune to all damage for 5 seconds\nMust have full health before immunity can be used again");
+            ItemText.RedText(tooltips, Mod, "The process is called 'living'");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

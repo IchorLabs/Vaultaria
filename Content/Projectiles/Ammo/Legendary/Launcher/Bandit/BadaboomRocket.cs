@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Launcher.Bandit
                 Dust.NewDustPerfect(Projectile.Center, DustID.YellowTorch).noGravity = true;
             }
 
-            Utilities.RocketJump(Projectile, ModContent.ItemType<Badaboom>(), 6.5f, 12f);
+            ItemEffects.RocketJump(Projectile, ModContent.ItemType<Badaboom>(), 6.5f, 12f);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

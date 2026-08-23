@@ -41,7 +41,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Effervescent.Pistol.Jakobs
 
         public override void OnKill(int timeLeft)
         {
-            Utilities.DustMaker(2, Projectile, DustID.CursedTorch, false);
+            ItemEffects.DustMaker(2, Projectile, DustID.CursedTorch, false);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

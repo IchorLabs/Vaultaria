@@ -9,9 +9,9 @@ using Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
 {
-    public class FirstBlood : ElementalItem
+    public class FirstBlood : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionSMG, 60);
+            SetItemSound(Item, Sounds.HyperionSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -56,10 +56,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Deals 25% increased damage to enemies with more than 50% of their maximum health");
-            Utilities.RedText(tooltips, Mod, "I don't do second chances.");
-            Utilities.CursedText(tooltips, Mod, "Exodus");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Deals 25% increased damage to enemies with more than 50% of their maximum health");
+            ItemText.RedText(tooltips, Mod, "I don't do second chances.");
+            ItemText.CursedText(tooltips, Mod, "Exodus");
         }
     }
 }

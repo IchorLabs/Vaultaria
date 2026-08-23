@@ -25,8 +25,8 @@ namespace Vaultaria.Content.Items.Materials
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "The second fragment of the Warrior's Vault Key");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Locked Gold Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "The second fragment of the Warrior's Vault Key");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Locked Gold Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

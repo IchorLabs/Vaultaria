@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Dahl
 {
-    public class NightSniper : ElementalItem
+    public class NightSniper : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            Utilities.SetItemSound(Item, Utilities.Sounds.DahlSniperBurst, 60);
+            SetItemSound(Item, Sounds.DahlSniperBurst, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -56,8 +56,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Dahl
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Frozen Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Frozen Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

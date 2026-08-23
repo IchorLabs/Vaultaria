@@ -21,15 +21,15 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(180f, 0.05f);
-            int bonusSpeed = Utilities.DisplaySkillBonusText(180f, 0.05f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(180f, 0.05f);
+            int bonusSpeed = SkillUtilities.DisplaySkillBonusText(180f, 0.05f);
             int bonusRegen = (int) (Main.LocalPlayer.statLifeMax2 * 0.01f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "While Decepti0n is active you gain increased Ranged Damage, Movement Speed, and Health Regeneration");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip5", $"+{bonusRegen}% Health Regeneration");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "While Decepti0n is active you gain increased Ranged Damage, Movement Speed, and Health Regeneration");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip5", $"+{bonusRegen}% Health Regeneration");
         }
     }
 }

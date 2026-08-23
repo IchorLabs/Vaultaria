@@ -4,20 +4,22 @@ using Microsoft.Xna.Framework;
 using Vaultaria.Content.Buffs.Prefixes.Elements;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
-using Vaultaria.Common.Utilities;
 using Vaultaria.Common.Configs;
 
-public class VaultHunterMode : GlobalNPC
+namespace Vaultaria.Common.Enemies
 {
-    public override void SetDefaults(NPC entity)
+    public class VaultHunterMode : GlobalNPC
     {
-        VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
-        
-        base.SetDefaults(entity);
-
-        if(entity.type != NPCID.DungeonGuardian)
+        public override void SetDefaults(NPC entity)
         {
-            entity.lifeMax *= config.VaultHunterMode;
+            VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
+            
+            base.SetDefaults(entity);
+
+            if(entity.type != NPCID.DungeonGuardian)
+            {
+                entity.lifeMax *= config.VaultHunterMode;
+            }
         }
     }
 }

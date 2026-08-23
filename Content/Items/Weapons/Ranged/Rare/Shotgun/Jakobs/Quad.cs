@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 {
-    public class Quad : ElementalItem
+    public class Quad : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,12 +46,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsShotgun, 60);
+            SetItemSound(Item, Sounds.JakobsShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 18, 2, 2, 10);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 18, 2, 2, 10);
 
             return false;
         }
@@ -63,9 +63,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 18);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Locked Shadow Chests", Utilities.VaultarianColours.Information);
+            ItemText.MultiShotText(tooltips, Item, 18);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Locked Shadow Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

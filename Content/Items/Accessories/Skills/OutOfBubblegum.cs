@@ -32,12 +32,12 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusFireRate = Utilities.DisplaySkillBonusText(45f, 0.05f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(45f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "While under 40% Health, you gain increased Fire Rate");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Wooden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "While under 40% Health, you gain increased Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

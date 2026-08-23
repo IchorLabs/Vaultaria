@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Hyperion
 {
-    public class InspiringTransaction : ElementalItem
+    public class InspiringTransaction : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionSniper, 60);
+            SetItemSound(Item, Sounds.HyperionSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -56,8 +56,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

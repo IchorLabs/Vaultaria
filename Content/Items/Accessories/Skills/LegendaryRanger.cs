@@ -21,29 +21,29 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int ranger = Utilities.DisplaySkillBonusText(300f, 0.01f);
-            int rangerDamage = Utilities.DisplaySkillBonusText(300f, 0.01f) + Utilities.DisplaySkillBonusText(80f, 0.05f);
-            int bonusMelee = Utilities.DisplaySkillBonusText(100f, 0.05f);
+            int ranger = SkillUtilities.DisplaySkillBonusText(300f, 0.01f);
+            int rangerDamage = SkillUtilities.DisplaySkillBonusText(300f, 0.01f) + SkillUtilities.DisplaySkillBonusText(80f, 0.05f);
+            int bonusMelee = SkillUtilities.DisplaySkillBonusText(100f, 0.05f);
             int bonusRegen = (int) (Main.LocalPlayer.statLifeMax2 * 0.01f);
-            int bonusDamage = Utilities.DisplaySkillBonusText(50f, 0.05f);
-            int bonusSpeed = Utilities.DisplaySkillBonusText(30f, 0.1f);
-            int bonusFireRate = Utilities.DisplaySkillBonusText(20f, 0.1f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(50f, 0.05f);
+            int bonusSpeed = SkillUtilities.DisplaySkillBonusText(30f, 0.1f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(20f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged Damage, Melee Damage, Crit Damage, Fire Rate, and Maximum Health");
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy grants you Health Regeneration for 7 seconds", Utilities.VaultarianColours.Healing);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Damage and Movement Speed for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Fire Rate for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{rangerDamage}% Ranged Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusMelee}% Melee Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{ranger}% Crit Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip5", $"+{ranger}% Fire Rate");
-            Utilities.Text(tooltips, Mod, "Tooltip6", $"+{ranger}% Maximum Health");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusRegen}% Health Regeneration on kill");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage on kill");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed on kill");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate on kill");
-            Utilities.RedText(tooltips, Mod, "Wanna know why I got these scars?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged Damage, Melee Damage, Crit Damage, Fire Rate, and Maximum Health");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy grants you Health Regeneration for 7 seconds", ItemText.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Damage and Movement Speed for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Ranged Fire Rate for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{rangerDamage}% Ranged Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusMelee}% Melee Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{ranger}% Crit Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip5", $"+{ranger}% Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip6", $"+{ranger}% Maximum Health");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusRegen}% Health Regeneration on kill");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage on kill");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed on kill");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate on kill");
+            ItemText.RedText(tooltips, Mod, "Wanna know why I got these scars?");
         }
 
         public override void AddRecipes()

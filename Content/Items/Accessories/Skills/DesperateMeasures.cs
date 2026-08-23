@@ -22,13 +22,13 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusWhip = Utilities.DisplayComparativeBonusText(2.7f) + Utilities.DisplaySkillBonusText(46f, 0.05f);
-            int bonusSummon = Utilities.DisplayComparativeBonusText(2.7f) + Utilities.DisplaySkillBonusText(46f, 0.05f);
+            int bonusWhip = SkillUtilities.DisplayComparativeBonusText(2.7f) + SkillUtilities.DisplaySkillBonusText(46f, 0.05f);
+            int bonusSummon = SkillUtilities.DisplayComparativeBonusText(2.7f) + SkillUtilities.DisplaySkillBonusText(46f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Whip and Summon Damage. The lower your Health the greater this bonus");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusWhip}% Whip Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"Up to +{bonusSummon}% Summon Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Whip and Summon Damage. The lower your Health the greater this bonus");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusWhip}% Whip Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"Up to +{bonusSummon}% Summon Damage");
         }
     }
 }

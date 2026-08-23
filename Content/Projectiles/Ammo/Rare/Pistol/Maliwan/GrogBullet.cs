@@ -44,7 +44,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Maliwan
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(4, Projectile);
+            ItemEffects.FrameRotator(4, Projectile);
         }
 
         public override void OnKill(int timeLeft)
@@ -58,7 +58,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Maliwan
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
-            Utilities.HealOnNPCHit(target, damageDone, 0.65f, Projectile);
+            ItemEffects.HealOnNPCHit(target, damageDone, 0.65f, Projectile);
 
             if (SetElementalChance(elementalChance))
             {
@@ -69,7 +69,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Maliwan
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            Utilities.HealOnPlayerHit(target, info.SourceDamage, 0.65f, Projectile);
+            ItemEffects.HealOnPlayerHit(target, info.SourceDamage, 0.65f, Projectile);
 
             if (SetElementalChance(elementalChance))
             {

@@ -21,13 +21,13 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusCrit = Utilities.DisplaySkillBonusText(150f, 0.05f);
-            int bonusReduction = Utilities.DisplaySkillBonusText(150f, 0.05f);
+            int bonusCrit = SkillUtilities.DisplaySkillBonusText(150f, 0.05f);
+            int bonusReduction = SkillUtilities.DisplaySkillBonusText(150f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "You get different Bonuses when fighting different enemy types");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Mobs: +{bonusCrit}% Summon / Whip Crit Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"Bosses: +{bonusReduction}% Damage Reduction");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "You get different Bonuses when fighting different enemy types");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Mobs: +{bonusCrit}% Summon / Whip Crit Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"Bosses: +{bonusReduction}% Damage Reduction");
         }
     }
 }

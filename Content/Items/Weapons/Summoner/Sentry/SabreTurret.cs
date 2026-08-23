@@ -92,12 +92,12 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Deploy a Sabre Turret that targets and fires upon enemies\n2 Sentries can be summoned");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots:");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "    \tChlorophyte bullets rapidly", Utilities.VaultarianColours.Corrosive);
-            Utilities.Text(tooltips, Mod, "Tooltip4", "    \tA homing slag ball per second", Utilities.VaultarianColours.Slag);
-            Utilities.Text(tooltips, Mod, "Tooltip5", "    \tA Cluster Rocket per 2 seconds", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Ten years of Dahl military experience at your service.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Deploy a Sabre Turret that targets and fires upon enemies\n2 Sentries can be summoned");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots:");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "    \tChlorophyte bullets rapidly", ItemText.VaultarianColours.Corrosive);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "    \tA homing slag ball per second", ItemText.VaultarianColours.Slag);
+            ItemText.Text(tooltips, Mod, "Tooltip5", "    \tA Cluster Rocket per 2 seconds", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Ten years of Dahl military experience at your service.");
         }
     }
 }

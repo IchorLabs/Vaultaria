@@ -44,10 +44,10 @@ namespace Vaultaria.Content.Items.Accessories.Skills
                 explosionDamage *= 2f;
             }
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "On death, create a large explosion that is equal to your defense * 4", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Damage is also scaled based on chosen difficulty", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Current Termination Damage = {explosionDamage}");
-            Utilities.RedText(tooltips, Mod, "You Willed Kilhelm...?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "On death, create a large explosion that is equal to your defense * 4", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Damage is also scaled based on chosen difficulty", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Current Termination Damage = {explosionDamage}");
+            ItemText.RedText(tooltips, Mod, "You Willed Kilhelm...?");
         }
 
         public override void AddRecipes()

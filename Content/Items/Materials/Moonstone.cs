@@ -26,7 +26,7 @@ namespace Vaultaria.Content.Items.Materials
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "An invaluable, high-grade mineral granted by the Moon Lord, essential for advanced Vault Hunter gear", Utilities.VaultarianColours.CursedText);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "An invaluable, high-grade mineral granted by the Moon Lord, essential for advanced Vault Hunter gear", ItemText.VaultarianColours.CursedText);
         }
     }
 }

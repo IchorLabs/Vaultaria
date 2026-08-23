@@ -54,8 +54,8 @@ namespace Vaultaria.Content.Items.Weapons.Magic
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Shoots a powerful beam of Slag");
-            Utilities.RedText(tooltips, Mod, "WARRIOR!!!... Kill.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Shoots a powerful beam of Slag");
+            ItemText.RedText(tooltips, Mod, "WARRIOR!!!... Kill.");
         }
 	}
 }

@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Rare.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Maliwan
 {
-    public class Revenant : ElementalItem
+    public class Revenant : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSMG, 60);
+            SetItemSound(Item, Sounds.MaliwanSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Corrosive Bullets", Utilities.VaultarianColours.Corrosive);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Corrosive Bullets", ItemText.VaultarianColours.Corrosive);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

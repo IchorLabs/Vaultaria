@@ -43,7 +43,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Sniper.Maliwan
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
             Projectile.velocity.Y += 0.175f;
         }
 

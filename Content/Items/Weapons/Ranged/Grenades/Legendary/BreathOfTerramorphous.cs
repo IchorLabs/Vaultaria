@@ -62,9 +62,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Is highly effective on the floor");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Creates Fire explosions on impact for 5 seconds", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "His breath was of fire…");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Is highly effective on the floor");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Creates Fire explosions on impact for 5 seconds", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "His breath was of fire…");
         }
     }
 }

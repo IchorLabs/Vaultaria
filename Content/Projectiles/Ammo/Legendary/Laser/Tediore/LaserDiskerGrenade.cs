@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Laser.Tediore
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
 
             Projectile.velocity.Y += 0.25f;
         }

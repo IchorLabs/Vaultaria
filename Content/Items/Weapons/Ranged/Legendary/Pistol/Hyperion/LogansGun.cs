@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Materials;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
 {
-    public class LogansGun : ElementalItem
+    public class LogansGun : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionPistol, 60);
+            SetItemSound(Item, Sounds.HyperionPistol, 60);
         }
 
         public override void AddRecipes()
@@ -70,9 +70,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive-Fire Rockets", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "Gun, Gunner!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive-Fire Rockets", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "Gun, Gunner!");
         }
     }
 }

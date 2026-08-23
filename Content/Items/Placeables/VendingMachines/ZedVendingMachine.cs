@@ -51,8 +51,8 @@ namespace Vaultaria.Content.Items.Placeables.VendingMachines
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Used to craft unique accessories");
-            Utilities.RedText(tooltips, Mod, "Next time you're bleedin' to death, just think: Dr. Zed!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Used to craft unique accessories");
+            ItemText.RedText(tooltips, Mod, "Next time you're bleedin' to death, just think: Dr. Zed!");
         }
     }
 }

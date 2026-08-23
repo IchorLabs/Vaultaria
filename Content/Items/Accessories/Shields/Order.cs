@@ -21,10 +21,10 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+15 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "When under 30% health, melee attacks do 40% bonus damage", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Gives you lifesteal if the Law is also equipped", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "Chung-gunk!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+15 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "When under 30% health, melee attacks do 40% bonus damage", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Gives you lifesteal if the Law is also equipped", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "Chung-gunk!");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

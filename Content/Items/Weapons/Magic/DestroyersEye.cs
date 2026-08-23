@@ -49,8 +49,8 @@ namespace Vaultaria.Content.Items.Weapons.Magic
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Shoots a destructive beam of energy");
-            Utilities.RedText(tooltips, Mod, "What is the Destroyer?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Shoots a destructive beam of energy");
+            ItemText.RedText(tooltips, Mod, "What is the Destroyer?");
         }
 	}
 }

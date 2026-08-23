@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(7, Projectile);
+            ItemEffects.FrameRotator(7, Projectile);
 
             Projectile.velocity.Y += 0.175f;
         }

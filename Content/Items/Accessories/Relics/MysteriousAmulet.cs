@@ -22,7 +22,7 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.RedText(tooltips, Mod, "While I fight with thee, dear friend, all losses are restored and sorrows end.");
+            ItemText.RedText(tooltips, Mod, "While I fight with thee, dear friend, all losses are restored and sorrows end.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

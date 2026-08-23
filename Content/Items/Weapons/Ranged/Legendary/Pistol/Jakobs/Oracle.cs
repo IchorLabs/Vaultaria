@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 {
-    public class Oracle : ElementalItem
+    public class Oracle : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
         
         public override Vector2? HoldoutOffset()
@@ -56,10 +56,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Critical hits either hit the same target again or ricochet to the closest enemy", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "You seek guidance?");
-            Utilities.CursedText(tooltips, Mod, "Exodus");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Critical hits either hit the same target again or ricochet to the closest enemy", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "You seek guidance?");
+            ItemText.CursedText(tooltips, Mod, "Exodus");
         }
     }
 }

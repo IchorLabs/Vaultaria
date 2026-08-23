@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Pistol.Dahl;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
 {
-    public class Hornet : ElementalItem
+    public class Hornet : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.DahlPistolBurst, 60);
+            SetItemSound(Item, Sounds.DahlPistolBurst, 60);
             // Item.UseSound = SoundID.Item31;
         }
 
@@ -59,9 +59,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Fires a burst of Corrosive bullets", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "Fear the swarm!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Fires a burst of Corrosive bullets", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "Fear the swarm!");
         }
     }
 }

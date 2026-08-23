@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Effervescent.Launcher.Torgue;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Launcher.Torgue
 {
-    public class WorldBurn : ElementalItem
+    public class WorldBurn : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Launcher.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueLauncher, 60);
+            SetItemSound(Item, Sounds.TorgueLauncher, 60);
         }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -68,9 +68,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Launcher.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots a more powerful Fiery nuke", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "War does not compute.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots a more powerful Fiery nuke", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "War does not compute.");
         }
     }
 }

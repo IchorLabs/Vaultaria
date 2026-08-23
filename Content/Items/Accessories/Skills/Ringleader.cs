@@ -21,15 +21,15 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusFreeze = Utilities.DisplaySkillBonusText(40f, 0.05f);
-            int bonusHeal = Utilities.DisplaySkillBonusText(170f, 0.02f);
+            int bonusFreeze = SkillUtilities.DisplaySkillBonusText(40f, 0.05f);
+            int bonusHeal = SkillUtilities.DisplaySkillBonusText(170f, 0.02f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Scoring a Critical Hit has a chance to freeze the enemy for 4 seconds", Utilities.VaultarianColours.Cryo);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Dealing Damage to Frozen enemies heals you", Utilities.VaultarianColours.Healing);
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusFreeze}% Freeze Chance");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusHeal}% Lifesteal");
-            Utilities.RedText(tooltips, Mod, "There's a spark between us. Can you feel it?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Scoring a Critical Hit has a chance to freeze the enemy for 4 seconds", ItemText.VaultarianColours.Cryo);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Dealing Damage to Frozen enemies heals you", ItemText.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusFreeze}% Freeze Chance");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusHeal}% Lifesteal");
+            ItemText.RedText(tooltips, Mod, "There's a spark between us. Can you feel it?");
         }
 
         public override void AddRecipes()

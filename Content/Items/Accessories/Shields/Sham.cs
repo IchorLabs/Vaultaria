@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+30 HP\n+2 Defense\nRegenerates health");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Has a 94% chance to absorb any Projectile", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Wow, I CAN do this all day.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+30 HP\n+2 Defense\nRegenerates health");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Has a 94% chance to absorb any Projectile", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Wow, I CAN do this all day.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

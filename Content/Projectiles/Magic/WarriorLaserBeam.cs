@@ -326,7 +326,7 @@ namespace Vaultaria.Content.Projectiles.Magic
 			Vector2 velocity = angle.ToRotationVector2() * startDistance;
 			Dust dust = Dust.NewDustDirect(endPosition, 0, 0, type, velocity.X, velocity.Y, 0, beamColor, scale);
 			// dust.color = beamColor;
-			dust.color = Utilities.VaultarianColours.Slag.GetVaultarianColor();
+			dust.color = ItemText.VaultarianColours.Slag.GetVaultarianColor();
 			dust.noGravity = true;
 
 			// If the beam is currently large, make the dust faster and larger to match.

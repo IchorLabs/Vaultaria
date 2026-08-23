@@ -21,17 +21,17 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(200f, 0.01f);
-            int bonusCrit = Utilities.DisplaySkillBonusText(200f, 0.01f);
-            int bonusFireRate = Utilities.DisplaySkillBonusText(200f, 0.01f);
-            int bonusLife = Utilities.DisplaySkillBonusText(200f, 0.01f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(200f, 0.01f);
+            int bonusCrit = SkillUtilities.DisplaySkillBonusText(200f, 0.01f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(200f, 0.01f);
+            int bonusLife = SkillUtilities.DisplaySkillBonusText(200f, 0.01f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged Damage, Crit Damage, Fire Rate, and Maximum Health");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusCrit}% Crit Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip5", $"+{bonusFireRate}% Fire Rate");
-            Utilities.Text(tooltips, Mod, "Tooltip6", $"+{bonusLife}% Maximum Health");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Ranged Damage, Crit Damage, Fire Rate, and Maximum Health");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Ranged Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusCrit}% Crit Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip5", $"+{bonusFireRate}% Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip6", $"+{bonusLife}% Maximum Health");
         }
     }
 }

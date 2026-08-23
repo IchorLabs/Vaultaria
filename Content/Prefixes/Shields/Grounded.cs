@@ -41,7 +41,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "Grounded", "Grants immunity to Shock damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Shock.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Shock.GetVaultarianColor()
             };
         }
 	}

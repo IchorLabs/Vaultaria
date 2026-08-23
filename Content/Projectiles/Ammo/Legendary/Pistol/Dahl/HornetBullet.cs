@@ -43,7 +43,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Pistol.Dahl
 
         public override void OnKill(int timeLeft)
         {
-            Utilities.DustMaker(2, Projectile, DustID.JungleSpore, false);
+            ItemEffects.DustMaker(2, Projectile, DustID.JungleSpore, false);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

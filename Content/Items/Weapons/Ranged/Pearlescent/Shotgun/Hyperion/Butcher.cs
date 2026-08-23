@@ -10,9 +10,9 @@ using Terraria.Audio;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 {
-    public class Butcher : ElementalItem
+    public class Butcher : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,12 +47,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionShotgun, 30);
+            SetItemSound(Item, Sounds.HyperionShotgun, 30);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5, 1, 11);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5, 1, 11);
             
             return false;
         }
@@ -85,10 +85,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 5);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "tooltip2", "85% chance to not consume ammo");
-            Utilities.RedText(tooltips, Mod, "Fresh meat!");
+            ItemText.MultiShotText(tooltips, Item, 5);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "tooltip2", "85% chance to not consume ammo");
+            ItemText.RedText(tooltips, Mod, "Fresh meat!");
         }
     }
 }

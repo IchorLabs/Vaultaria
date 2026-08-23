@@ -20,10 +20,10 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+60 HP\n+5 Defense\nRegenerates health\n+50% Deflection Chance\n+880% Deflected Bullet Damage\n+50% Damage Reduction");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Deflects enemy bullets, sending them flying toward nearby enemies.", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Launches Slag homing balls at attackers", Utilities.VaultarianColours.Slag);
-            Utilities.RedText(tooltips, Mod, "I'm rubber, you're glue.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+60 HP\n+5 Defense\nRegenerates health\n+50% Deflection Chance\n+880% Deflected Bullet Damage\n+50% Damage Reduction");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Deflects enemy bullets, sending them flying toward nearby enemies.", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Launches Slag homing balls at attackers", ItemText.VaultarianColours.Slag);
+            ItemText.RedText(tooltips, Mod, "I'm rubber, you're glue.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

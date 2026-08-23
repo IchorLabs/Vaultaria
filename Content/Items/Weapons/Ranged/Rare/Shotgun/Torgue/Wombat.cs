@@ -14,9 +14,9 @@ using Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Shotgun.Torgue;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Torgue
 {
-    public class Wombat : ElementalItem
+    public class Wombat : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -51,12 +51,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(silver: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 60);
+            SetItemSound(Item, Sounds.TorgueShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 4, 3, 8);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 4, 3, 8);
 
             return true;
         }
@@ -80,11 +80,11 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 7);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots 7 Explosive shots", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Does friendly-fire damage", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "The bush bulldozer.");
+            ItemText.MultiShotText(tooltips, Item, 7);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots 7 Explosive shots", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Does friendly-fire damage", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "The bush bulldozer.");
         }
     }
 }

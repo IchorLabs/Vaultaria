@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "High health regen and life steal when shooting enemies in space", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "You give me everything just by breathing.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "High health regen and life steal when shooting enemies in space", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "You give me everything just by breathing.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

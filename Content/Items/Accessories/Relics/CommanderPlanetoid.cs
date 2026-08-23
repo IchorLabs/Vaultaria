@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Melee strikes deal an additional 25% Elemental Damage\nThe element randomizes every hit", Utilities.VaultarianColours.Radiation);
-            Utilities.RedText(tooltips, Mod, "The power is YOURS!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Melee strikes deal an additional 25% Elemental Damage\nThe element randomizes every hit", ItemText.VaultarianColours.Radiation);
+            ItemText.RedText(tooltips, Mod, "The power is YOURS!");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

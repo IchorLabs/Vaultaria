@@ -21,14 +21,14 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusCrit = Utilities.DisplaySkillBonusText(55f, 0.05f);
-            int bonusFireRate = Utilities.DisplaySkillBonusText(40f, 0.05f);
+            int bonusCrit = SkillUtilities.DisplaySkillBonusText(55f, 0.05f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(40f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Projectile Crit Damage and Fire Rate for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusCrit}% Crit Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusFireRate}% Fire Rate");
-            Utilities.Text(tooltips, Mod, "Tooltip5", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Projectile Crit Damage and Fire Rate for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusCrit}% Crit Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusFireRate}% Fire Rate");
+            ItemText.Text(tooltips, Mod, "Tooltip5", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

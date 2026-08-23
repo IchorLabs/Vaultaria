@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "BlastProof", "Reduces damage from explosions")
             {
-                OverrideColor = Utilities.VaultarianColours.Explosive.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Explosive.GetVaultarianColor()
             };
         }
 	}

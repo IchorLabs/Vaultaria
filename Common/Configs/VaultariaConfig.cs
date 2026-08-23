@@ -29,6 +29,9 @@ namespace Vaultaria.Common.Configs
         [DefaultValue(false)]
         public bool ExecuteSoundEffect;
 
+        [DefaultValue(false)]
+        public bool DisableMilkshakeVoiceLine;
+
         // --- Optional Integer Setting ---
         [DefaultValue(1)] // Default value is 1 (no multiplier)
         [Range(1, 10)] // Optional: Defines the min/max slider range in the UI

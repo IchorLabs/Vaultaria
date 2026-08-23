@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Sniper.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Maliwan
 {
-    public class Volcano : ElementalItem
+    public class Volcano : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSniper, 60);
+            SetItemSound(Item, Sounds.MaliwanSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "tooltip1", "Uses Sniper Ammo");
-            Utilities.Text(tooltips, Mod, "tooltip2", "Shoots bullets that explode on impact, dealing Incendiary Damage.", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "Pele humbly requests a sacrifice, if it's not too much trouble.");
+            ItemText.Text(tooltips, Mod, "tooltip1", "Uses Sniper Ammo");
+            ItemText.Text(tooltips, Mod, "tooltip2", "Shoots bullets that explode on impact, dealing Incendiary Damage.", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "Pele humbly requests a sacrifice, if it's not too much trouble.");
         }
     }
 }

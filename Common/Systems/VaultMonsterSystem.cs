@@ -10,7 +10,6 @@ using Terraria.ModLoader.IO;
 using Vaultaria.Common.Configs;
 using Vaultaria.Common.Networking;
 using Vaultaria.Common.Systems.GenPasses.Vaults;
-using Vaultaria.Content.Items.Placeables.Vaults;
 
 namespace Vaultaria.Common.Systems
 {

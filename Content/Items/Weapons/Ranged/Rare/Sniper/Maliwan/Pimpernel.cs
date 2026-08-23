@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Rare.Sniper.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Maliwan
 {
-    public class Pimpernel : ElementalItem
+    public class Pimpernel : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 3);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSniper, 60);
+            SetItemSound(Item, Sounds.MaliwanSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Sniper Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Spawns 4 pellets on impact", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Sink me!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Sniper Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Spawns 4 pellets on impact", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Sink me!");
         }
     }
 }

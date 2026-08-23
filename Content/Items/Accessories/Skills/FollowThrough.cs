@@ -21,13 +21,13 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            float bonusDamage = Utilities.DisplaySkillBonusText(60f, 0.05f);
-            float bonusSpeed = Utilities.DisplaySkillBonusText(42f, 0.05f);
+            float bonusDamage = SkillUtilities.DisplaySkillBonusText(60f, 0.05f);
+            float bonusSpeed = SkillUtilities.DisplaySkillBonusText(42f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Damage and Movement Speed for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Damage and Movement Speed for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
         }
     }
 }

@@ -11,9 +11,9 @@ using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
 {
-    public class Norfleet : ElementalItem
+    public class Norfleet : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(platinum: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.Norfleet, 120);
+            SetItemSound(Item, Sounds.Norfleet, 120);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 35);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 35);
 
             return false;
         }
@@ -80,10 +80,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 3);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots 3 elemental orbs that deal massive damage", Utilities.VaultarianColours.Master);
-            Utilities.RedText(tooltips, Mod, "Blows up everything!");
+            ItemText.MultiShotText(tooltips, Item, 3);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots 3 elemental orbs that deal massive damage", ItemText.VaultarianColours.Master);
+            ItemText.RedText(tooltips, Mod, "Blows up everything!");
         }
     }
 }

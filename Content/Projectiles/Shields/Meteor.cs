@@ -47,13 +47,13 @@ namespace Vaultaria.Content.Projectiles.Shields
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(4, Projectile);
+            ItemEffects.FrameRotator(4, Projectile);
 
             NPC target = FindTarget();
 
             if (target != null && target.active && !target.friendly)
             {
-                Utilities.MoveToTarget(Projectile, target, 4, 1);
+                ItemEffects.MoveToTarget(Projectile, target, 4, 1);
             }
         }
 

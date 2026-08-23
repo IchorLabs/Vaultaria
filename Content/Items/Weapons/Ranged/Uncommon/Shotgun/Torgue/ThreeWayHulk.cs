@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Uncommon.Shotgun.Torgue;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Shotgun.Torgue
 {
-    public class ThreeWayHulk : ElementalItem
+    public class ThreeWayHulk : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Shotgun.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(silver: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 60);
+            SetItemSound(Item, Sounds.TorgueShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 15, 2, 4, 7);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 15, 2, 4, 7);
 
             return false;
         }
@@ -65,9 +65,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Shotgun.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 15);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Golden Chests", Utilities.VaultarianColours.Information);
+            ItemText.MultiShotText(tooltips, Item, 15);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Golden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

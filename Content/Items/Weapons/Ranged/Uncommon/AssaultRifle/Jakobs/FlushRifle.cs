@@ -10,9 +10,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Jakobs
 {
-    public class FlushRifle : ElementalItem
+    public class FlushRifle : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(silver: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsAR, 60);
+            SetItemSound(Item, Sounds.JakobsAR, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -57,8 +57,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Golden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Golden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

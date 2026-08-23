@@ -46,9 +46,9 @@ namespace Vaultaria.Content.Items.Consumables.Bags
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Right Click to open");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Right Click in your inventory to get a random Vaultarian item");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Right Click while holding the bag to get a random Terrarian item that has a rarity of {MinRarity} - {MaxRarity}");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Right Click to open");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right Click in your inventory to get a random Vaultarian item");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Right Click while holding the bag to get a random Terrarian item that has a rarity of {MinRarity} - {MaxRarity}");
         }
 
         public abstract bool ItemRarityIsValid(Item item);

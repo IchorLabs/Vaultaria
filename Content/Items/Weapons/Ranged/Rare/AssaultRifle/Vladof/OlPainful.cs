@@ -10,9 +10,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 {
-    public class OlPainful : ElementalItem
+    public class OlPainful : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,12 +47,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            Utilities.SetItemSound(Item, Utilities.Sounds.GenericLaser, 60);
+            SetItemSound(Item, Sounds.GenericLaser, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, 4, 7);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, 4, 7);
 
             return false;
         }
@@ -64,9 +64,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "ToolTip1", "Shoots 3 lasers", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Skyware Chests", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Come on in... Ol' Painful is waiting.");
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots 3 lasers", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Skyware Chests", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Come on in... Ol' Painful is waiting.");
         }
     }
 }

@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 {
-    public class OrphanMaker : ElementalItem
+    public class OrphanMaker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsShotgun, 60);
+            SetItemSound(Item, Sounds.JakobsShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 4, 6);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 4, 6);
 
             return false;
         }
@@ -72,13 +72,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 4);
-            Utilities.Text(tooltips, Mod);
+            ItemText.MultiShotText(tooltips, Item, 4);
+            ItemText.Text(tooltips, Mod);
 
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Found in Locked Shadow Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Locked Shadow Chests", ItemText.VaultarianColours.Information);
 
-            Utilities.RedText(tooltips, Mod, "Makes orphans. Often.");
-            Utilities.CursedText(tooltips, Mod, "Curse of the Nefarious Backlash!\n(-10 HP on use)");
+            ItemText.RedText(tooltips, Mod, "Makes orphans. Often.");
+            ItemText.CursedText(tooltips, Mod, "Curse of the Nefarious Backlash!\n(-10 HP on use)");
         }
     }
 }

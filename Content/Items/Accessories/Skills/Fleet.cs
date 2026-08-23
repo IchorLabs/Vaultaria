@@ -22,12 +22,12 @@ namespace Vaultaria.Content.Items.Accessories.Skills
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusSpeed = Utilities.DisplaySkillBonusText(27f, 0.1f);
+            int bonusSpeed = SkillUtilities.DisplaySkillBonusText(27f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "While under 30% health you gain increased Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusSpeed}% Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Frozen Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "While under 30% health you gain increased Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusSpeed}% Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Frozen Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

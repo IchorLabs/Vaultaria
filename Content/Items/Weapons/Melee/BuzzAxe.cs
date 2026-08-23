@@ -29,7 +29,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             // Combat properties
             Item.useStyle = ItemUseStyleID.Swing;
             Item.knockBack = 2.3f;
-            Item.damage = 18;
+            Item.damage = 60;
             Item.crit = 0;
             Item.DamageType = DamageClass.Melee;
 
@@ -44,7 +44,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             Item.shootSpeed = 11;
 
             // Other properties
-            Item.value = Item.buyPrice(silver: 1);
+            Item.value = Item.buyPrice(gold: 1);
         }
 
         public override Vector2? HoldoutOffset()
@@ -60,10 +60,9 @@ namespace Vaultaria.Content.Items.Weapons.Melee
 
         public override bool CanUseItem(Player player)
         {
-
             if (player.altFunctionUse == 2) // Shoot
             {
-                Item.damage = 18;
+                Item.damage = 60;
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = true;
@@ -80,7 +79,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             }
             else // Melee
             {
-                Item.damage = 18;
+                Item.damage = 60;
                 Item.DamageType = DamageClass.Melee;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = false;
@@ -104,17 +103,15 @@ namespace Vaultaria.Content.Items.Weapons.Melee
         {
             CreateRecipe()
                 .AddIngredient<Eridium>(5)
-                .AddIngredient(ItemID.SilverBroadsword, 1)
-                .AddIngredient(ItemID.SharpeningStation, 1)
-                .AddIngredient(ItemID.Dynamite, 100)
+                .AddIngredient(ItemID.CobaltSword, 1)
+                .AddIngredient(ItemID.Dynamite, 5)
                 .AddTile(ModContent.TileType<Tiles.VendingMachines.MarcusVendingMachine>())
                 .Register();
 
             CreateRecipe()
                 .AddIngredient<Eridium>(5)
-                .AddIngredient(ItemID.TungstenBroadsword, 1)
-                .AddIngredient(ItemID.SharpeningStation, 1)
-                .AddIngredient(ItemID.Dynamite, 100)
+                .AddIngredient(ItemID.PalladiumSword, 1)
+                .AddIngredient(ItemID.Dynamite, 5)
                 .AddTile(ModContent.TileType<Tiles.VendingMachines.MarcusVendingMachine>())
                 .Register();
         }
@@ -132,8 +129,8 @@ namespace Vaultaria.Content.Items.Weapons.Melee
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Right-Click to throw an explosive buzz axe");
-            Utilities.RedText(tooltips, Mod, "I'M THE CONDUCTOR OF THE POOP TRAIN!!!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Right-Click to throw an explosive buzz axe");
+            ItemText.RedText(tooltips, Mod, "I'M THE CONDUCTOR OF THE POOP TRAIN!!!");
         }
     }
 }

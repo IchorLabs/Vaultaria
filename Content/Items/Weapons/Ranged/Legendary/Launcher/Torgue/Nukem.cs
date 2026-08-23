@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Launcher.Torgue;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Torgue
 {
-    public class Nukem : ElementalItem
+    public class Nukem : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 3);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueLauncher, 60);
+            SetItemSound(Item, Sounds.TorgueLauncher, 60);
         }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -68,9 +68,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Fires a nuke", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Name dropper.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Fires a nuke", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Name dropper.");
         }
     }
 }

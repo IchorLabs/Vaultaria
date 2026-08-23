@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Shock", "20% Chance to deal 20% bonus Shock damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Shock.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Shock.GetVaultarianColor()
             };
         }
 	}

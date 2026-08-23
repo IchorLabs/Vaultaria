@@ -64,8 +64,8 @@ namespace Vaultaria.Content.Items.Placeables.VendingMachines
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Used to craft one of a kind weaponry");
-            Utilities.RedText(tooltips, Mod, "No refunds.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Used to craft one of a kind weaponry");
+            ItemText.RedText(tooltips, Mod, "No refunds.");
         }
     }
 }

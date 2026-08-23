@@ -23,8 +23,8 @@ namespace Vaultaria.Content.Items.Accessories.Skills
         {
             int bonusRegen = (int) (Main.LocalPlayer.statLifeMax2 * 0.01f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy grants you Health Regeneration for 7 seconds", Utilities.VaultarianColours.Healing);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusRegen}% Health Regeneration");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy grants you Health Regeneration for 7 seconds", ItemText.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusRegen}% Health Regeneration");
         }
     }
 }

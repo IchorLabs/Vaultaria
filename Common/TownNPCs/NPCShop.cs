@@ -9,7 +9,7 @@ using Vaultaria.Content.Items.Weapons.Ranged.Grenades.Rare;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Maliwan;
 using Vaultaria.Content.NPCs.Town.Claptrap;
 
-namespace ExampleMod.Common.GlobalNPCs
+namespace Vaultaria.Common.TownNPCs
 {
 	class NPCShop : GlobalNPC
 	{

@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 {
-    public class PlasmaCoil : ElementalItem
+    public class PlasmaCoil : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.PlasmaCoil, 120);
+            SetItemSound(Item, Sounds.PlasmaCoil, 120);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -75,7 +75,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
                 Item.useAnimation = 32;
                 Item.autoReuse = true;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.PlasmaCoil, 120);
+                SetItemSound(Item, Sounds.PlasmaCoil, 120);
             }
             else // Shoot Radiation
             {
@@ -95,7 +95,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
                 Item.useAnimation = 32;
                 Item.autoReuse = true;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.PlasmaCoil, 120);
+                SetItemSound(Item, Sounds.PlasmaCoil, 120);
             }
 
             return base.CanUseItem(player);
@@ -108,10 +108,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Left-Click to shoot a 16-Round Burst of Radiation orbs", Utilities.VaultarianColours.Radiation);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Right-Click to shoot a 16-Round Burst of Cryo orbs", Utilities.VaultarianColours.Cryo);
-            Utilities.RedText(tooltips, Mod, "Harness the 4th state of matter.");   
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Left-Click to shoot a 16-Round Burst of Radiation orbs", ItemText.VaultarianColours.Radiation);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Right-Click to shoot a 16-Round Burst of Cryo orbs", ItemText.VaultarianColours.Cryo);
+            ItemText.RedText(tooltips, Mod, "Harness the 4th state of matter.");   
         }
     }
 }

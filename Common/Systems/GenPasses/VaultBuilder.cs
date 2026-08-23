@@ -16,7 +16,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace Vaultaria.Common.Utilities
+namespace Vaultaria.Common.Systems.GenPasses
 {
     public static class VaultBuilder
     {
@@ -153,7 +153,7 @@ namespace Vaultaria.Common.Utilities
                     Tile tile = Main.tile[i, j];
 
                     // 2. Dangerous Tile Check: Check if the current tile type is in the dangerous list.
-                    if(Utilities.badTiles.Contains(tile.TileType) || Utilities.badLiquids.Contains(tile.LiquidType))
+                    if(Utilities.Utilities.badTiles.Contains(tile.TileType) || Utilities.Utilities.badLiquids.Contains(tile.LiquidType))
                     {
                         return false;
                     }

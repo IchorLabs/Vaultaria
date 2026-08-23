@@ -34,11 +34,11 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+4 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Grants immunity to Incendiary damage", Utilities.VaultarianColours.Incendiary);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Continually releases Fire Nova blasts that deals {Main.LocalPlayer.statDefense * 2} damage when under 30% health", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"Damage is based on your defense");
-            Utilities.RedText(tooltips, Mod, "From the ashes she will rise.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+4 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Grants immunity to Incendiary damage", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Continually releases Fire Nova blasts that deals {Main.LocalPlayer.statDefense * 2} damage when under 30% health", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"Damage is based on your defense");
+            ItemText.RedText(tooltips, Mod, "From the ashes she will rise.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

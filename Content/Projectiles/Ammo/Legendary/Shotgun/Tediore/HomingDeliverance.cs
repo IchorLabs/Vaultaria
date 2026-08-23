@@ -53,7 +53,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Tediore
                 float distance = Vector2.Distance(Projectile.Center, target.Center);
                 if (distance > 60)
                 {
-                    Utilities.MoveToPosition(Projectile, target.Center - new Vector2(60, 60), 5f, 0.2f);
+                    ItemEffects.MoveToPosition(Projectile, target.Center - new Vector2(60, 60), 5f, 0.2f);
                 }
 
                 Projectile.rotation = Projectile.velocity.ToRotation();

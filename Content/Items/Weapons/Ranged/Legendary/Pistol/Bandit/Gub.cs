@@ -10,11 +10,11 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Pistol.Bandit;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 {
-    public class Gub : ElementalItem
+    public class Gub : VaultarianItem
     {
         // override: This "plugs into" the virtual slot created in the base class. It replaces the null with actual data.
         // => [...]: Every time the code asks for ItemSounds, it points to this specific list of two sounds. Because it’s a property, it doesn't "run" until it's called in UseItem.
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -50,7 +50,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditPistol, 60);
+            SetItemSound(Item, Sounds.BanditPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -60,9 +60,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Corrosive bullets", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "Abt natural.\nThe Curse of the Gub");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Corrosive bullets", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "Abt natural.\nThe Curse of the Gub");
         }
     }
 }

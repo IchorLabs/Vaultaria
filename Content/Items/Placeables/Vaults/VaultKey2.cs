@@ -56,7 +56,7 @@ namespace Vaultaria.Content.Items.Placeables.Vaults
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Right-Click a Vault-Key Pedestal to enter the vault", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Right-Click a Vault-Key Pedestal to enter the vault", ItemText.VaultarianColours.Information);
         }
     }
 }

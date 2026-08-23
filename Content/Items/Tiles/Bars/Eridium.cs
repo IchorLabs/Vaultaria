@@ -21,7 +21,7 @@ namespace Vaultaria.Content.Items.Tiles.Bars
             TileObjectData.newTile.LavaDeath = false;
             TileObjectData.addTile(Type);
 
-            AddMapEntry(Utilities.GetVaultarianColor(Utilities.VaultarianColours.Slag), CreateMapEntryName()); // Adds the name to the minimap
+            AddMapEntry(ItemText.GetVaultarianColor(ItemText.VaultarianColours.Slag), CreateMapEntryName()); // Adds the name to the minimap
         }
     }
 }

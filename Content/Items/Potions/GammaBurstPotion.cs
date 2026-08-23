@@ -78,9 +78,9 @@ namespace Vaultaria.Content.Items.Potions
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Doubles minion damage and size");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Causes minion attacks to deal additional Radiation damage", Utilities.VaultarianColours.Radiation);
-            Utilities.RedText(tooltips, Mod, "Good Boy.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Doubles minion damage and size");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Causes minion attacks to deal additional Radiation damage", ItemText.VaultarianColours.Radiation);
+            ItemText.RedText(tooltips, Mod, "Good Boy.");
         }
     }
 }

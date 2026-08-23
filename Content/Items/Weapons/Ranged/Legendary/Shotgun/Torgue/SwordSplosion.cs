@@ -12,9 +12,9 @@ using Vaultaria.Content.Items.Accessories.Relics;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 {
-    public class SwordSplosion : ElementalItem
+    public class SwordSplosion : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -50,12 +50,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 60);
+            SetItemSound(Item, Sounds.TorgueShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5);
             
             return false;
         }
@@ -78,11 +78,11 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 3);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 3 Shotgun Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots out swords that explode on contact", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Given after completing 50 Angler quests", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Because Mister Torgue said so.");
+            ItemText.MultiShotText(tooltips, Item, 3);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 3 Shotgun Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots out swords that explode on contact", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Given after completing 50 Angler quests", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Because Mister Torgue said so.");
         }
     }
 }

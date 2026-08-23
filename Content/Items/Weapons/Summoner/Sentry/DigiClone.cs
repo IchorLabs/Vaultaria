@@ -12,7 +12,7 @@ using Vaultaria.Common.Systems.GenPasses.Vaults;
 
 namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 {
-    public class DigiClone : ModItem
+    public class DigiClone : VaultarianItem
     {
         public override void SetStaticDefaults()
         {
@@ -41,7 +41,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.DigiCloneSpawn, 120);
+            SetItemSound(Item, Sounds.DigiCloneSpawn, 120);
 
             Item.noMelee = true;
             Item.shootSpeed = 0f;
@@ -92,7 +92,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 
                 TeleportToClone(player);
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.DigiCloneSwap, 120);
+                SetItemSound(Item, Sounds.DigiCloneSwap, 120);
             }
             else // Summon Clone
             {
@@ -109,7 +109,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.DigiCloneSpawn, 120);
+                SetItemSound(Item, Sounds.DigiCloneSpawn, 120);
             }
 
             return base.CanUseItem(player);
@@ -122,21 +122,21 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Your Digi-Clone shoots a copy of whatever item your player is currently holding");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Digi-Clone won't consume your ammo, but still requires ammo to shoot the weapon");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Only Magic and Ranged weapons can be copied");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"If holding an incompatible item, the damage defaults to your defense / 2 ({Main.LocalPlayer.statDefense / 2})");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Your Digi-Clone shoots a copy of whatever item your player is currently holding");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Digi-Clone won't consume your ammo, but still requires ammo to shoot the weapon");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Only Magic and Ranged weapons can be copied");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"If holding an incompatible item, the damage defaults to your defense / 2 ({Main.LocalPlayer.statDefense / 2})");
 
             if(SubworldLibrary.SubworldSystem.IsActive<Vault1Subworld>() || SubworldLibrary.SubworldSystem.IsActive<Vault2Subworld>())
             {
-                Utilities.Text(tooltips, Mod, "Tooltip5", "Right-Clicking to swap with Digi-Clone is disabled while inside either Vault");
+                ItemText.Text(tooltips, Mod, "Tooltip5", "Right-Clicking to swap with Digi-Clone is disabled while inside either Vault");
             }
             else
             {
-                Utilities.Text(tooltips, Mod, "Tooltip5", "Right-Click to swap positions with Digi-Clone");
+                ItemText.Text(tooltips, Mod, "Tooltip5", "Right-Click to swap positions with Digi-Clone");
             }
 
-            Utilities.RedText(tooltips, Mod, "I know that fella. We went to the same assassin bars.");
+            ItemText.RedText(tooltips, Mod, "I know that fella. We went to the same assassin bars.");
         }
 
         public override bool AllowPrefix(int pre)

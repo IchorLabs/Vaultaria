@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
 {
-    public class BasicRepeater : ElementalItem
+    public class BasicRepeater : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(silver: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.DahlPistolBurst, 60);
+            SetItemSound(Item, Sounds.DahlPistolBurst, 60);
             // Item.UseSound = SoundID.Item31;
         }
 
@@ -70,9 +70,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 burst round");
-            Utilities.RedText(tooltips, Mod, "Wait a minute - you're not dead!\nYES! Now I can get off this glacier!\nClaptrap, your metaphorical ship has finally come in!");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 burst round");
+            ItemText.RedText(tooltips, Mod, "Wait a minute - you're not dead!\nYES! Now I can get off this glacier!\nClaptrap, your metaphorical ship has finally come in!");
         }
     }
 }

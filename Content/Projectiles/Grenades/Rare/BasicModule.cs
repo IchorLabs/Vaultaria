@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Rare
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(3, Projectile);
+            ItemEffects.FrameRotator(3, Projectile);
 
             Projectile.velocity.Y += 0.175f;
         }
@@ -91,7 +91,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Rare
                 Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, DustID.Torch, 0f, 0f, 100, default(Color), 3f);
             }
 
-            Utilities.RocketJump(Projectile, ModContent.ItemType<BasicGrenade>(), 8f, 8f);
+            ItemEffects.RocketJump(Projectile, ModContent.ItemType<BasicGrenade>(), 8f, 8f);
         }
 
         public override Vector3 SetProjectileLightColour()

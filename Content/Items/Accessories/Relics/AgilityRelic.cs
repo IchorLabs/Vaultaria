@@ -20,10 +20,10 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+10 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "+31% Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "+22% Jump Height");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Rich Mahogany Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+10 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "+31% Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "+22% Jump Height");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

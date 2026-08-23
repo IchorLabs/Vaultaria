@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Corrosive", "20% Chance to deal 20% bonus Corrosive damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Corrosive.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Corrosive.GetVaultarianColor()
             };
         }
 	}

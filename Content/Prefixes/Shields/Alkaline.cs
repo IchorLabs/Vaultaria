@@ -43,7 +43,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "Alkaline", "Grants immunity to Corrosive damage & Venom")
             {
-                OverrideColor = Utilities.VaultarianColours.Corrosive.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Corrosive.GetVaultarianColor()
             };
         }
 	}

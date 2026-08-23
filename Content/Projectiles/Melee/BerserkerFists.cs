@@ -42,7 +42,7 @@ namespace Vaultaria.Content.Projectiles.Melee
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(8, Projectile);
+            ItemEffects.FrameRotator(8, Projectile);
         }
     }
 }

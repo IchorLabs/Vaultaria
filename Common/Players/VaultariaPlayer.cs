@@ -109,7 +109,7 @@ namespace Vaultaria.Common.Players
 
             if(IsWearing(ModContent.ItemType<Ranger>()) || IsWearing(ModContent.ItemType<LegendaryRanger>()))
             {
-                float bonusLife = Utilities.Utilities.SkillBonus(200f, 0.01f);
+                float bonusLife = SkillUtilities.SkillBonus(200f, 0.01f);
                 health *= bonusLife;
             }
         }
@@ -222,7 +222,7 @@ namespace Vaultaria.Common.Players
             {
                 if (Player.ZoneSkyHeight)
                 {
-                    Utilities.Utilities.HealOnNPCHit(target, damageDone, 0.1f, proj);
+                    ItemEffects.HealOnNPCHit(target, damageDone, 0.1f, proj);
                 }
             }
 
@@ -257,7 +257,7 @@ namespace Vaultaria.Common.Players
 
                     if(hit.Crit && numTimesPenetrated < 5)
                     {
-                        Utilities.Utilities.MoveToTarget(proj, target, 10, 10);
+                        ItemEffects.MoveToTarget(proj, target, 10, 10);
                         numTimesPenetrated++;
                     }
                     else
@@ -314,14 +314,14 @@ namespace Vaultaria.Common.Players
 
             if(Player.HasBuff(ModContent.BuffType<IncitePassive>()))
             {
-                multiplier *= Utilities.Utilities.SkillBonus(100f, 0.05f);
+                multiplier *= SkillUtilities.SkillBonus(100f, 0.05f);
             }
 
             if(Player.HasBuff(ModContent.BuffType<KillerKillSkill>()))
             {
                 if(item.DamageType == DamageClass.Magic || item.DamageType == DamageClass.Ranged || item.DamageType == DamageClass.Throwing)
                 {
-                    multiplier *= Utilities.Utilities.SkillBonus(40f, 0.05f);
+                    multiplier *= SkillUtilities.SkillBonus(40f, 0.05f);
                 }
             }
 
@@ -335,7 +335,7 @@ namespace Vaultaria.Common.Players
 
             if(IsWearing(ModContent.ItemType<Ranger>()) || IsWearing(ModContent.ItemType<LegendaryRanger>()))
             {
-                multiplier *= Utilities.Utilities.SkillBonus(200f, 0.01f);
+                multiplier *= SkillUtilities.SkillBonus(200f, 0.01f);
             }
 
             return multiplier;
@@ -362,7 +362,7 @@ namespace Vaultaria.Common.Players
 
             if(Player.HasBuff(ModContent.BuffType<FleetPassive>()))
             {
-                float bonusSpeed = Utilities.Utilities.SkillBonus(27f, 0.1f);
+                float bonusSpeed = SkillUtilities.SkillBonus(27f, 0.1f);
 
                 Player.moveSpeed *= bonusSpeed; 
                 Player.runAcceleration *= bonusSpeed;
@@ -372,7 +372,7 @@ namespace Vaultaria.Common.Players
 
             if(Player.HasBuff(ModContent.BuffType<IncitePassive>()))
             {
-                float bonusSpeed = Utilities.Utilities.SkillBonus(85f, 0.05f);
+                float bonusSpeed = SkillUtilities.SkillBonus(85f, 0.05f);
 
                 Player.moveSpeed *= bonusSpeed; 
                 Player.runAcceleration *= bonusSpeed;
@@ -386,7 +386,7 @@ namespace Vaultaria.Common.Players
 
             if(Player.HasBuff(ModContent.BuffType<InnervatePassiveSkill>()))
             {
-                float bonusSpeed = Utilities.Utilities.SkillBonus(180f, 0.05f);
+                float bonusSpeed = SkillUtilities.SkillBonus(180f, 0.05f);
 
                 Player.moveSpeed *= bonusSpeed; 
                 Player.runAcceleration *= bonusSpeed;
@@ -421,7 +421,7 @@ namespace Vaultaria.Common.Players
 
             if(Player.HasBuff(ModContent.BuffType<InnervatePassiveSkill>()))
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(180f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(180f, 0.05f);
 
                 if(item.DamageType == DamageClass.Ranged)
                 {
@@ -541,11 +541,11 @@ namespace Vaultaria.Common.Players
 
             if (IsWearing(sham))
             {
-                Utilities.Utilities.AbsorbedAmmo(Player, proj, ref modifiers, 94f);
+                ItemEffects.AbsorbedAmmo(Player, proj, ref modifiers, 94f);
             }
             if (IsWearing(aequitas))
             {
-                Utilities.Utilities.AbsorbedAmmo(Player, proj, ref modifiers, 50f);
+                ItemEffects.AbsorbedAmmo(Player, proj, ref modifiers, 50f);
             }
 
             Grit(ref modifiers);
@@ -575,7 +575,7 @@ namespace Vaultaria.Common.Players
             {
                 if (target.life <= 0)
                 {
-                    Utilities.Utilities.Heal(Player, Player.statLifeMax2 * 0.1f); // Heals for 10% of health
+                    ItemEffects.Heal(Player, Player.statLifeMax2 * 0.1f); // Heals for 10% of health
                 }
             }
 
@@ -754,7 +754,7 @@ namespace Vaultaria.Common.Players
         {
             if((IsWearing(ModContent.ItemType<Backstab>()) || IsWearing(ModContent.ItemType<LegendaryNinja>())) && Player.HeldItem.DamageType == DamageClass.Melee)
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(65f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(65f, 0.05f);
 
                 if(npc.direction == 1 && Player.Center.X < npc.Center.X)
                 {
@@ -771,7 +771,7 @@ namespace Vaultaria.Common.Players
         {
             if(IsWearing(ModContent.ItemType<Grit>()))
             {
-                float numberOfBossesDefeated = Utilities.Utilities.DownedBossCounter();
+                float numberOfBossesDefeated = SkillUtilities.DownedBossCounter();
 
                 float baseGrit = 5f;
 
@@ -805,7 +805,7 @@ namespace Vaultaria.Common.Players
         {
             if((IsWearing(ModContent.ItemType<KillingBlow>()) || IsWearing(ModContent.ItemType<LegendaryNinja>())) && Player.HeldItem.DamageType == DamageClass.Melee)
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(65f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(65f, 0.05f);
 
                 if(npc.life <= npc.lifeMax * 0.2f)
                 {
@@ -818,11 +818,11 @@ namespace Vaultaria.Common.Players
         {
             if((IsWearing(ModContent.ItemType<Resurgence>()) || IsWearing(ModContent.ItemType<LegendaryNinja>())) && Player.HeldItem.DamageType == DamageClass.Melee)
             {
-                float bonusHealth = Utilities.Utilities.SkillBonus(300f) - 1; // Without the -1, it'll be 1.x which means player.life * 1.x will be like 500 instead of 50
+                float bonusHealth = SkillUtilities.SkillBonus(300f) - 1; // Without the -1, it'll be 1.x which means player.life * 1.x will be like 500 instead of 50
 
                 if (npc.life <= 0)
                 {
-                    Utilities.Utilities.Heal(Player, Player.statLifeMax2 * bonusHealth); // Heals for % of health
+                    ItemEffects.Heal(Player, Player.statLifeMax2 * bonusHealth); // Heals for % of health
                 }
             }
         }
@@ -831,9 +831,9 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff(ModContent.BuffType<SalvationKillSkill>()) && Player.HeldItem.DamageType == DamageClass.Ranged)
             {
-                float Lifesteal = Utilities.Utilities.SkillBonus(600f) - 1;
+                float Lifesteal = SkillUtilities.SkillBonus(600f) - 1;
 
-                Utilities.Utilities.Heal(Player, hit.SourceDamage * Lifesteal);
+                ItemEffects.Heal(Player, hit.SourceDamage * Lifesteal);
             }
         }
 
@@ -875,7 +875,7 @@ namespace Vaultaria.Common.Players
 
                 if(distance <= 90)
                 {
-                    float damage = Utilities.Utilities.ComparativeBonus(100f, distance, 1.5f) + Utilities.Utilities.SkillBonus(120f, 0.1f);
+                    float damage = SkillUtilities.ComparativeBonus(100f, distance, 1.5f) + SkillUtilities.SkillBonus(120f, 0.1f);
                     modifiers.FinalDamage *= damage;
                 }
             }
@@ -885,7 +885,7 @@ namespace Vaultaria.Common.Players
         {
             if(IsWearing(ModContent.ItemType<PackTactics>()) || IsWearing(ModContent.ItemType<LegendaryTrainer>()))
             {
-                float bonusLife = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                float bonusLife = SkillUtilities.SkillBonus(150f, 0.05f);
                 health *= bonusLife;
             }
         }
@@ -894,7 +894,7 @@ namespace Vaultaria.Common.Players
         {
             if((IsWearing(ModContent.ItemType<PackTactics>()) || IsWearing(ModContent.ItemType<LegendaryTrainer>())) && item.DamageType == DamageClass.Summon)
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(88f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(88f, 0.05f);
                 damage *= bonusDamage;
             }
         }
@@ -905,12 +905,12 @@ namespace Vaultaria.Common.Players
             {
                 if(item.DamageType == DamageClass.SummonMeleeSpeed)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(150f, 0.05f);
                     damage *= bonusDamage;
                 }
                 if(item.DamageType == DamageClass.Summon)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(120f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(120f, 0.05f);
                     damage *= bonusDamage;
                 }
             }
@@ -920,7 +920,7 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff<TheFastAndTheFurryousPassiveSkill>())
             {
-                float bonusSpeed = Utilities.Utilities.SkillBonus(170f, 0.025f);
+                float bonusSpeed = SkillUtilities.SkillBonus(170f, 0.025f);
 
                 Player.moveSpeed *= bonusSpeed; 
                 Player.runAcceleration *= bonusSpeed;
@@ -933,7 +933,7 @@ namespace Vaultaria.Common.Players
         {
             if(IsWearing(ModContent.ItemType<DesperateMeasures>()))
             {
-                float bonusDamage = Utilities.Utilities.ComparativeBonus(Player.statLifeMax2, Player.statLife, 2.7f) + Utilities.Utilities.SkillBonus(46f, 0.05f);
+                float bonusDamage = SkillUtilities.ComparativeBonus(Player.statLifeMax2, Player.statLife, 2.7f) + SkillUtilities.SkillBonus(46f, 0.05f);
 
                 if(item.DamageType == DamageClass.SummonMeleeSpeed || item.DamageType == DamageClass.Summon)
                 {
@@ -948,7 +948,7 @@ namespace Vaultaria.Common.Players
             {
                 if(hit.Crit)
                 {
-                    float bonusFreeze = Utilities.Utilities.SkillBonus(40f, 0.05f);
+                    float bonusFreeze = SkillUtilities.SkillBonus(40f, 0.05f);
 
                     if(Utilities.Utilities.Randomizer(bonusFreeze))
                     {
@@ -964,9 +964,9 @@ namespace Vaultaria.Common.Players
             {
                 if(target.HasBuff(ModContent.BuffType<CryoBuff>()))
                 {
-                    float bonusHeal = Utilities.Utilities.SkillBonus(1500f) - 1;
+                    float bonusHeal = SkillUtilities.SkillBonus(1500f) - 1;
 
-                    Utilities.Utilities.Heal(Player, Player.statLifeMax2 * bonusHeal);
+                    ItemEffects.Heal(Player, Player.statLifeMax2 * bonusHeal);
                 }
             }
         }
@@ -979,7 +979,7 @@ namespace Vaultaria.Common.Players
 
                 if(realSpeed > 0)
                 {
-                    float bonusDamage = Utilities.Utilities.ComparativeBonus(1f, -realSpeed, 25f) + Utilities.Utilities.SkillBonus(87f, 0.05f);
+                    float bonusDamage = SkillUtilities.ComparativeBonus(1f, -realSpeed, 25f) + SkillUtilities.SkillBonus(87f, 0.05f);
 
                     if(item.DamageType != DamageClass.Summon)
                     {
@@ -993,7 +993,7 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff(ModContent.BuffType<ViolentSpeedKillSkill>()))
             {
-                float bonusSpeed = Utilities.Utilities.SkillBonus(40f, 0.05f);
+                float bonusSpeed = SkillUtilities.SkillBonus(40f, 0.05f);
 
                 Player.moveSpeed *= bonusSpeed; 
                 Player.runAcceleration *= bonusSpeed;
@@ -1014,7 +1014,7 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff(ModContent.BuffType<OutOfBubblegumPassiveSkill>()))
             {
-                float bonusFireRate = Utilities.Utilities.SkillBonus(45f, 0.05f);
+                float bonusFireRate = SkillUtilities.SkillBonus(45f, 0.05f);
 
                 multiplayer *= bonusFireRate;
             }
@@ -1024,7 +1024,7 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff(ModContent.BuffType<WreckPassiveSkill>()))
             {
-                float bonusFireRate = Utilities.Utilities.SkillBonus(45f, 0.05f);
+                float bonusFireRate = SkillUtilities.SkillBonus(45f, 0.05f);
 
                 if(Player.HeldItem.DamageType == DamageClass.Magic)
                 {
@@ -1037,7 +1037,7 @@ namespace Vaultaria.Common.Players
         {
             if(IsWearing(ModContent.ItemType<Foresight>()) || IsWearing(ModContent.ItemType<LegendarySiren>()))
             {
-                float bonusFireRate = Utilities.Utilities.SkillBonus(80f, 0.05f);
+                float bonusFireRate = SkillUtilities.SkillBonus(80f, 0.05f);
 
                 if(Player.HeldItem.DamageType == DamageClass.Magic)
                 {
@@ -1082,7 +1082,7 @@ namespace Vaultaria.Common.Players
             {
                 if(item.DamageType == DamageClass.Melee)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(100f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(100f, 0.05f);
 
                     damage *= bonusDamage;
                 }
@@ -1093,7 +1093,7 @@ namespace Vaultaria.Common.Players
         {
             if(Player.HasBuff(ModContent.BuffType<MetalStormKillSkill>()))
             {
-                float bonusFireRate = Utilities.Utilities.SkillBonus(25f, 0.1f);
+                float bonusFireRate = SkillUtilities.SkillBonus(25f, 0.1f);
 
                 if(Player.HeldItem.DamageType == DamageClass.Ranged)
                 {
@@ -1119,7 +1119,7 @@ namespace Vaultaria.Common.Players
             {
                 if(Player == Main.player[projectile.owner] && (projectile.minion || projectile.sentry))
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(60f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(60f, 0.05f);
 
                     if(npc.direction == 1 && Player.Center.X < npc.Center.X)
                     {
@@ -1139,7 +1139,7 @@ namespace Vaultaria.Common.Players
             {
                 if(!npc.boss && item.DamageType == DamageClass.MeleeNoSpeed)
                 {
-                    float bonusCrit = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                    float bonusCrit = SkillUtilities.SkillBonus(150f, 0.05f);
 
                     modifiers.CritDamage *= bonusCrit;
                 }
@@ -1152,7 +1152,7 @@ namespace Vaultaria.Common.Players
             {
                 if(!npc.boss && proj.active && proj.owner == Main.myPlayer && (proj.minion || proj.sentry))
                 {
-                    float bonusCrit = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                    float bonusCrit = SkillUtilities.SkillBonus(150f, 0.05f);
 
                     modifiers.CritDamage *= bonusCrit;
                 }
@@ -1165,7 +1165,7 @@ namespace Vaultaria.Common.Players
             {
                 if(npc.boss)
                 {
-                    float bonusReduction = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                    float bonusReduction = SkillUtilities.SkillBonus(150f, 0.05f);
 
                     modifiers.FinalDamage /= bonusReduction;
                 }

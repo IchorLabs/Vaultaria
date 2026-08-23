@@ -7,7 +7,7 @@ using Terraria.Localization;
 using Vaultaria.Common.Systems.GenPasses.Vaults;
 using Vaultaria.Common.Networking;
 
-namespace Vaultaria.Common.Global
+namespace Vaultaria.Common.Enemies.Bosses
 {
     public class BossKillGlobalNPC : GlobalNPC
     {

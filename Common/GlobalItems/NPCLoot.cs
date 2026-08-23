@@ -50,7 +50,6 @@ using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Maliwan;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof;
 using Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.AssaultRifle.Bandit;
-using Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Launcher.Maliwan;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion;
@@ -76,6 +75,9 @@ using Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan;
 using Vaultaria.Content.Items.Weapons.Summoner.Sentry;
 using Vaultaria.Content.NPCs.Town.Claptrap;
 using Vaultaria.Common.Systems;
+using Vaultaria.Common.GlobalItems.DropConditions.AttunementDropConditions;
+using Vaultaria.Common.GlobalItems.DropConditions.WeaponDropConditions;
+using Vaultaria.Common.GlobalItems.DropConditions.TubbyDropConditions;
 
 namespace Vaultaria.Common.GlobalItems
 {

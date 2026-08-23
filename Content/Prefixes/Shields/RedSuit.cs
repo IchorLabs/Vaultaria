@@ -43,7 +43,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "RedSuit", "Grants immunity to Radiation damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Radiation.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Radiation.GetVaultarianColor()
             };
         }
 	}

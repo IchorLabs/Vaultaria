@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
 {
-    public class HeartBreaker : ElementalItem
+    public class HeartBreaker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionShotgun, 60);
+            SetItemSound(Item, Sounds.HyperionShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 3, 2, 10);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 3, 2, 10);
 
             return false;
         }
@@ -76,10 +76,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 6);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Heals the player on enemy hit", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "I don't want to set the world on fire…");
+            ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Heals the player on enemy hit", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "I don't want to set the world on fire…");
         }
     }
 }

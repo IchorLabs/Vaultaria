@@ -21,11 +21,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusMagic = Utilities.DisplayComparativeBonusText(1.5f) + Utilities.DisplaySkillBonusText(120f, 0.1f);
+            int bonusMagic = SkillUtilities.DisplayComparativeBonusText(1.5f) + SkillUtilities.DisplaySkillBonusText(120f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "You deal Increased Magic Damage the closer you are to your target");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusMagic}% Magic Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "You deal Increased Magic Damage the closer you are to your target");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusMagic}% Magic Damage");
         }
     }
 }

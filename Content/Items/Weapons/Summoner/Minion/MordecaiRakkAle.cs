@@ -86,9 +86,9 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Minion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Summons Bloodwing to fight for you");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Has a chance to inflict a random element on enemies");
-            Utilities.RedText(tooltips, Mod, "Oh, where the hell is... argh, I had a violin somewhere,\nI was gonna play it all sarcastically... goddammit, it was gonna be awesome.\nBLAKE! WHERE'S THE BLOODY VIOLIN?!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Summons Bloodwing to fight for you");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Has a chance to inflict a random element on enemies");
+            ItemText.RedText(tooltips, Mod, "Oh, where the hell is... argh, I had a violin somewhere,\nI was gonna play it all sarcastically... goddammit, it was gonna be awesome.\nBLAKE! WHERE'S THE BLOODY VIOLIN?!");
         }
     }
 }

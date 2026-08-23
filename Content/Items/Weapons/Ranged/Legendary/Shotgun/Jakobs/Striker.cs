@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Jakobs
 {
-    public class Striker : ElementalItem
+    public class Striker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,12 +48,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsShotgun, 60);
+            SetItemSound(Item, Sounds.JakobsShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5);
 
             return false;
         }
@@ -65,9 +65,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 5);
-            Utilities.Text(tooltips, Mod);
-            Utilities.RedText(tooltips, Mod, "Fandir? Thirteen.");
+            ItemText.MultiShotText(tooltips, Item, 5);
+            ItemText.Text(tooltips, Mod);
+            ItemText.RedText(tooltips, Mod, "Fandir? Thirteen.");
         }
     }
 }

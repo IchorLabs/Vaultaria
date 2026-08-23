@@ -10,9 +10,9 @@ using Terraria.Audio;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
-    public class Law : ElementalItem
+    public class Law : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -94,7 +94,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
                 Item.shootSpeed = 10f;
                 Item.shoot = ProjectileID.Bullet;
                 Item.useAmmo = AmmoID.Bullet;
-                Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+                SetItemSound(Item, Sounds.JakobsPistol, 60);
 
                 Item.useTime = 12;
                 Item.useAnimation = 12;
@@ -113,10 +113,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Right-Click to do a melee attack");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Gives you lifesteal if Order is also equipped", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "De Da.");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to do a melee attack");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Gives you lifesteal if Order is also equipped", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "De Da.");
         }
 
         private void HasOrderOn(Player player, int damageDone)

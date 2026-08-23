@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

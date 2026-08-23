@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 
-namespace Vaultaria.Common.Systems
+namespace Vaultaria.Common.GlobalItems.DropConditions.TubbyDropConditions
 {
     /// <summary>
     /// A custom drop rule that starts with a base pool of items and dynamically appends 

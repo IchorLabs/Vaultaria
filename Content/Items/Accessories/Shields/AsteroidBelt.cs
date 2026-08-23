@@ -22,9 +22,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Launch homing Explosive Meteors when damaged", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Straight from the bug homeworld.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+20 HP\n+2 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Launch homing Explosive Meteors when damaged", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Straight from the bug homeworld.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

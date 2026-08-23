@@ -10,9 +10,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
 {
-    public class Ogre : ElementalItem
+    public class Ogre : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,12 +47,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueAR, 60);
+            SetItemSound(Item, Sounds.TorgueAR, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, 4, 8);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, 4, 8);
 
             return false;
         }
@@ -64,10 +64,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 3);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Rapidly fires 3 explosive bullets", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Ogres chew their food.");
+            ItemText.MultiShotText(tooltips, Item, 3);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly fires 3 explosive bullets", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Ogres chew their food.");
         }
     }
 }

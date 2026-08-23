@@ -10,9 +10,9 @@ using Terraria.Audio;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
 {
-    public class Infinity : ElementalItem
+    public class Infinity : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
             // Item.UseSound = SoundID.Item31;
-            Utilities.SetItemSound(Item, Utilities.Sounds.VladofPistol, 60);
+            SetItemSound(Item, Sounds.VladofPistol, 60);
         }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)
@@ -75,9 +75,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Consumes no ammo");
-            Utilities.RedText(tooltips, Mod, "It's closer than you think! (no it isn't)");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Consumes no ammo");
+            ItemText.RedText(tooltips, Mod, "It's closer than you think! (no it isn't)");
         }
     }
 }

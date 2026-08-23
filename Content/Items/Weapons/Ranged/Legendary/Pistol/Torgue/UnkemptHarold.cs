@@ -11,9 +11,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
 {
-    public class UnkemptHarold : ElementalItem
+    public class UnkemptHarold : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorguePistol, 60);
+            SetItemSound(Item, Sounds.TorguePistol, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -90,9 +90,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 6 Pistol Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Fires multiple Explosive rounds", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Did I fire six shots, or only five? Three? Seven. Whatever.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 6 Pistol Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Fires multiple Explosive rounds", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Did I fire six shots, or only five? Three? Seven. Whatever.");
         }
     }
 }

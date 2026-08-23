@@ -23,12 +23,12 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+150 HP\n+10 Defense\nRegenerates health rapidly");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "When under 65% health, melee attacks do 80% bonus damage", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Deals 100% bonus thorn damage", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"Releases a Fire Nova blast that deals {Main.LocalPlayer.statDefense * 4} damage when health dips under 30%", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip5", $"Damage is based on your defense");
-            Utilities.RedText(tooltips, Mod, "...His hide turned the mightiest tame...");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+150 HP\n+10 Defense\nRegenerates health rapidly");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "When under 65% health, melee attacks do 80% bonus damage", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Deals 100% bonus thorn damage", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"Releases a Fire Nova blast that deals {Main.LocalPlayer.statDefense * 4} damage when health dips under 30%", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip5", $"Damage is based on your defense");
+            ItemText.RedText(tooltips, Mod, "...His hide turned the mightiest tame...");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Tediore;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
 {
-    public class BabyMaker : ElementalItem
+    public class BabyMaker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         private bool altFireMode = false;
 
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TedioreSMG, 60);
+            SetItemSound(Item, Sounds.TedioreSMG, 60);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -101,7 +101,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TedioreSMGThrow, 120);
+                SetItemSound(Item, Sounds.TedioreSMGThrow, 120);
             }
             else // Shoot
             {
@@ -122,7 +122,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TedioreSMG, 60);
+                SetItemSound(Item, Sounds.TedioreSMG, 60);
             }
 
             return base.CanUseItem(player);
@@ -135,9 +135,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw an explosive SMG");
-            Utilities.RedText(tooltips, Mod, "Who's a widdle gunny-wunny?");   
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw an explosive SMG");
+            ItemText.RedText(tooltips, Mod, "Who's a widdle gunny-wunny?");   
         }
     }
 }

@@ -11,9 +11,9 @@ using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl
 {
-    public class CatONineTails : ElementalItem
+    public class CatONineTails : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.GenericLaser, 60);
+            SetItemSound(Item, Sounds.GenericLaser, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -80,8 +80,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "ToolTip1", "Shoots a burst of piercing Incendiary lasers that ricochet on surface impact", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "The cat's out of the bag.");
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots a burst of piercing Incendiary lasers that ricochet on surface impact", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "The cat's out of the bag.");
         }
     }
 }

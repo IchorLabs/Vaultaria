@@ -24,11 +24,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
         {
             float realSpeed = Main.LocalPlayer.velocity.Length();
 
-            int bonusDamage = (int) (100f * (Utilities.ComparativeBonus(1f, -realSpeed, 25f)) + Utilities.DisplaySkillBonusText(87f, 0.05f));
+            int bonusDamage = (int) (100f * (SkillUtilities.ComparativeBonus(1f, -realSpeed, 25f)) + SkillUtilities.DisplaySkillBonusText(87f, 0.05f));
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "While moving, you gain increased Damage. The faster you move, the greater this bonus");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusDamage}% Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "While moving, you gain increased Damage. The faster you move, the greater this bonus");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Up to +{bonusDamage}% Damage");
         }
     }
 }

@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Materials;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 {
-    public class Hellfire : ElementalItem
+    public class Hellfire : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSMG, 60);
+            SetItemSound(Item, Sounds.MaliwanSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -69,9 +69,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Incendiary bullets", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "We don't need no fire…");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Incendiary bullets", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "We don't need no fire…");
         }
     }
 }

@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Cryo", "20% Chance to deal 20% bonus Cryo damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Cryo.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Cryo.GetVaultarianColor()
             };
         }
 	}

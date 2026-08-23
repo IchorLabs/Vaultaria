@@ -10,9 +10,9 @@ using Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
 {
-    public class Trespasser : ElementalItem
+    public class Trespasser : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 3);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsSniper, 60);
+            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override void AddRecipes()
@@ -69,9 +69,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bypasses all enemy defense", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "I infrequently perish.");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bypasses all enemy defense", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "I infrequently perish.");
         }
     }
 }

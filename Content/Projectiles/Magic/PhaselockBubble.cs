@@ -44,7 +44,7 @@ namespace Vaultaria.Content.Projectiles.Magic
 
             if (target != null && target.active && !target.friendly)
             {
-                Utilities.MoveToPosition(Projectile, target.Center, 4, 1);
+                ItemEffects.MoveToPosition(Projectile, target.Center, 4, 1);
 
                 float distance = Vector2.Distance(Projectile.Center, target.Center);
 
@@ -81,7 +81,7 @@ namespace Vaultaria.Content.Projectiles.Magic
             {
                 if(Vector2.Distance(npc.Center, target.Center) < 1000 && !npc.townNPC)
                 {
-                    Utilities.MoveToPosition(npc, target.Center, 40f, 6f);
+                    ItemEffects.MoveToPosition(npc, target.Center, 40f, 6f);
                 }
             }
         }

@@ -1555,7 +1555,7 @@ Configs: {
 
 		DisableMilkshakeVoiceLine: {
 			Label: Disable Milkshake Voice Line
-			Tooltip: Stops Handsome Jack from imitating Roland when consuming a Milkshake
+			Tooltip: Enable this to disable Handsome Jack's mocking voice line
 		}
 
 		ChubbySpawnChance: {
@@ -1571,15 +1571,6 @@ Configs: {
 		ExecuteSoundEffect: {
 			Label: Execute Sound Effect
 			Tooltip: Enable this to have the swoosh sound effect play when in Deception
-		}
-	}
-
-	VaultariaConfig2: {
-		DisplayName: Vaultaria Config2
-
-		DisableMilkshakeVoiceLine: {
-			Label: Disable Milkshake Voice Line
-			Tooltip: ""
 		}
 	}
 }

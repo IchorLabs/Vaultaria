@@ -3,18 +3,30 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Vaultaria.Common.Utilities;
 using System.Collections.Generic;
+using Vaultaria.Common.Configs;
 
 namespace Vaultaria.Content.Items.Consumables.Bags
 {
     public class Milkshake : GlobalItem
     {
-        public override void SetDefaults(Item entity)
+        public override void HoldItem(Item item, Player player)
         {
-            base.SetDefaults(entity);
+            base.HoldItem(item, player);
 
-            if(entity.type == ItemID.Milkshake)
+            MilkshakeSound(item);
+        }
+
+        private static void MilkshakeSound(Item entity)
+        {
+            VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
+
+            if(entity.type == ItemID.Milkshake && config.DisableMilkshakeVoiceLine == false)
             {
-                Utilities.SetItemSound(entity, Utilities.Sounds.RolandsMilkshakes, 420);
+                VaultarianItem.SetItemSound(entity, VaultarianItem.Sounds.RolandsMilkshakes, 420);
+            }
+            else if (entity.type == ItemID.Milkshake)
+            {
+                entity.UseSound = SoundID.Item3;
             }
         }
 
@@ -24,7 +36,7 @@ namespace Vaultaria.Content.Items.Consumables.Bags
 
             if(item.type == ItemID.Milkshake)
             {
-                Utilities.RedText(tooltips, Mod, "Hey buddy, it's me Roland. Lets kill Handsome Jack, and then we'll all go out for milkshakes.");
+                ItemText.RedText(tooltips, Mod, "Hey buddy, it's me Roland. Lets kill Handsome Jack, and then we'll all go out for milkshakes.");
             }
         }
     }

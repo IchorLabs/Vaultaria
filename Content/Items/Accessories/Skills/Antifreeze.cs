@@ -23,15 +23,15 @@ namespace Vaultaria.Content.Items.Accessories.Skills
         {
             float realSpeed = Main.LocalPlayer.velocity.Length();
 
-            int bonusSpeed = Utilities.DisplaySkillBonusText(40f, 0.05f);
-            int bonusDamage = (int) (100f * (Utilities.ComparativeBonus(1f, -realSpeed, 25f)) + Utilities.DisplaySkillBonusText(87f, 0.05f));
+            int bonusSpeed = SkillUtilities.DisplaySkillBonusText(40f, 0.05f);
+            int bonusDamage = (int) (100f * (SkillUtilities.ComparativeBonus(1f, -realSpeed, 25f)) + SkillUtilities.DisplaySkillBonusText(87f, 0.05f));
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Killing an enemy increases your Movement Speed for 8 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip3", "While moving, you gain increased Damage. The faster you move, the greater this bonus");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip5", $"Up to +{bonusDamage}% Damage");
-            Utilities.RedText(tooltips, Mod, "Jet propulsion, disengage.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Killing an enemy increases your Movement Speed for 8 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "While moving, you gain increased Damage. The faster you move, the greater this bonus");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusSpeed}% Movement Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip5", $"Up to +{bonusDamage}% Damage");
+            ItemText.RedText(tooltips, Mod, "Jet propulsion, disengage.");
         }
 
         public override void AddRecipes()

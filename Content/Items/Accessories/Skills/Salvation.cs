@@ -21,11 +21,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusLifesteal = Utilities.DisplaySkillBonusText(600f);
+            int bonusLifesteal = SkillUtilities.DisplaySkillBonusText(600f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy, grants you Ranged Damage Lifesteal for 5 seconds", Utilities.VaultarianColours.Healing);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusLifesteal}% Lifesteal", Utilities.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy, grants you Ranged Damage Lifesteal for 5 seconds", ItemText.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusLifesteal}% Lifesteal", ItemText.VaultarianColours.Healing);
         }
     }
 }

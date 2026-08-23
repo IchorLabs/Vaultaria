@@ -23,15 +23,15 @@ namespace Vaultaria.Content.Items.Accessories.Skills
         {
             int bonusShot = (int) CloudOfLeadCounter();
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Every Nth shot from you shoots an Incendiary bullet and won't consume ammo", Utilities.VaultarianColours.Incendiary);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"Triggers every {bonusShot}th shot");
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Golden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Every Nth shot from you shoots an Incendiary bullet and won't consume ammo", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"Triggers every {bonusShot}th shot");
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Golden Chests", ItemText.VaultarianColours.Information);
         }
     
         private float CloudOfLeadCounter()
         {
-            float numberOfBossesDefeated = Utilities.DownedBossCounter();
+            float numberOfBossesDefeated = SkillUtilities.DownedBossCounter();
 
             if(numberOfBossesDefeated > 25)
             {

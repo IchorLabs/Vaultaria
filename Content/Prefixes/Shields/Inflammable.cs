@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "Inflammable", "Grants immunity to Fire damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Incendiary.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Incendiary.GetVaultarianColor()
             };
         }
 	}

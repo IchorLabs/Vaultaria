@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 {
-    public class Maggie : ElementalItem
+    public class Maggie : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,12 +46,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsPistol, 60);
+            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 5, 4, 8);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 7, 5, 4, 8);
 
             return false;
         }
@@ -76,10 +76,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 7);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Fires as fast as you can pull the trigger");
-            Utilities.RedText(tooltips, Mod, "Monty's wife don't take no guff.");
+            ItemText.MultiShotText(tooltips, Item, 7);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Fires as fast as you can pull the trigger");
+            ItemText.RedText(tooltips, Mod, "Monty's wife don't take no guff.");
         }
     }
 }

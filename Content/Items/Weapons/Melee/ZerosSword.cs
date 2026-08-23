@@ -13,7 +13,7 @@ using Vaultaria.Common.Configs;
 
 namespace Vaultaria.Content.Items.Weapons.Melee
 {
-    public class ZerosSword : ModItem
+    public class ZerosSword : VaultarianItem
     {
         public override void SetStaticDefaults()
         {
@@ -65,7 +65,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
             if(config.ExecuteSoundEffect == true && player.HasBuff(ModContent.BuffType<DeceptionBuff>()))
             {
-                Utilities.SetItemSound(Item, Utilities.Sounds.Execute, 60);
+                SetItemSound(Item, Sounds.Execute, 60);
             }
             else
             {
@@ -112,7 +112,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             {
                 if (Main.mouseLeft && target.Hitbox.Intersects(mouse))
                 {
-                    Utilities.MoveToPosition(player, Main.MouseWorld, 20, 3f);
+                    ItemEffects.MoveToPosition(player, Main.MouseWorld, 20, 3f);
                 }
             }
 
@@ -132,9 +132,9 @@ namespace Vaultaria.Content.Items.Weapons.Melee
         
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "0", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "When paired with the Deception potion's buff,\nyou gain the ability to dash towards enemies at your mouse", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "How hilarious\nYou just set off my trap card\nYour death approaches.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "0", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "When paired with the Deception potion's buff,\nyou gain the ability to dash towards enemies at your mouse", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "How hilarious\nYou just set off my trap card\nYour death approaches.");
         }
     }
 }

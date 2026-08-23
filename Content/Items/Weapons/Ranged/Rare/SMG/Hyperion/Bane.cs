@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
 {
-    public class Bane : ElementalItem
+    public class Bane : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.Bane, 30);
+            SetItemSound(Item, Sounds.Bane, 30);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Screams while firing and greatly reduces movement speed", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "In Spain, stays mainly on the plain.");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Screams while firing and greatly reduces movement speed", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "In Spain, stays mainly on the plain.");
         }
     }
 }

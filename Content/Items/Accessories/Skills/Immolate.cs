@@ -22,11 +22,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(20f, 0.1f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(20f, 0.1f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "While under 20% health, your magic attacks deal bonus Incendiary Damage", Utilities.VaultarianColours.Incendiary);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Incendiary Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "While under 20% health, your magic attacks deal bonus Incendiary Damage", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Incendiary Damage");
         }
     }
 }

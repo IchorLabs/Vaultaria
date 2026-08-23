@@ -11,9 +11,9 @@ using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 {
-    public class Blackout : ElementalItem
+    public class Blackout : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 4);
-            Utilities.SetItemSound(Item, Utilities.Sounds.ETechARSingle, 60);
+            SetItemSound(Item, Sounds.ETechARSingle, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Rapidly fires Explosive-Slag rounds", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "It says it in chat.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly fires Explosive-Slag rounds", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "It says it in chat.");
         }
     }
 }

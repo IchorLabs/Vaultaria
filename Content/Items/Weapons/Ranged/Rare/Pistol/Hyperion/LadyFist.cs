@@ -11,9 +11,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 {
-    public class LadyFist : ElementalItem
+    public class LadyFist : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionPistol, 60);
+            SetItemSound(Item, Sounds.HyperionPistol, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -68,17 +68,17 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+800% Crit");
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+800% Crit");
 
             if(!NPC.downedGolemBoss)
             {
-                Utilities.Text(tooltips, Mod, "Tooltip2", "Can only be used after defeating Golem", Utilities.VaultarianColours.Information);
+                ItemText.Text(tooltips, Mod, "Tooltip2", "Can only be used after defeating Golem", ItemText.VaultarianColours.Information);
             }
 
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Given after completing 30 Angler quests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Given after completing 30 Angler quests", ItemText.VaultarianColours.Information);
 
-            Utilities.RedText(tooltips, Mod, "Love is a Lady Finger. True love is a Lady Fist.");
+            ItemText.RedText(tooltips, Mod, "Love is a Lady Finger. True love is a Lady Fist.");
         }
     }
 }

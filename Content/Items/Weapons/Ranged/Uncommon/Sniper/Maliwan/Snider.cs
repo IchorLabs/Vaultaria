@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Uncommon.Sniper.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
 {
-    public class Snider : ElementalItem
+    public class Snider : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(silver: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanSniper, 60);
+            SetItemSound(Item, Sounds.MaliwanSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Sniper Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Incendiary Bullets", Utilities.VaultarianColours.Incendiary);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Found in Golden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Sniper Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Incendiary Bullets", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Golden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

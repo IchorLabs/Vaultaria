@@ -9,9 +9,9 @@ using Vaultaria.Content.Items.Materials;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Eridian
 {
-    public class EridianFabricator : ElementalItem
+    public class EridianFabricator : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Eridian
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.LegendaryDrop, 60);
+            SetItemSound(Item, Sounds.LegendaryDrop, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -81,9 +81,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Eridian
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses 250 eridium", Utilities.VaultarianColours.Slag);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots out a Legendary gun", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "A Gun... Gun?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 250 eridium", ItemText.VaultarianColours.Slag);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots out a Legendary gun", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "A Gun... Gun?");
         }
     }
 }

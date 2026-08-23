@@ -99,10 +99,10 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Minion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Summons Wolf and Saint to fight for you");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Wolf attacks enemies", Utilities.VaultarianColours.Radiation);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Saint regenerates your health", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "You killed Wilhelm...?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Summons Wolf and Saint to fight for you");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Wolf attacks enemies", ItemText.VaultarianColours.Radiation);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Saint regenerates your health", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "You killed Wilhelm...?");
         }
     }
 }

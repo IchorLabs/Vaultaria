@@ -3,109 +3,111 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Microsoft.Xna.Framework.Graphics;
-using Vaultaria.Common.Utilities;
 using Vaultaria.Common.Configs;
 using Terraria.ModLoader.IO;
 using System.IO;
 
-public class TubbyNPC : GlobalNPC
+namespace Vaultaria.Common.Enemies.Mobs.Modified
 {
-    public bool isTubby = false;
-    public bool isChubby = false;
-    public override bool InstancePerEntity => true;
-
-    public override void SetDefaults(NPC npc)
+    public class TubbyNPC : GlobalNPC
     {
-        base.SetDefaults(npc);
+        public bool isTubby = false;
+        public bool isChubby = false;
+        public override bool InstancePerEntity => true;
 
-        if(Main.netMode != NetmodeID.MultiplayerClient)
+        public override void SetDefaults(NPC npc)
         {
-            bool boss = npc.boss || npc.type == NPCID.Pumpking || npc.type == NPCID.IceQueen;
+            base.SetDefaults(npc);
 
-            if(npc.type != NPCID.TargetDummy && boss == false && !npc.townNPC && !NPCID.Sets.CountsAsCritter[npc.type])
+            if(Main.netMode != NetmodeID.MultiplayerClient)
             {
-                VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
+                bool boss = npc.boss || npc.type == NPCID.Pumpking || npc.type == NPCID.IceQueen;
 
-                if(Utilities.Randomizer(config.ChubbySpawnChance))
+                if(npc.type != NPCID.TargetDummy && boss == false && !npc.townNPC && !NPCID.Sets.CountsAsCritter[npc.type])
                 {
-                    if(Main.hardMode)
+                    VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
+
+                    if(Utilities.Utilities.Randomizer(config.ChubbySpawnChance))
                     {
-                        SetTubbyDefaults(npc, ref isTubby, 3, 2, 2, 1.3f);
-                    }
-                    else
-                    {
-                        SetTubbyDefaults(npc, ref isChubby, 2, 2, 2, 1.3f);
-                    }
-                }   
+                        if(Main.hardMode)
+                        {
+                            SetTubbyDefaults(npc, ref isTubby, 3, 2, 2, 1.3f);
+                        }
+                        else
+                        {
+                            SetTubbyDefaults(npc, ref isChubby, 2, 2, 2, 1.3f);
+                        }
+                    }   
+                }
             }
         }
-    }
 
-    private void SetTubbyDefaults(NPC npc, ref bool tubVariant, int life, int damage, int defense, float scaler)
-    {
-        tubVariant = true;
-
-        npc.lifeMax *= life;
-        npc.damage *= damage;
-        npc.defense *= defense;
-
-        npc.scale *= scaler;
-        npc.width *= (int) scaler;
-        npc.height *= (int) scaler;
-
-        npc.netUpdate = true;
-    }
-
-    public override void ModifyTypeName(NPC npc, ref string typeName)
-    {
-        base.ModifyTypeName(npc, ref typeName);
-
-        if(isTubby)
+        private void SetTubbyDefaults(NPC npc, ref bool tubVariant, int life, int damage, int defense, float scaler)
         {
-            typeName = $"Tubby {typeName}";
+            tubVariant = true;
+
+            npc.lifeMax *= life;
+            npc.damage *= damage;
+            npc.defense *= defense;
+
+            npc.scale *= scaler;
+            npc.width *= (int) scaler;
+            npc.height *= (int) scaler;
+
+            npc.netUpdate = true;
         }
-        else if(isChubby)
+
+        public override void ModifyTypeName(NPC npc, ref string typeName)
         {
-            typeName = $"Chubby {typeName}";
+            base.ModifyTypeName(npc, ref typeName);
+
+            if(isTubby)
+            {
+                typeName = $"Tubby {typeName}";
+            }
+            else if(isChubby)
+            {
+                typeName = $"Chubby {typeName}";
+            }
         }
-    }
 
-    public override void DrawEffects(NPC npc, ref Color drawColor)
-    {
-        base.DrawEffects(npc, ref drawColor);
-
-        if(isTubby || isChubby)
+        public override void DrawEffects(NPC npc, ref Color drawColor)
         {
-            drawColor = Color.Gold;
-            Dust.NewDust(npc.position, npc.width, npc.height, DustID.IceTorch);
+            base.DrawEffects(npc, ref drawColor);
+
+            if(isTubby || isChubby)
+            {
+                drawColor = Color.Gold;
+                Dust.NewDust(npc.position, npc.width, npc.height, DustID.IceTorch);
+            }
         }
-    }
 
-    public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter writer)
-    {
-        writer.Write(isTubby);
-        writer.Write(isChubby);
+        public override void SendExtraAI(NPC npc, BitWriter bitWriter, BinaryWriter writer)
+        {
+            writer.Write(isTubby);
+            writer.Write(isChubby);
 
-        writer.Write(npc.lifeMax);
-        writer.Write(npc.damage);
-        writer.Write(npc.defense);
+            writer.Write(npc.lifeMax);
+            writer.Write(npc.damage);
+            writer.Write(npc.defense);
 
-        writer.Write(npc.scale);
-        writer.Write(npc.width);
-        writer.Write(npc.height);
-    }
+            writer.Write(npc.scale);
+            writer.Write(npc.width);
+            writer.Write(npc.height);
+        }
 
-    public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader reader)
-    {
-        isTubby = reader.ReadBoolean();
-        isChubby = reader.ReadBoolean();
+        public override void ReceiveExtraAI(NPC npc, BitReader bitReader, BinaryReader reader)
+        {
+            isTubby = reader.ReadBoolean();
+            isChubby = reader.ReadBoolean();
 
-        npc.lifeMax = reader.ReadInt32();
-        npc.damage = reader.ReadInt32();
-        npc.defense = reader.ReadInt32();
+            npc.lifeMax = reader.ReadInt32();
+            npc.damage = reader.ReadInt32();
+            npc.defense = reader.ReadInt32();
 
-        npc.scale = reader.ReadSingle();
-        npc.width = reader.ReadInt32();
-        npc.height = reader.ReadInt32();
+            npc.scale = reader.ReadSingle();
+            npc.width = reader.ReadInt32();
+            npc.height = reader.ReadInt32();
+        }
     }
 }

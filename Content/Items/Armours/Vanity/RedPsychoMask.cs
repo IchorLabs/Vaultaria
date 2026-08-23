@@ -42,7 +42,7 @@ namespace Vaultaria.Content.Items.Armours.Vanity
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.RedText(tooltips, Mod, "I'm here to shank and smile!");
+            ItemText.RedText(tooltips, Mod, "I'm here to shank and smile!");
         }
 	}
 }

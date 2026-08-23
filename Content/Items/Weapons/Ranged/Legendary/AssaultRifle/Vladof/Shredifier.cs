@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 {
-    public class Shredifier : ElementalItem
+    public class Shredifier : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 4);
-            Utilities.SetItemSound(Item, Utilities.Sounds.VladofAR, 60);
+            SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -75,10 +75,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 2);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "+100% Fire rate", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Speed kills.");
+            ItemText.MultiShotText(tooltips, Item, 2);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "+100% Fire rate", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Speed kills.");
         }
     }
 }

@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Projectiles.Shields
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(4, Projectile);
+            ItemEffects.FrameRotator(4, Projectile);
 
             if (IsItem(ModContent.ItemType<MagicMissileEpic>()))
             {
@@ -62,7 +62,7 @@ namespace Vaultaria.Content.Projectiles.Shields
 
             if (target != null && target.active && !target.friendly)
             {
-                Utilities.MoveToTarget(Projectile, target, 4, 1);
+                ItemEffects.MoveToTarget(Projectile, target, 4, 1);
             }
         }
 

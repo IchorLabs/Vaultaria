@@ -20,10 +20,10 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+25 HP\n+3 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Launches Corrosive homing spikes when damaged with a projectile", Utilities.VaultarianColours.Corrosive);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Deals Corrosive Thorn Damage to melee attackers", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "Vlad would be proud");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+25 HP\n+3 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Launches Corrosive homing spikes when damaged with a projectile", ItemText.VaultarianColours.Corrosive);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Deals Corrosive Thorn Damage to melee attackers", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "Vlad would be proud");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

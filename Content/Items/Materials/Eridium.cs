@@ -35,7 +35,7 @@ namespace Vaultaria.Content.Items.Materials
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "An alien material used to turn ordinary items into legendary gear", Utilities.VaultarianColours.Slag);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "An alien material used to turn ordinary items into legendary gear", ItemText.VaultarianColours.Slag);
         }
     }
 }

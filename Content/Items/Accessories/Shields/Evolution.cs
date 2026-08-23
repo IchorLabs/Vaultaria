@@ -24,9 +24,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+50 HP\n+6 Defense\nRegenerates health rapidly");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Grants immunity to all the elements and most debuffs", Utilities.VaultarianColours.Master);
-            Utilities.RedText(tooltips, Mod, "Strength through adversity.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+50 HP\n+6 Defense\nRegenerates health rapidly");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Grants immunity to all the elements and most debuffs", ItemText.VaultarianColours.Master);
+            ItemText.RedText(tooltips, Mod, "Strength through adversity.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

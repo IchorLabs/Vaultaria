@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Laser.Tediore;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
 {
-    public class LaserDisker : ElementalItem
+    public class LaserDisker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         private bool altFireMode = false;
 
@@ -50,7 +50,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.LaserDisker, 60);
+            SetItemSound(Item, Sounds.LaserDisker, 60);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -99,7 +99,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TedioreLaserThrow, 120);
+                SetItemSound(Item, Sounds.TedioreLaserThrow, 120);
             }
             else // Shoot
             {
@@ -120,7 +120,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.LaserDisker, 60);
+                SetItemSound(Item, Sounds.LaserDisker, 60);
             }
 
             return base.CanUseItem(player);
@@ -133,9 +133,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "ToolTip1", "Shoots Explosive Laser Disks", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "ToolTip2", "Right-Click to throw the weapon", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Shazbot!");
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots Explosive Laser Disks", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "ToolTip2", "Right-Click to throw the weapon", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Shazbot!");
         }
     }
 }

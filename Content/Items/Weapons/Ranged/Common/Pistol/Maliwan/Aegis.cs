@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Common.Pistol.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 {
-    public class Aegis : ElementalItem
+    public class Aegis : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(silver: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanPistol, 60);
+            SetItemSound(Item, Sounds.MaliwanPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "ToolTip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Shock bullets", Utilities.VaultarianColours.Shock);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Shock bullets", ItemText.VaultarianColours.Shock);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

@@ -62,7 +62,7 @@ namespace Vaultaria.Content.Projectiles.Summoner.Minion
         {
             base.AI();
 
-            Utilities.MinionFrameRotator(8, Projectile);
+            ItemEffects.MinionFrameRotator(8, Projectile);
             Lighting.AddLight(Projectile.Center, Color.White.ToVector3() * 0.65f); // Gives it light
 
             Player player = Main.player[Projectile.owner];

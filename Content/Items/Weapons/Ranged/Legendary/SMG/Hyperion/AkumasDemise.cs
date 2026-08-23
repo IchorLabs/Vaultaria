@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
 {
-    public class AkumasDemise : ElementalItem
+    public class AkumasDemise : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.ETechSMGSingle, 60);
+            SetItemSound(Item, Sounds.ETechSMGSingle, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -57,8 +57,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Shoots an Incendiary laser", Utilities.VaultarianColours.Incendiary);
-            Utilities.RedText(tooltips, Mod, "Sun Gun, don't worry its not hot.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Shoots an Incendiary laser", ItemText.VaultarianColours.Incendiary);
+            ItemText.RedText(tooltips, Mod, "Sun Gun, don't worry its not hot.");
         }
     }
 }

@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Common.Pistol.Tediore;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
 {
-    public class Handgun : ElementalItem
+    public class Handgun : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
 
             // Other properties
             Item.value = Item.buyPrice(silver: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TediorePistol, 60);
+            SetItemSound(Item, Sounds.TediorePistol, 60);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -97,7 +97,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TediorePistolThrow, 120);
+                SetItemSound(Item, Sounds.TediorePistolThrow, 120);
             }
             else // Shoot
             {
@@ -115,7 +115,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
                 Item.autoReuse = true;
                 Item.useTurn = false;
 
-                Utilities.SetItemSound(Item, Utilities.Sounds.TediorePistol, 60);
+                SetItemSound(Item, Sounds.TediorePistol, 60);
             }
 
             return base.CanUseItem(player);
@@ -128,9 +128,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw the Pistol", Utilities.VaultarianColours.Explosive);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw the Pistol", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

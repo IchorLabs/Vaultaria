@@ -20,10 +20,10 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+60 HP\n+5 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Get 10% health back on every kill", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "Every man for himself.");
-            Utilities.CursedText(tooltips, Mod, "Curse of the Sudden-er Death!\n(-1 HP/s)");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+60 HP\n+5 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Get 10% health back on every kill", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "Every man for himself.");
+            ItemText.CursedText(tooltips, Mod, "Curse of the Sudden-er Death!\n(-1 HP/s)");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

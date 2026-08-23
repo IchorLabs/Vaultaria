@@ -81,12 +81,12 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Deploy a Scorpio Turret that targets and fires upon enemies");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Silver bullets every second", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Spawns ammo randomly every 5 seconds", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Spawns hearts randomly every 10 seconds", Utilities.VaultarianColours.Healing);
-            Utilities.Text(tooltips, Mod, "Tooltip5", "Found in Locked Shadow Chests", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "LOOK OUT! BADASS LOADER!");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Deploy a Scorpio Turret that targets and fires upon enemies");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Silver bullets every second", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Spawns ammo randomly every 5 seconds", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Spawns hearts randomly every 10 seconds", ItemText.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip5", "Found in Locked Shadow Chests", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "LOOK OUT! BADASS LOADER!");
         }
     }
 }

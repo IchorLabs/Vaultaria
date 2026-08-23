@@ -10,9 +10,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 {
-    public class Hail : ElementalItem
+    public class Hail : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            Utilities.SetItemSound(Item, Utilities.Sounds.VladofAR, 60);
+            SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -57,9 +57,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "tooltip1", "Uses Assault Rifle Ammo");
-            Utilities.Text(tooltips, Mod, "tooltip2", "Heals the player on enemy hit", Utilities.VaultarianColours.Healing);
-            Utilities.RedText(tooltips, Mod, "What play thing can you offer me today?");
+            ItemText.Text(tooltips, Mod, "tooltip1", "Uses Assault Rifle Ammo");
+            ItemText.Text(tooltips, Mod, "tooltip2", "Heals the player on enemy hit", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "What play thing can you offer me today?");
         }
     }
 }

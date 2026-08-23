@@ -12,9 +12,9 @@ using Vaultaria.Content.Projectiles.Ammo.Rare.Shotgun.Jakobs;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 {
-    public class TooScoops : ElementalItem
+    public class TooScoops : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsShotgun, 60);
+            SetItemSound(Item, Sounds.JakobsShotgun, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -76,18 +76,18 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 2);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots 2 snowballs", Utilities.VaultarianColours.Cryo);
+            ItemText.MultiShotText(tooltips, Item, 2);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots 2 snowballs", ItemText.VaultarianColours.Cryo);
 
             if(!Main.hardMode)
             {
-                Utilities.Text(tooltips, Mod, "Tooltip3", "Can only be used in Hardmode", Utilities.VaultarianColours.Information);
+                ItemText.Text(tooltips, Mod, "Tooltip3", "Can only be used in Hardmode", ItemText.VaultarianColours.Information);
             }
 
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Frozen Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Frozen Chests", ItemText.VaultarianColours.Information);
 
-            Utilities.RedText(tooltips, Mod, "Coz one's never enough!");
+            ItemText.RedText(tooltips, Mod, "Coz one's never enough!");
         }
     }
 }

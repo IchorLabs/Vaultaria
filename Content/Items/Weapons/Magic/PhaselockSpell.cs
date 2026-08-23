@@ -15,9 +15,9 @@ using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Content.Items.Weapons.Magic
 {
-    public class PhaselockSpell : ElementalItem
+    public class PhaselockSpell : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -63,22 +63,22 @@ namespace Vaultaria.Content.Items.Weapons.Magic
             {
                 if(wof)
                 {
-                    Utilities.SetItemSound(Item, Utilities.Sounds.PhaselockRuin, 300);
+                    SetItemSound(Item, Sounds.PhaselockRuin, 300);
                 }
                 else
                 {
-                    Utilities.SetItemSound(Item, Utilities.Sounds.PhaselockBase, 300);   
+                    SetItemSound(Item, Sounds.PhaselockBase, 300);   
                 }
             }
             else
             {
                 if(moonLord)
                 {
-                    Utilities.SetItemSound(Item, Utilities.Sounds.PhaselockRuin, 300);
+                    SetItemSound(Item, Sounds.PhaselockRuin, 300);
                 }
                 else
                 {
-                    Utilities.SetItemSound(Item, Utilities.Sounds.PhaselockBase, 300);   
+                    SetItemSound(Item, Sounds.PhaselockBase, 300);   
                 }
             }
         }
@@ -135,7 +135,7 @@ namespace Vaultaria.Content.Items.Weapons.Magic
             {
                 if(Vector2.Distance(npc.Center, mouse.Center.ToVector2()) < 1000 && !npc.townNPC)
                 {
-                    Utilities.MoveToPosition(npc, mouse.Center.ToVector2(), 40f, 6f);
+                    ItemEffects.MoveToPosition(npc, mouse.Center.ToVector2(), 40f, 6f);
                 }
             }
         }
@@ -192,7 +192,7 @@ namespace Vaultaria.Content.Items.Weapons.Magic
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Summons a bubble at your cursor, that locks in place the npc that was clicked on", Utilities.VaultarianColours.Healing);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Summons a bubble at your cursor, that locks in place the npc that was clicked on", ItemText.VaultarianColours.Healing);
 
             VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
             bool moonLord = NPC.downedMoonlord;
@@ -203,38 +203,38 @@ namespace Vaultaria.Content.Items.Weapons.Magic
             {
                 if(!wof)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip2", "Defeat the Wall of Flesh to get Ruin", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip2", "Defeat the Wall of Flesh to get Ruin", ItemText.VaultarianColours.Information);
                 }
 
                 if(!fishron)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip3", "Defeat Duke Fishron to get Converge", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip3", "Defeat Duke Fishron to get Converge", ItemText.VaultarianColours.Information);
                 }
 
                 if(!moonLord)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip4", "Defeat the Moon Lord to get Sub-Sequence", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip4", "Defeat the Moon Lord to get Sub-Sequence", ItemText.VaultarianColours.Information);
                 }
             }
             else
             {
                 if(!wof)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip2", "Defeat the Wall of Flesh to get Sub-Sequence", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip2", "Defeat the Wall of Flesh to get Sub-Sequence", ItemText.VaultarianColours.Information);
                 }
 
                 if(!fishron)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip3", "Defeat Duke Fishron to get Converge", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip3", "Defeat Duke Fishron to get Converge", ItemText.VaultarianColours.Information);
                 }
 
                 if(!moonLord)
                 {
-                    Utilities.Text(tooltips, Mod, "Tooltip4", "Defeat the Moon Lord to get Ruin", Utilities.VaultarianColours.Information);
+                    ItemText.Text(tooltips, Mod, "Tooltip4", "Defeat the Moon Lord to get Ruin", ItemText.VaultarianColours.Information);
                 }
             }
             
-            Utilities.RedText(tooltips, Mod, "I love my powers!");
+            ItemText.RedText(tooltips, Mod, "I love my powers!");
         }
     }
 }

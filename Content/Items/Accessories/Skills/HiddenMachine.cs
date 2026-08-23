@@ -21,13 +21,13 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusDamage = Utilities.DisplaySkillBonusText(60f, 0.05f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(60f, 0.05f);
             int number = !Main.hardMode ? 1 : 2; // if not hardmode, then 1, else 2
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Your Summons deal increased damage to enemies that you are behind");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Summon Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"Increases your max number of minions by {number}");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Your Summons deal increased damage to enemies that you are behind");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Summon Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"Increases your max number of minions by {number}");
         }
     }
 }

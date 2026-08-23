@@ -22,11 +22,11 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusFreeze = Utilities.DisplaySkillBonusText(40f, 0.05f);
+            int bonusFreeze = SkillUtilities.DisplaySkillBonusText(40f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Scoring a Critical Hit has a chance to freeze the enemy for 4 seconds", Utilities.VaultarianColours.Cryo);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", Utilities.VaultarianColours.Information);
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusFreeze}% Freeze Chance");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Scoring a Critical Hit has a chance to freeze the enemy for 4 seconds", ItemText.VaultarianColours.Cryo);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Bonuses increase as you progress", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusFreeze}% Freeze Chance");
         }
     }
 }

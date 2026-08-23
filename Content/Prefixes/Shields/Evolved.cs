@@ -42,7 +42,7 @@ namespace Vaultaria.Content.Prefixes.Shields
         {
             yield return new TooltipLine(Mod, "Evolved", "Grants immunity to Slag damage, Ichor & Slowness")
             {
-                OverrideColor = Utilities.VaultarianColours.Slag.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Slag.GetVaultarianColor()
             };
         }
 	}

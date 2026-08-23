@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Incendiary", "20% Chance to deal 20% bonus Fire damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Incendiary.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Incendiary.GetVaultarianColor()
             };
         }
 	}

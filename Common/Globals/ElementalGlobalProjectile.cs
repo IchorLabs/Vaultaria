@@ -333,7 +333,7 @@ namespace Vaultaria.Common.Globals
         {
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<JustGotReal>()))
             {
-                float bonusDamage = Utilities.Utilities.ComparativeBonus(player.statLifeMax2, player.statLife, 3f) + Utilities.Utilities.SkillBonus(60f, 0.05f);
+                float bonusDamage = SkillUtilities.ComparativeBonus(player.statLifeMax2, player.statLife, 3f) + SkillUtilities.SkillBonus(60f, 0.05f);
 
                 if(projectile.DamageType == DamageClass.Ranged)
                 {
@@ -346,7 +346,7 @@ namespace Vaultaria.Common.Globals
         {
             if(player.HasBuff(ModContent.BuffType<WreckPassiveSkill>()))
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(80f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(80f, 0.05f);
 
                 if(projectile.DamageType == DamageClass.Magic)
                 {
@@ -359,7 +359,7 @@ namespace Vaultaria.Common.Globals
         {
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<Accelerate>()) || Utilities.Utilities.IsWearing(player, ModContent.ItemType<LegendarySiren>()))
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(100f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(100f, 0.05f);
 
                 if(projectile.DamageType == DamageClass.Magic)
                 {
@@ -372,7 +372,7 @@ namespace Vaultaria.Common.Globals
         {
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<Accelerate>()) || Utilities.Utilities.IsWearing(player, ModContent.ItemType<LegendarySiren>()))
             {
-                float bonusProjectileSpeed = Utilities.Utilities.SkillBonus(80f, 0.05f);
+                float bonusProjectileSpeed = SkillUtilities.SkillBonus(80f, 0.05f);
 
                 if(projectile.DamageType == DamageClass.Magic)
                 {
@@ -385,7 +385,7 @@ namespace Vaultaria.Common.Globals
         {
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<Reaper>()) || Utilities.Utilities.IsWearing(player, ModContent.ItemType<LegendarySiren>()))
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(35f, 0.05f);
+                float bonusDamage = SkillUtilities.SkillBonus(35f, 0.05f);
 
                 if(projectile.DamageType == DamageClass.Magic && target.life >= target.lifeMax * 0.5f)
                 {
@@ -398,11 +398,11 @@ namespace Vaultaria.Common.Globals
         {
             if(player.HasBuff(ModContent.BuffType<ImmolatePassiveSkill>()))
             {
-                float bonusDamage = Utilities.Utilities.SkillBonus(20f, 0.1f);
+                float bonusDamage = SkillUtilities.SkillBonus(20f, 0.1f);
 
                 short incendiaryProjectile;
 
-                if(Utilities.Utilities.DownedBossCounter() < 16)
+                if(SkillUtilities.DownedBossCounter() < 16)
                 {
                     incendiaryProjectile = ElementalID.IncendiaryProjectile;
                 }
@@ -424,7 +424,7 @@ namespace Vaultaria.Common.Globals
             {
                 if(projectile.DamageType == DamageClass.Ranged)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(80f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(80f, 0.05f);
 
                     modifiers.SourceDamage *= bonusDamage;
                 }
@@ -437,7 +437,7 @@ namespace Vaultaria.Common.Globals
             {
                 if(projectile.DamageType == DamageClass.Ranged)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(200f, 0.01f);
+                    float bonusDamage = SkillUtilities.SkillBonus(200f, 0.01f);
 
                     modifiers.SourceDamage *= bonusDamage;
                     modifiers.CritDamage *= bonusDamage;
@@ -449,7 +449,7 @@ namespace Vaultaria.Common.Globals
         {
             if(player.HasBuff<KillerKillSkill>() && (projectile.DamageType == DamageClass.Magic || projectile.DamageType == DamageClass.Ranged || projectile.DamageType == DamageClass.Throwing))
             {
-                float critBonus = Utilities.Utilities.SkillBonus(55f, 0.05f);
+                float critBonus = SkillUtilities.SkillBonus(55f, 0.05f);
                 modifiers.CritDamage *= critBonus;
             }
         }
@@ -460,7 +460,7 @@ namespace Vaultaria.Common.Globals
             {
                 if(projectile.DamageType == DamageClass.Magic || projectile.DamageType == DamageClass.Ranged || projectile.DamageType == DamageClass.Throwing)
                 {
-                    float bonusCrit = Utilities.Utilities.SkillBonus(80f, 0.05f);
+                    float bonusCrit = SkillUtilities.SkillBonus(80f, 0.05f);
 
                     modifiers.CritDamage *= bonusCrit;
                 }
@@ -473,8 +473,8 @@ namespace Vaultaria.Common.Globals
             {
                 if(projectile.DamageType == DamageClass.Magic || projectile.DamageType == DamageClass.Ranged || projectile.DamageType == DamageClass.Throwing)
                 {
-                    float bonusDamage = Utilities.Utilities.SkillBonus(200f, 0.05f);
-                    float bonusCrit = Utilities.Utilities.SkillBonus(150f, 0.05f);
+                    float bonusDamage = SkillUtilities.SkillBonus(200f, 0.05f);
+                    float bonusCrit = SkillUtilities.SkillBonus(150f, 0.05f);
 
                     modifiers.SourceDamage *= bonusDamage;
                     modifiers.CritDamage *= bonusCrit;
@@ -488,7 +488,7 @@ namespace Vaultaria.Common.Globals
             {
                 if(projectile.DamageType == DamageClass.Magic || projectile.DamageType == DamageClass.Ranged || projectile.DamageType == DamageClass.Throwing)
                 {
-                    float bonusProjectileSpeed = Utilities.Utilities.SkillBonus(15f, 0.1f);
+                    float bonusProjectileSpeed = SkillUtilities.SkillBonus(15f, 0.1f);
 
                     projectile.velocity *= bonusProjectileSpeed;
                 }
@@ -503,7 +503,7 @@ namespace Vaultaria.Common.Globals
 
                 if(realSpeed > 0)
                 {
-                    float bonusDamage = Utilities.Utilities.ComparativeBonus(1f, -realSpeed, 25f) + Utilities.Utilities.SkillBonus(87f, 0.05f);
+                    float bonusDamage = SkillUtilities.ComparativeBonus(1f, -realSpeed, 25f) + SkillUtilities.SkillBonus(87f, 0.05f);
 
                     if(projectile.active && projectile.owner == player.whoAmI && (projectile.minion || projectile.sentry))
                     {

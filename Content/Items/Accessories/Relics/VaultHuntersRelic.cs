@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Relics
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+5 HP\n+1 Defense");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "+25% Luck", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+5 HP\n+1 Defense");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "+25% Luck", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

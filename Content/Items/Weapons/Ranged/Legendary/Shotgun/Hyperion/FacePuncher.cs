@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Hyperion
 {
-    public class FacePuncher : ElementalItem
+    public class FacePuncher : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,12 +46,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.HyperionShotgun, 60);
+            SetItemSound(Item, Sounds.HyperionShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 12, 5, 3, 8);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 12, 5, 3, 8);
 
             return false;
         }
@@ -75,9 +75,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Hyperion
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 12);
-            Utilities.Text(tooltips, Mod);
-            Utilities.RedText(tooltips, Mod, "Man your own jackhammer.");
+            ItemText.MultiShotText(tooltips, Item, 12);
+            ItemText.Text(tooltips, Mod);
+            ItemText.RedText(tooltips, Mod, "Man your own jackhammer.");
         }
     }
 }

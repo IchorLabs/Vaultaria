@@ -53,7 +53,7 @@ namespace Vaultaria.Content.Projectiles.Elements
         {
             base.AI();
 
-            Utilities.FrameRotator(4, Projectile);
+            ItemEffects.FrameRotator(4, Projectile);
         }
 
         public override Vector3 SetProjectileLightColour()

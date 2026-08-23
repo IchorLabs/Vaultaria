@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Pistol.Bandit;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 {
-    public class Zim : ElementalItem
+    public class Zim : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditPistol, 60);
+            SetItemSound(Item, Sounds.BanditPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -58,9 +58,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Guaranteed Cryo", Utilities.VaultarianColours.Cryo);
-            Utilities.RedText(tooltips, Mod, "Would you like to know more?");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Guaranteed Cryo", ItemText.VaultarianColours.Cryo);
+            ItemText.RedText(tooltips, Mod, "Would you like to know more?");
         }
     }
 }

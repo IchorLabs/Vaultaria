@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Launcher.Maliwan
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
         }
 
         public override void OnKill(int timeLeft)

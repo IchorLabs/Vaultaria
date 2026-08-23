@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
 {
-    public class NightHawkin : ElementalItem
+    public class NightHawkin : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.DahlSMGBurst, 60);
+            SetItemSound(Item, Sounds.DahlSMGBurst, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -67,18 +67,18 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots Cryo bullets during the day", Utilities.VaultarianColours.Cryo);
-            Utilities.Text(tooltips, Mod, "Tooltip3", "Shoots Incendiary bullets at night", Utilities.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Cryo bullets during the day", ItemText.VaultarianColours.Cryo);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Shoots Incendiary bullets at night", ItemText.VaultarianColours.Incendiary);
 
             if(!Main.hardMode)
             {
-                Utilities.Text(tooltips, Mod, "Tooltip4", "Can only be used in Hardmode", Utilities.VaultarianColours.Information);
+                ItemText.Text(tooltips, Mod, "Tooltip4", "Can only be used in Hardmode", ItemText.VaultarianColours.Information);
             }
 
-            Utilities.Text(tooltips, Mod, "Tooltip4", "Found in Web Covered Chests", Utilities.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Found in Web Covered Chests", ItemText.VaultarianColours.Information);
 
-            Utilities.RedText(tooltips, Mod, "Stranger than things.");
+            ItemText.RedText(tooltips, Mod, "Stranger than things.");
         }
     }
 }

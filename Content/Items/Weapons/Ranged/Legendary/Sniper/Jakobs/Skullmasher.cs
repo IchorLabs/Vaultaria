@@ -10,9 +10,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
 {
-    public class Skullmasher : ElementalItem
+    public class Skullmasher : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,12 +47,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsSniper, 60);
+            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5, 4, 7);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5, 4, 7);
 
             return false;
         }
@@ -64,9 +64,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 6);
-            Utilities.Text(tooltips, Mod);
-            Utilities.RedText(tooltips, Mod, "A real head turner! Turned to mush! Ahahaha!");
+            ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod);
+            ItemText.RedText(tooltips, Mod, "A real head turner! Turned to mush! Ahahaha!");
         }
     }
 }

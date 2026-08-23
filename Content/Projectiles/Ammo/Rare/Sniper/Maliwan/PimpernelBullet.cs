@@ -43,7 +43,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Sniper.Maliwan
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
         }
 
         // Could be good for Bore cause it infinitely creates projectiles that one shot anything. Killed Dungeon Guardian in a few seconds

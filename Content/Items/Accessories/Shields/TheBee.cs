@@ -20,9 +20,9 @@ namespace Vaultaria.Content.Items.Accessories.Shields
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "+25 HP\n+4 Defense\nRegenerates health");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "When at max health, non-melee attacks deals 25% bonus Amp Damage", Utilities.VaultarianColours.Information);
-            Utilities.RedText(tooltips, Mod, "Float like a butterfly...");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "+25 HP\n+4 Defense\nRegenerates health");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "When at max health, non-melee attacks deals 25% bonus Amp Damage", ItemText.VaultarianColours.Information);
+            ItemText.RedText(tooltips, Mod, "Float like a butterfly...");
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

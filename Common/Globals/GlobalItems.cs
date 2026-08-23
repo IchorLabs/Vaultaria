@@ -61,7 +61,7 @@ namespace Vaultaria.Common.Globals
 
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<Inconceivable>()))
             {
-                float bonusShot = Utilities.Utilities.ComparativeBonus(player.statLifeMax2, player.statLife, 1.2f) + Utilities.Utilities.SkillBonus(300f, 0.05f);
+                float bonusShot = Utilities.SkillUtilities.ComparativeBonus(player.statLifeMax2, player.statLife, 1.2f) + Utilities.SkillUtilities.SkillBonus(300f, 0.05f);
                 float chance = 100 * (bonusShot - 1);
 
                 if(Utilities.Utilities.Randomizer(chance) && weapon.DamageType == DamageClass.Ranged)
@@ -83,7 +83,7 @@ namespace Vaultaria.Common.Globals
 
         private float CloudOfLeadCounter()
         {
-            float numberOfBossesDefeated = Utilities.Utilities.DownedBossCounter();
+            float numberOfBossesDefeated = SkillUtilities.DownedBossCounter();
 
             if(numberOfBossesDefeated > 25)
             {

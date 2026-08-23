@@ -10,9 +10,9 @@ using Vaultaria.Content.Projectiles.Ammo.Rare.Launcher.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Launcher.Maliwan
 {
-    public class Hive : ElementalItem
+    public class Hive : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Launcher.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.MaliwanLauncher, 60);
+            SetItemSound(Item, Sounds.MaliwanLauncher, 60);
         }
         
         public override Vector2? HoldoutOffset()
@@ -67,9 +67,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Launcher.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "ToolTip1", "Consumes 25 Launcher Ammo per shot");
-            Utilities.Text(tooltips, Mod, "ToolTip3", "After a second, the initial projectile will spawn Corrosive homing rockets", Utilities.VaultarianColours.Corrosive);
-            Utilities.RedText(tooltips, Mod, "Full of bees.");
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Consumes 25 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "ToolTip3", "After a second, the initial projectile will spawn Corrosive homing rockets", ItemText.VaultarianColours.Corrosive);
+            ItemText.RedText(tooltips, Mod, "Full of bees.");
         }
     }
 }

@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Legendary
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(3, Projectile);
+            ItemEffects.FrameRotator(3, Projectile);
 
             Projectile.velocity.Y += 0.175f;
         }
@@ -58,7 +58,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Legendary
             if (SetElementalChance(elementalChance))
             {
                 Player player = Main.player[Projectile.owner];
-                Utilities.HealOnNPCHit(target, damageDone, 0.5f, Projectile);
+                ItemEffects.HealOnNPCHit(target, damageDone, 0.5f, Projectile);
                 SetElementOnNPC(target, hit, explosiveMultiplier, player, explosiveProjectile, explosiveBuff, buffTime);
             }
         }
@@ -68,7 +68,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Legendary
             if (SetElementalChance(elementalChance))
             {
                 Player player = Main.player[Projectile.owner];
-                Utilities.HealOnPlayerHit(target, info.SourceDamage, 0.5f, Projectile);
+                ItemEffects.HealOnPlayerHit(target, info.SourceDamage, 0.5f, Projectile);
                 SetElementOnPlayer(target, info, explosiveMultiplier, player, explosiveProjectile, explosiveBuff, buffTime);
             }
         }

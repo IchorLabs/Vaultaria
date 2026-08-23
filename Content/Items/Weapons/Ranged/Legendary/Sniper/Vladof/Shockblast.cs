@@ -11,9 +11,9 @@ using Vaultaria.Content.Projectiles.Ammo.Legendary.Sniper.Vladof;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
 {
-    public class Shockblast : ElementalItem
+    public class Shockblast : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.ETechSniperSingle, 60);
+            SetItemSound(Item, Sounds.ETechSniperSingle, 60);
         }
 
         public override bool AltFunctionUse(Player player)
@@ -68,7 +68,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
                 Item.shootSpeed = 20f;
                 Item.shoot = ModContent.ProjectileType<ShockblastExBullet>();
                 Item.useAmmo = ModContent.ItemType<SniperAmmo>();
-                Utilities.SetItemSound(Item, Utilities.Sounds.ETechLauncher, 60);
+                SetItemSound(Item, Sounds.ETechLauncher, 60);
 
                 Item.damage = 200;
                 Item.crit = 0;
@@ -86,7 +86,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
                 Item.shootSpeed = 30f;
                 Item.shoot = ModContent.ProjectileType<ShockblastElBullet>();
                 Item.useAmmo = ModContent.ItemType<SniperAmmo>();
-                Utilities.SetItemSound(Item, Utilities.Sounds.ETechSniperSingle, 60);
+                SetItemSound(Item, Sounds.ETechSniperSingle, 60);
 
                 Item.damage = 70;
                 Item.crit = 0;
@@ -117,11 +117,11 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "tooltip1", "Consumes 3 Sniper Ammo per shot");
-            Utilities.Text(tooltips, Mod, "tooltip2", "Left-click to shoot fast Shock e-tech rounds", Utilities.VaultarianColours.Shock);
-            Utilities.Text(tooltips, Mod, "tooltip3", "Right-click to shoot more powerful Explosive-Shock rounds", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Blast them to smithereens!");
-            Utilities.CursedText(tooltips, Mod, "Exodus");
+            ItemText.Text(tooltips, Mod, "tooltip1", "Consumes 3 Sniper Ammo per shot");
+            ItemText.Text(tooltips, Mod, "tooltip2", "Left-click to shoot fast Shock e-tech rounds", ItemText.VaultarianColours.Shock);
+            ItemText.Text(tooltips, Mod, "tooltip3", "Right-click to shoot more powerful Explosive-Shock rounds", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Blast them to smithereens!");
+            ItemText.CursedText(tooltips, Mod, "Exodus");
         }
     }
 }

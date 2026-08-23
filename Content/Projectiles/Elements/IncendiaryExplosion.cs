@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Projectiles.Elements
         {
             base.AI();
 
-            Utilities.FrameRotator(4, Projectile);
+            ItemEffects.FrameRotator(4, Projectile);
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

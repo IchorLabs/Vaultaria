@@ -21,7 +21,7 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killed enemies trigger a matching Elemental Nova Explosion");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killed enemies trigger a matching Elemental Nova Explosion");
         }
     }
 }

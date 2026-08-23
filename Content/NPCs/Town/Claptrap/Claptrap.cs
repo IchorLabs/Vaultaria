@@ -292,7 +292,7 @@ namespace Vaultaria.Content.NPCs.Town.Claptrap
 				}
 				
 				// These are things that the NPC has a chance of telling you when you talk to it.
-				chat.Add($"You have defeated {Utilities.DownedBossCounter()} / 31 of the required enemies for full skill progression. Remember Vault Hunter, to unlock the full bonus, you must defeat every boss and complete every event", 1f);
+				chat.Add($"You have defeated {SkillUtilities.DownedBossCounter()} / 31 of the required enemies for full skill progression. Remember Vault Hunter, to unlock the full bonus, you must defeat every boss and complete every event", 1f);
 				chat.Add(Language.GetTextValue("Mods.Vaultaria.NPCs.Claptrap.Dialogue.UVHM", 1f));
 				chat.Add(Language.GetTextValue("Mods.Vaultaria.NPCs.Claptrap.Dialogue.StandardDialogue1"));
 				chat.Add(Language.GetTextValue("Mods.Vaultaria.NPCs.Claptrap.Dialogue.StandardDialogue2"));

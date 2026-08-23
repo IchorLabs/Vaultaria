@@ -42,7 +42,7 @@ namespace Vaultaria.Content.Items.Armours.Vanity
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.RedText(tooltips, Mod, "It's time to go insane!");
+            ItemText.RedText(tooltips, Mod, "It's time to go insane!");
         }
 	}
 }

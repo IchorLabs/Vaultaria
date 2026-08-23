@@ -13,9 +13,9 @@ using Humanizer;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 {
-    public class Flakker : ElementalItem
+    public class Flakker : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -50,7 +50,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 120);
+            SetItemSound(Item, Sounds.TorgueShotgun, 120);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -73,7 +73,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
             }
 
             Projectile.NewProjectileDirect(source, position, velocity, ProjectileID.Volcano, damage, knockback, player.whoAmI);
-            Utilities.SetItemSound(Item, Utilities.Sounds.TorgueShotgun, 120);
+            SetItemSound(Item, Sounds.TorgueShotgun, 120);
             
             return false;
         }
@@ -100,10 +100,10 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 6);
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Consumes 5 Shotgun Ammo per shot");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Shoots a chain of random Explosive Projectiles", Utilities.VaultarianColours.Explosive);
-            Utilities.RedText(tooltips, Mod, "Flak the world.");
+            ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 5 Shotgun Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots a chain of random Explosive Projectiles", ItemText.VaultarianColours.Explosive);
+            ItemText.RedText(tooltips, Mod, "Flak the world.");
         }
     }
 }

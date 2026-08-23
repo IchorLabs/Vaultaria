@@ -57,7 +57,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Legendary
             if (target != null && target.active && !target.friendly)
             {
                 EnemyFoundToExplode(target);
-                Utilities.MoveToPosition(Projectile, target.Center, 5, 1);
+                ItemEffects.MoveToPosition(Projectile, target.Center, 5, 1);
             }
         }
 

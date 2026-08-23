@@ -30,7 +30,7 @@
 
 //         public override void ModifyTooltips(List<TooltipLine> tooltips)
 //         {
-//             Utilities.RedText(tooltips, Mod, "No, no, no... I can't die like this...\nNot when I'm so close... And not at the hands of a filthy bandit.\nI could have saved this planet; I could have actually restored order!\nAnd I wasn't supposed to die... by the hands of a CHILD KILLING PSYCHOPATH!!\nYou're a savage! You're a maniac, you are a bandit,\nAND I AM THE GODDAMN HERO!!");
+//             ItemText.RedText(tooltips, Mod, "No, no, no... I can't die like this...\nNot when I'm so close... And not at the hands of a filthy bandit.\nI could have saved this planet; I could have actually restored order!\nAnd I wasn't supposed to die... by the hands of a CHILD KILLING PSYCHOPATH!!\nYou're a savage! You're a maniac, you are a bandit,\nAND I AM THE GODDAMN HERO!!");
 //         }
 // 	}
 // }

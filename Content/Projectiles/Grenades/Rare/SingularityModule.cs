@@ -48,7 +48,7 @@ namespace Vaultaria.Content.Projectiles.Grenades.Rare
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(3, Projectile);
+            ItemEffects.FrameRotator(3, Projectile);
 
             Projectile.velocity.Y += 0.175f;
         }
@@ -120,11 +120,11 @@ namespace Vaultaria.Content.Projectiles.Grenades.Rare
                 {
                     if(Math.Abs(npc.Center.Y - Projectile.Center.Y) < 2)
                     {
-                        Utilities.MoveToPosition(npc, Projectile.Center, 60f, 10f);
+                        ItemEffects.MoveToPosition(npc, Projectile.Center, 60f, 10f);
                     }
                     else
                     {
-                        Utilities.MoveToPosition(npc, Projectile.Center, 30f, 6f);
+                        ItemEffects.MoveToPosition(npc, Projectile.Center, 30f, 6f);
                     }
                 }
             }

@@ -10,9 +10,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Maliwan
 {
-    public class Florentine : ElementalItem
+    public class Florentine : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            Utilities.SetItemSound(Item, Utilities.Sounds.ETechSMGSingle, 60);
+            SetItemSound(Item, Sounds.ETechSMGSingle, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -78,9 +78,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Has a chance to deal bonus Slag & Shock damage", Utilities.VaultarianColours.Slag);
-            Utilities.RedText(tooltips, Mod, "Double trouble.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Has a chance to deal bonus Slag & Shock damage", ItemText.VaultarianColours.Slag);
+            ItemText.RedText(tooltips, Mod, "Double trouble.");
         }
     }
 }

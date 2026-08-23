@@ -10,9 +10,9 @@ using Terraria.Audio;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Shotgun.Bandit
 {
-    public class Skatergun : ElementalItem
+    public class Skatergun : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -47,12 +47,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Shotgun.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(silver: 1);
-            Utilities.SetItemSound(Item, Utilities.Sounds.BanditShotgun, 60);
+            SetItemSound(Item, Sounds.BanditShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5, 2, 9);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 6, 5, 2, 9);
             
             return false;
         }
@@ -64,9 +64,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Shotgun.Bandit
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 6);
-            Utilities.Text(tooltips, Mod);
-            Utilities.Text(tooltips, Mod, "Tooltip2", "Found in Wooden Chests", Utilities.VaultarianColours.Information);
+            ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }
 }

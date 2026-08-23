@@ -10,6 +10,7 @@ using Vaultaria.Content.Items.Consumables.Bags;
 using Vaultaria.Common.Networking;
 using Terraria.Localization;
 using System;
+using Vaultaria.Common.Systems.GenPasses.Chests;
 
 namespace Vaultaria.Common.Systems.GenPasses.Vaults
 {
@@ -144,7 +145,7 @@ namespace Vaultaria.Common.Systems.GenPasses.Vaults
 			int maxItems = Main.chest.Length;
 			int chest = 11;
 
-            Utilities.Utilities.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
+            ChestFiller.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
         }
 
         private void PlaceInIceChests()
@@ -155,7 +156,7 @@ namespace Vaultaria.Common.Systems.GenPasses.Vaults
 			int maxItems = Main.chest.Length;
 			int chest = 22;
 
-            Utilities.Utilities.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
+            ChestFiller.PlaceItemsInChest(itemsToPlaceInChest, itemsToPlaceInChestChoice, itemsPlaced, maxItems, chest);
         }
 	}
 }

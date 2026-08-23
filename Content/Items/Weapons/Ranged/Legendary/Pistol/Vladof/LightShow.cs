@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
 {
-    public class LightShow : ElementalItem
+    public class LightShow : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,12 +46,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            Utilities.SetItemSound(Item, Utilities.Sounds.VladofPistol, 60);
+            SetItemSound(Item, Sounds.VladofPistol, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Utilities.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 4, 8);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 4, 8);
 
             return false;
         }
@@ -76,9 +76,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.MultiShotText(tooltips, Item, 4);
-            Utilities.Text(tooltips, Mod);
-            Utilities.RedText(tooltips, Mod, "Give me some light, away!");
+            ItemText.MultiShotText(tooltips, Item, 4);
+            ItemText.Text(tooltips, Mod);
+            ItemText.RedText(tooltips, Mod, "Give me some light, away!");
         }
     }
 }

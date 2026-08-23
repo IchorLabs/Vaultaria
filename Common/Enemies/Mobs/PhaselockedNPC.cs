@@ -10,109 +10,113 @@ using Vaultaria.Content.Projectiles.Magic;
 using Terraria.DataStructures;
 using Vaultaria.Common.Configs;
 
-public class PhaselockedNPC : GlobalNPC
+namespace Vaultaria.Common.Enemies.Mobs
 {
-    public override void PostDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
+    
+    public class PhaselockedNPC : GlobalNPC
     {
-        base.PostDraw(npc, spriteBatch, screenPos, drawColor);
-
-        if (!npc.townNPC)
+        public override void PostDraw(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            if (npc.HasBuff(ModContent.BuffType<Phaselocked>()))
+            base.PostDraw(npc, spriteBatch, screenPos, drawColor);
+
+            if (!npc.townNPC)
             {
-                AddDrawing(npc, spriteBatch, screenPos);
+                if (npc.HasBuff(ModContent.BuffType<Phaselocked>()))
+                {
+                    AddDrawing(npc, spriteBatch, screenPos);
+                }
             }
         }
-    }
 
-    public override void OnKill(NPC npc)
-    {
-        VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
-
-        if(!config.GetRuinFirst && Main.hardMode)
+        public override void OnKill(NPC npc)
         {
-            SubSequence(npc);
+            VaultariaConfig config = ModContent.GetInstance<VaultariaConfig>();
+
+            if(!config.GetRuinFirst && Main.hardMode)
+            {
+                SubSequence(npc);
+            }
+            else if(config.GetRuinFirst && Main.hardMode && NPC.downedMoonlord)
+            {
+                SubSequence(npc);
+            }
+
+            base.OnKill(npc);
         }
-        else if(config.GetRuinFirst && Main.hardMode && NPC.downedMoonlord)
+
+        public void SubSequence(NPC npc)
         {
-            SubSequence(npc);
+            // Check for the buff first.
+            if (npc.HasBuff(ModContent.BuffType<Phaselocked>()))
+            {
+                Vector2 direction = npc.Center;
+                direction.Normalize();
+                direction *= 8f;
+
+                Projectile.NewProjectileDirect(
+                    npc.GetSource_FromThis(),
+                    npc.Center,
+                    direction,
+                    ModContent.ProjectileType<PhaselockBubble>(),
+                    0,
+                    0f,
+                    Main.myPlayer
+                );
+            }
         }
 
-        base.OnKill(npc);
-    }
-
-    public void SubSequence(NPC npc)
-    {
-        // Check for the buff first.
-        if (npc.HasBuff(ModContent.BuffType<Phaselocked>()))
+        private void AddDrawing(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos)
         {
-            Vector2 direction = npc.Center;
-            direction.Normalize();
-            direction *= 8f;
+            // --- 1. Load the Texture (This should usually be cached in Load() for efficiency) ---
 
-            Projectile.NewProjectileDirect(
-                npc.GetSource_FromThis(),
-                npc.Center,
-                direction,
-                ModContent.ProjectileType<PhaselockBubble>(),
-                0,
-                0f,
-                Main.myPlayer
+            // Replace "MyIndicator" with the path to your texture (e.g., "Vaultaria/Textures/Indicator")
+            Texture2D texture = ModContent.Request<Texture2D>("Vaultaria/Common/Textures/bubble").Value;
+
+            // --- 2. Calculate Drawing Position ---
+
+            // npc.Center is the world position.
+            // screenPos converts it to a screen position.
+            Vector2 drawCenter = npc.Center - screenPos;
+
+            // --- 3. Define Drawing Parameters ---
+
+            Rectangle sourceRectangle = texture.Frame(); // Use the whole texture
+            Vector2 origin = sourceRectangle.Size() / 2f; // Draw from the center of the texture
+
+            float scale = npc.height * 0.0625f * npc.width * 0.0625f * 0.5f;
+
+            NPC golemHeadDummy = new NPC();
+            NPC golemHandDummy = new NPC();
+            golemHeadDummy.SetDefaults(NPCID.GolemHead);
+            golemHandDummy.SetDefaults(NPCID.GolemFistLeft);
+
+            if(npc.height >= npc.width * 2)
+            {
+                scale *= 2;
+            }
+
+            if(npc.height >= golemHeadDummy.height || npc.width >= golemHeadDummy.width)
+            {
+                scale /= 3.5f;
+            }
+
+            if(npc.height >= golemHandDummy.height || npc.width >= golemHandDummy.width)
+            {
+                scale /= 2f;
+            }
+
+            // --- 4. Draw the Texture ---
+            spriteBatch.Draw(
+                texture,                  // The texture to draw
+                drawCenter,             // The screen position to draw at
+                sourceRectangle,          // Which part of the texture to use
+                Color.White * 0.5f,              // Drawing color (White uses the texture's native color)
+                0f,                       // Rotation (none)
+                origin,                   // Origin for rotation and positioning
+                scale,                       // Scale (0.5x size)
+                SpriteEffects.None,       // Flip effects
+                0f                        // Layer depth (0f is foreground)
             );
         }
-    }
-
-    private void AddDrawing(NPC npc, SpriteBatch spriteBatch, Vector2 screenPos)
-    {
-        // --- 1. Load the Texture (This should usually be cached in Load() for efficiency) ---
-
-        // Replace "MyIndicator" with the path to your texture (e.g., "Vaultaria/Textures/Indicator")
-        Texture2D texture = ModContent.Request<Texture2D>("Vaultaria/Common/Textures/bubble").Value;
-
-        // --- 2. Calculate Drawing Position ---
-
-        // npc.Center is the world position.
-        // screenPos converts it to a screen position.
-        Vector2 drawCenter = npc.Center - screenPos;
-
-        // --- 3. Define Drawing Parameters ---
-
-        Rectangle sourceRectangle = texture.Frame(); // Use the whole texture
-        Vector2 origin = sourceRectangle.Size() / 2f; // Draw from the center of the texture
-
-        float scale = npc.height * 0.0625f * npc.width * 0.0625f * 0.5f;
-
-        NPC golemHeadDummy = new NPC();
-        NPC golemHandDummy = new NPC();
-        golemHeadDummy.SetDefaults(NPCID.GolemHead);
-        golemHandDummy.SetDefaults(NPCID.GolemFistLeft);
-
-        if(npc.height >= npc.width * 2)
-        {
-            scale *= 2;
-        }
-
-        if(npc.height >= golemHeadDummy.height || npc.width >= golemHeadDummy.width)
-        {
-            scale /= 3.5f;
-        }
-
-        if(npc.height >= golemHandDummy.height || npc.width >= golemHandDummy.width)
-        {
-            scale /= 2f;
-        }
-
-        // --- 4. Draw the Texture ---
-        spriteBatch.Draw(
-            texture,                  // The texture to draw
-            drawCenter,             // The screen position to draw at
-            sourceRectangle,          // Which part of the texture to use
-            Color.White * 0.5f,              // Drawing color (White uses the texture's native color)
-            0f,                       // Rotation (none)
-            origin,                   // Origin for rotation and positioning
-            scale,                       // Scale (0.5x size)
-            SpriteEffects.None,       // Flip effects
-            0f                        // Layer depth (0f is foreground)
-        );
     }
 }

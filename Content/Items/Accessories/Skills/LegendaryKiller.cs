@@ -21,21 +21,21 @@ namespace Vaultaria.Content.Items.Accessories.Skills
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            int bonusCrit = Utilities.DisplaySkillBonusText(150f, 0.05f) + Utilities.DisplaySkillBonusText(80f, 0.05f);
-            int bonusDamage = Utilities.DisplaySkillBonusText(200f, 0.05f);
-            int bonusProjectileSpeed = Utilities.DisplaySkillBonusText(15f, 0.1f);
-            int bonusKillCrit = Utilities.DisplaySkillBonusText(55f, 0.05f);
-            int bonusFireRate = Utilities.DisplaySkillBonusText(40f, 0.05f);
+            int bonusCrit = SkillUtilities.DisplaySkillBonusText(150f, 0.05f) + SkillUtilities.DisplaySkillBonusText(80f, 0.05f);
+            int bonusDamage = SkillUtilities.DisplaySkillBonusText(200f, 0.05f);
+            int bonusProjectileSpeed = SkillUtilities.DisplaySkillBonusText(15f, 0.1f);
+            int bonusKillCrit = SkillUtilities.DisplaySkillBonusText(55f, 0.05f);
+            int bonusFireRate = SkillUtilities.DisplaySkillBonusText(40f, 0.05f);
 
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Increases your Projectile's Damage, Crit Damage and Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Crit Damage and Fire Rate for 7 seconds");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusCrit}% Crit Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Damage");
-            Utilities.Text(tooltips, Mod, "Tooltip4", $"+{bonusProjectileSpeed}% Projectile Speed");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusKillCrit}% Crit Damage on kill");
-            Utilities.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate on kill");
-            Utilities.RedText(tooltips, Mod, "Well, that escalated quickly.");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Gives all the previous bonuses in one Class Mod");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Increases your Projectile's Damage, Crit Damage and Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Killing an enemy increases your Crit Damage and Fire Rate for 7 seconds");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusCrit}% Crit Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusDamage}% Damage");
+            ItemText.Text(tooltips, Mod, "Tooltip4", $"+{bonusProjectileSpeed}% Projectile Speed");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusKillCrit}% Crit Damage on kill");
+            ItemText.Text(tooltips, Mod, "Tooltip3", $"+{bonusFireRate}% Fire Rate on kill");
+            ItemText.RedText(tooltips, Mod, "Well, that escalated quickly.");
         }
 
         public override void AddRecipes()

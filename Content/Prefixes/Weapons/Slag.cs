@@ -49,7 +49,7 @@ namespace Vaultaria.Content.Prefixes.Weapons
         {
             yield return new TooltipLine(Mod, "Slag1", "20% Chance to Slag\nSlagged enemies take increased damage")
             {
-                OverrideColor = Utilities.VaultarianColours.Slag.GetVaultarianColor()
+                OverrideColor = ItemText.VaultarianColours.Slag.GetVaultarianColor()
             };
         }
 	}

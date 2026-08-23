@@ -9,9 +9,9 @@ using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 {
-    public class GearboxMuckamuck : ElementalItem
+    public class GearboxMuckamuck : VaultarianItem
     {
-        protected override Utilities.Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(copper: 0);
-            Utilities.SetItemSound(Item, Utilities.Sounds.JakobsSniper, 60);
+            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -56,8 +56,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            Utilities.Text(tooltips, Mod);
-            Utilities.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
+            ItemText.Text(tooltips, Mod);
+            ItemText.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
         }
     }
 }

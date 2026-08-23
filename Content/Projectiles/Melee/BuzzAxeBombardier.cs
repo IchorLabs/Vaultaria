@@ -31,8 +31,8 @@ namespace Vaultaria.Content.Projectiles.Melee
         {
             base.SetDefaults();
             // Size
-            Projectile.Size = new Vector2(30, 29);
-            Projectile.scale = 2.1f;
+            Projectile.Size = new Vector2(60, 58);
+            Projectile.scale = 1f;
 
             // Damage
             Projectile.damage = 25;
@@ -51,7 +51,7 @@ namespace Vaultaria.Content.Projectiles.Melee
         public override void AI()
         {
             base.AI();
-            Utilities.FrameRotator(6, Projectile);
+            ItemEffects.FrameRotator(6, Projectile);
 
             Projectile.velocity.Y += 0.15f;
         }
