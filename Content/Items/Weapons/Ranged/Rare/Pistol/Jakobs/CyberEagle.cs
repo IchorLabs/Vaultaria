@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Terraria.Audio;
+using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
