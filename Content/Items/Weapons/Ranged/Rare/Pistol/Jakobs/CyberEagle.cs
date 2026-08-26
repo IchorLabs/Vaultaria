@@ -58,3 +58,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Shock Lasers");
             ItemText.RedText(tooltips, Mod, "Feel like I'm gonna break this damn thing!");
         }
+    }
