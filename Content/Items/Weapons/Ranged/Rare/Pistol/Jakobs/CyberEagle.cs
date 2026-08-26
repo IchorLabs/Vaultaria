@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
-using Vaultaria.Content.Items.Accessories.Shields;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Terraria.Audio;
@@ -32,7 +31,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             Item.noMelee = true;
             Item.shootSpeed = 10f;
             Item.shoot = ProjectileID.MartianTurretBolt;
-            Item.useAmmo = AmmoID.PistolBullet;
+            Item.useAmmo = AmmoID.Bullet;
 
             // Combat properties
             Item.useStyle = ItemUseStyleID.Shoot;
@@ -59,4 +58,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             ItemText.RedText(tooltips, Mod, "Feel like I'm gonna break this damn thing!");
         }
     } 
-    
+}
