@@ -31,7 +31,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             Item.noMelee = true;
             Item.shootSpeed = 10f;
             Item.shoot = ProjectileID.HeatRay;
-            Item.useAmmo = AmmoID.modcontent.itemtype<PistolAmmo>();
+            Item.useAmmo = ModContent.ItemType<PistolAmmo>();
 
             // Combat properties
             Item.useStyle = ItemUseStyleID.Shoot;
