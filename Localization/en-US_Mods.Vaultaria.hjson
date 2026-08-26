@@ -1117,6 +1117,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Blue Psycho Mask
 	}
+
+	CyberEagle: {
+		DisplayName: Cyber Eagle
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
