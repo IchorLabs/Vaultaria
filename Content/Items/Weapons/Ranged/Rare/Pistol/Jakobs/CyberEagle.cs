@@ -37,7 +37,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             // Combat properties
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.knockBack = 1f;
-            Item.damage = 15;
+            Item.damage = 16;
             Item.crit = 4;
             Item.DamageType = DamageClass.Magic; // Assuming it's a magic weapon, change as needed
 
@@ -58,4 +58,5 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Shock Lasers");
             ItemText.RedText(tooltips, Mod, "Feel like I'm gonna break this damn thing!");
         }
-    }
+    } 
+    
