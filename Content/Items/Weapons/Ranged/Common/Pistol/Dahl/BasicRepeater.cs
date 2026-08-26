@@ -35,7 +35,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
 
             // Combat properties
             Item.knockBack = 2.3f;
-            Item.damage = 12;
+            Item.damage = 3;
             Item.crit = 4;
             Item.DamageType = DamageClass.Ranged;
 

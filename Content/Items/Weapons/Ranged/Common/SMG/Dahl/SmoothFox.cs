@@ -30,7 +30,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.SMG.Dahl
 
             // Gun properties
             Item.noMelee = true;
-            Item.shootSpeed = 14;
+            Item.shootSpeed = 5;
             Item.shoot = ProjectileID.Bullet;
             Item.useAmmo = AmmoID.Bullet;
 

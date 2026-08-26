@@ -36,7 +36,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Shotgun.Bandit
 
             // Combat properties
             Item.knockBack = 2f;
-            Item.damage = 5;
+            Item.damage = 2;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 

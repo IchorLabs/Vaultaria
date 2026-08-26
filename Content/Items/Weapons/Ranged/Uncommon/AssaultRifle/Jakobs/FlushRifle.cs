@@ -36,12 +36,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Jakobs
 
             // Combat properties
             Item.knockBack = 1f;
-            Item.damage = 30;
+            Item.damage = 10;
             Item.crit = 6;
             Item.DamageType = DamageClass.Ranged;
 
-            Item.useTime = 10;
-            Item.useAnimation = 10;
+            Item.useTime = 8;
+            Item.useAnimation = 8;
             Item.reuseDelay = 10;
             Item.autoReuse = true;
 

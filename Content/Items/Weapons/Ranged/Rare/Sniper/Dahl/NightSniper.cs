@@ -35,12 +35,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Dahl
 
             // Combat properties
             Item.knockBack = 2.3f;
-            Item.damage = 20;
-            Item.crit = 0;
+            Item.damage = 14;
+            Item.crit = 3;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 8;
-            Item.useAnimation = 24;
+            Item.useAnimation = 32;
             Item.reuseDelay = 45;
             Item.autoReuse = true;
 

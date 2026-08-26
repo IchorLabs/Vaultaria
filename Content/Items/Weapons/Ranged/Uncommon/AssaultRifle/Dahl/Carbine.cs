@@ -36,8 +36,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Dahl
 
             // Combat properties
             Item.knockBack = 1f;
-            Item.damage = 21;
-            Item.crit = 0;
+            Item.damage = 9;
+            Item.crit = 1;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 7;

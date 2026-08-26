@@ -37,7 +37,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 
             // Combat properties
             Item.knockBack = 0.5f;
-            Item.damage = 16;
+            Item.damage = 6;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 

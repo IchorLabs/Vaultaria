@@ -35,8 +35,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 
             // Combat properties
             Item.knockBack = 1.2f;
-            Item.damage = 35;
-            Item.crit = 56;
+            Item.damage = 12;
+            Item.crit = 6;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 20;

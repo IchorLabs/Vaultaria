@@ -35,7 +35,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
 
             // Combat properties
             Item.knockBack = 0.5f;
-            Item.damage = 10;
+            Item.damage = 5;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 
@@ -83,7 +83,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
         {
             if (player.altFunctionUse == 2) // Throw
             {
-                Item.damage = 8;
+                Item.damage = 5;
                 Item.crit = 1;
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Swing;
@@ -101,7 +101,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
             }
             else // Shoot
             {
-                Item.damage = 8;
+                Item.damage = 5;
                 Item.crit = 0;
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Shoot;

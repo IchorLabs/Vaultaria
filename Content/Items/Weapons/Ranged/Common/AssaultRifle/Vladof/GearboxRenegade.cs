@@ -35,7 +35,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Vladof
 
             // Combat properties
             Item.knockBack = 0f;
-            Item.damage = 12;
+            Item.damage = 3;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 

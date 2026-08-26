@@ -38,7 +38,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue
 
             // Combat properties
             Item.knockBack = 0f;
-            Item.damage = 15;
+            Item.damage = 5;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 

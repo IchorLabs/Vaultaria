@@ -35,12 +35,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.SMG.Hyperion
 
             // Combat properties
             Item.knockBack = 0f;
-            Item.damage = 7;
+            Item.damage = 2;
             Item.crit = 6;
             Item.DamageType = DamageClass.Ranged;
 
-            Item.useTime = 5;
-            Item.useAnimation = 5;
+            Item.useTime = 7;
+            Item.useAnimation = 7;
             Item.reuseDelay = 3;
             Item.autoReuse = true;
 

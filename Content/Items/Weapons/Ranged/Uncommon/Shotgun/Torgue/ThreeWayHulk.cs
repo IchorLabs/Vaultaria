@@ -37,8 +37,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Shotgun.Torgue
 
             // Combat properties
             Item.knockBack = 1f;
-            Item.damage = 10;
-            Item.crit = 0;
+            Item.damage = 7;
+            Item.crit = 2;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 30;

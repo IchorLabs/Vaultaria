@@ -35,8 +35,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Hyperion
 
             // Combat properties
             Item.knockBack = 2.3f;
-            Item.damage = 40;
-            Item.crit = 0;
+            Item.damage = 15;
+            Item.crit = 2;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 20;

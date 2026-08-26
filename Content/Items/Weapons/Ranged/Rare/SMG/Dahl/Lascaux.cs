@@ -35,12 +35,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Dahl
 
             // Combat properties
             Item.knockBack = 1f;
-            Item.damage = 10;
-            Item.crit = 0;
+            Item.damage = 2;
+            Item.crit = 2;
             Item.DamageType = DamageClass.Ranged;
 
             Item.useTime = 4;
-            Item.useAnimation = 36;
+            Item.useAnimation = 44;
             Item.reuseDelay = 8;
             Item.autoReuse = true;
 
