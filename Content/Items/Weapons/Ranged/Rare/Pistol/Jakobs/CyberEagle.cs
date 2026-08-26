@@ -31,7 +31,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             Item.noMelee = true;
             Item.shootSpeed = 10f;
             Item.shoot = ProjectileID.HeatRay;
-            Item.useAmmo = AmmoID.Bullet;
+            Item.useAmmo = AmmoID.PistolAmmo;
 
             // Combat properties
             Item.useStyle = ItemUseStyleID.Shoot;
@@ -40,7 +40,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             Item.crit = 4;
             Item.DamageType = DamageClass.Magic; // Assuming it's a magic weapon, change as needed
 
-            Item.useTime = 20;
+            Item.useTime = 17;
             Item.useAnimation = 20;
             Item.reuseDelay = 10;
             Item.autoReuse = true;
