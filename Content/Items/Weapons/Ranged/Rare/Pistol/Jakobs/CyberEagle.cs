@@ -41,9 +41,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             Item.crit = 4;
             Item.DamageType = DamageClass.Magic; // Assuming it's a magic weapon, change as needed
 
-            Item.useTime = 1;
-            Item.useAnimation = 1;
-            Item.reuseDelay = 1;
+            Item.useTime = 10;
+            Item.useAnimation = 10;
+            Item.reuseDelay = 10;
             Item.autoReuse = false;
             Item.useTurn = false;
 
