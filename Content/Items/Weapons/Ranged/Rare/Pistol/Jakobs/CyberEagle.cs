@@ -30,7 +30,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             // Gun properties
             Item.noMelee = true;
             Item.shootSpeed = 10f;
-            Item.shoot = ProjectileID.MartianTurretBolt;
+            Item.shoot = ProjectileID.HeatRay;
             Item.useAmmo = AmmoID.Bullet;
 
             // Combat properties
