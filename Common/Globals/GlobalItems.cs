@@ -22,10 +22,20 @@ namespace Vaultaria.Common.Globals
         public int firedWeaponPrefixID;
         public override bool InstancePerEntity => true;
 
+        private const float HyperionMaximumSpread = 20f;
+        private const float HyperionAccuracyGain = 0.08f;
+        private const float HyperionAccuracyDecay = 0.0025f;
+
+        private float hyperionAccuracy;
         private int colCounter = 0;
 
         public override void HoldItem(Item item, Player player)
         {
+            if (IsHyperionWeapon(item))
+            {
+                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, 1f);
+            }
+
             base.HoldItem(item, player);
         }
 
@@ -46,6 +56,26 @@ namespace Vaultaria.Common.Globals
             Redistribution(item, player);
 
             return base.Shoot(item, player, source, position, velocity, type, damage, knockback);
+        }
+
+        public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
+        {
+            if (IsHyperionWeapon(item) && item.useAmmo != 0)
+            {
+                float spread = HyperionMaximumSpread * (1f - hyperionAccuracy);
+                if (spread > 0f)
+                {
+                    velocity = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
+                }
+
+                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy + HyperionAccuracyGain, 0f, 1f);
+            }
+            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0)
+            {
+                velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.5f));
+            }
+
+            base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo, Player player)
@@ -125,6 +155,11 @@ namespace Vaultaria.Common.Globals
                     }
                 }
             }
+        }
+
+        private bool IsHyperionWeapon(Item item)
+        {
+            return item.ModItem?.GetType().Namespace?.Contains(".Hyperion", StringComparison.Ordinal) == true;
         }
     }
 }
