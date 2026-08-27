@@ -35,6 +35,15 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
             Projectile.extraUpdates = 2;
         }
 
+        public override void OnSpawn(Terraria.DataStructures.IEntitySource source)
+        {
+            for (int i = 0; i < Projectile.oldPos.Length; i++)
+            {
+                Projectile.oldPos[i] = Projectile.position;
+                Projectile.oldRot[i] = Projectile.rotation;
+            }
+        }
+
         public override void AI()
         {
             Projectile.rotation = Projectile.velocity.ToRotation();
@@ -56,7 +65,6 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
             shader.UseImage0(TextureAssets.Projectile[194]);
             shader.UseImage1(TextureAssets.Projectile[192]);
             shader.UseImage2(TextureAssets.Projectile[193]);
-            shader.UseColor(new Color(120, 210, 255));
             shader.UseShaderSpecificData(new Vector4(
                 (float)(Main.GameUpdateCount % 30) / 30f,
                 0f,
@@ -90,6 +98,11 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
                 SpriteEffects.None,
                 0f
             );
+
+            shader.UseImage0(TextureAssets.Projectile[194]);
+            shader.UseImage1(TextureAssets.Projectile[192]);
+            shader.UseImage2(TextureAssets.Projectile[193]);
+            shader.UseColor(Color.White);
 
             return false;
         }
