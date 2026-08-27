@@ -18,7 +18,7 @@ namespace Vaultaria.Common.Utilities
     {
         public static Vector2 RandomizeProjectileVelocity(Vector2 velocity)
         {
-            return velocity * Main.rand.NextFloat(0.9f, 1.1f);
+            return velocity * Main.rand.NextFloat(0.7f, 1.1f);
         }
 
         public static Dictionary<int, int> bulletMap = new Dictionary<int, int>
