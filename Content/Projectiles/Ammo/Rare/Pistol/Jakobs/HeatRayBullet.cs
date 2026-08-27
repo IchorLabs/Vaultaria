@@ -77,6 +77,20 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
             vertexStrip.DrawTrail();
 
             Main.pixelShader.CurrentTechnique.Passes[0].Apply();
+
+            Texture2D projectileTexture = TextureAssets.Projectile[Type].Value;
+            Main.EntitySpriteDraw(
+                projectileTexture,
+                Projectile.Center - Main.screenPosition,
+                projectileTexture.Frame(),
+                Color.LightBlue * Projectile.Opacity,
+                Projectile.rotation,
+                projectileTexture.Size() / 2f,
+                Projectile.scale,
+                SpriteEffects.None,
+                0f
+            );
+
             return false;
         }
 
