@@ -20,7 +20,7 @@ namespace Vaultaria.Content.Items.Weapons.Ammo
             Item.Size = new Vector2(35, 30);
 
             // Damage
-            Item.damage = 0; // Does no damage. It's just used as the consumable ammo for all AR's
+            Item.damage = 7; // Does no damage. It's just used as the consumable ammo for all AR's
             Item.DamageType = DamageClass.Ranged;
             Item.knockBack = 0;
 

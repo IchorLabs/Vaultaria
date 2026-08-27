@@ -38,7 +38,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue
 
             // Combat properties
             Item.knockBack = 0f;
-            Item.damage = 5;
+            Item.damage = 4;
             Item.crit = 0;
             Item.DamageType = DamageClass.Ranged;
 
@@ -60,7 +60,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
-            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive bullets", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive bullets, damaging enemies twice!", ItemText.VaultarianColours.Explosive);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }

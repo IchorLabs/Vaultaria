@@ -19,7 +19,7 @@ namespace Vaultaria.Content.Items.Weapons.Ammo
             Item.Size = new Vector2(38, 19);
 
             // Damage
-            Item.damage = 0;
+            Item.damage = 7;
             Item.DamageType = DamageClass.Ranged;
             Item.knockBack = 0;
 

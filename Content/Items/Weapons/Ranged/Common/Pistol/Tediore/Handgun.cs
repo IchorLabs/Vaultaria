@@ -129,7 +129,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.Text(tooltips, Mod);
-            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw the Pistol", ItemText.VaultarianColours.Explosive);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw the Pistol, unleashing a high damage explosion!", ItemText.VaultarianColours.Explosive);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }
     }

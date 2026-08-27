@@ -71,7 +71,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.Text(tooltips, Mod);
-            ItemText.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 burst round");
+            ItemText.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 round burst");
             ItemText.RedText(tooltips, Mod, "Wait a minute - you're not dead!\nYES! Now I can get off this glacier!\nClaptrap, your metaphorical ship has finally come in!");
         }
     }
