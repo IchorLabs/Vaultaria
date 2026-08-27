@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.GameContent;
 using Terraria.Graphics;
@@ -35,7 +36,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
             Projectile.extraUpdates = 2;
         }
 
-        public override void OnSpawn(Terraria.DataStructures.IEntitySource source)
+        public override void OnSpawn(IEntitySource source)
         {
             for (int i = 0; i < Projectile.oldPos.Length; i++)
             {
