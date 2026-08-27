@@ -52,7 +52,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5, 1, 11);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5, 1, 11, true);
             
             return false;
         }

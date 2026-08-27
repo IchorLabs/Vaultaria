@@ -64,9 +64,11 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Projectile.NewProjectile(source, position - new Vector2(0, -20), velocity, type, damage, knockback, player.whoAmI);
+            Vector2 shotPosition = position - new Vector2(0, -20);
+            Projectile.NewProjectile(source, shotPosition, ItemEffects.RandomizeProjectileVelocity(velocity), type, damage, knockback, player.whoAmI);
+            Projectile.NewProjectile(source, position, ItemEffects.RandomizeProjectileVelocity(velocity), type, damage, knockback, player.whoAmI);
 
-            return true;
+            return false;
         }
 
         public override Vector2? HoldoutOffset()

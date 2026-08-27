@@ -55,7 +55,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, randomizeVelocity: true);
             
             return false;
         }

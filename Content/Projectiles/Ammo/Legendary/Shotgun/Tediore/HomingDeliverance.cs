@@ -91,6 +91,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Tediore
                 float bulletAngle = MathHelper.Lerp(-spreadAngle / 2, spreadAngle / 2, (float)i / (numberOfAdditionalBullets - 1));
 
                 Vector2 bulletVelocity = bulletAngle.ToRotationVector2() * velocity.Length();
+                bulletVelocity = ItemEffects.RandomizeProjectileVelocity(bulletVelocity);
 
                 Projectile.NewProjectile(source, position, bulletVelocity, type, damage, knockback, Projectile.owner);
             }

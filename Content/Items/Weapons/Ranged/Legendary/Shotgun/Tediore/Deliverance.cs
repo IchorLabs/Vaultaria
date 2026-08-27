@@ -123,7 +123,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
         {
             if (altFireMode == false)
             {
-                ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 2, 10);
+                ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 4, 5, 2, 10, true);
             }
             else
             {

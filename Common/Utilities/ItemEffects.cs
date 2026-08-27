@@ -16,6 +16,11 @@ namespace Vaultaria.Common.Utilities
 {
     public static class ItemEffects
     {
+        public static Vector2 RandomizeProjectileVelocity(Vector2 velocity)
+        {
+            return velocity * Main.rand.NextFloat(0.9f, 1.1f);
+        }
+
         public static Dictionary<int, int> bulletMap = new Dictionary<int, int>
         {
             { ProjectileID.Bullet, ItemID.MusketBall },
@@ -160,7 +165,7 @@ namespace Vaultaria.Common.Utilities
         /// <param name="knockback"></param>
         /// <param name="numberOfAdditionalBullets"></param>
         /// <param name="degreeSpread"></param>
-        public static void CloneShots(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback, int numberOfAdditionalBullets, float degreeSpread, int min = 0, int max = 0)
+        public static void CloneShots(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback, int numberOfAdditionalBullets, float degreeSpread, int min = 0, int max = 0, bool randomizeVelocity = false)
         {
             if(player.whoAmI == Main.myPlayer)
             {
@@ -193,6 +198,11 @@ namespace Vaultaria.Common.Utilities
 
                     // Calculate the new velocity vector for this bullet
                     Vector2 bulletVelocity = bulletAngle.ToRotationVector2() * velocity.Length();
+
+                    if (randomizeVelocity)
+                    {
+                        bulletVelocity = RandomizeProjectileVelocity(bulletVelocity);
+                    }
 
                     Projectile.NewProjectile(source, position, bulletVelocity, type, damage, knockback, player.whoAmI);
                 }

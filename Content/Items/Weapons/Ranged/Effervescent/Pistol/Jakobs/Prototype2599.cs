@@ -122,12 +122,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         {
             if(Utilities.Randomizer(25f))
             {
-                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 2, 10, 4, 8);
+                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 2, 10, 4, 8, true);
             }
 
             if (altFireMode == false)
             {
-                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 4, 5, 4, 8);
+                ItemEffects.CloneShots(player, source, position, velocity * 2f, type, damage, knockback, 4, 5, 4, 8, true);
 
                 return false;
             }

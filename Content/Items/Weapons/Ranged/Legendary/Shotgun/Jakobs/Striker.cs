@@ -53,7 +53,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Jakobs
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5);
+            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 5, 5, randomizeVelocity: true);
 
             return false;
         }

@@ -64,7 +64,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
                 float flakShotY = Main.rand.NextFloat(mouse.TopLeft().Y, mouse.TopLeft().Y + area);
                 Vector2 flakShotZone = new Vector2(flakShotX, flakShotY);
 
-                Vector2 randomVel = new Vector2(Main.rand.NextFloat(-1f, 1f), Main.rand.NextFloat(-1f, 1f));
+                Vector2 randomVel = ItemEffects.RandomizeProjectileVelocity(new Vector2(Main.rand.NextFloat(-1f, 1f), Main.rand.NextFloat(-1f, 1f)));
 
                 Projectile projectile = Projectile.NewProjectileDirect(source, flakShotZone, randomVel, type, damage, knockback, player.whoAmI, ai0: i);
 
