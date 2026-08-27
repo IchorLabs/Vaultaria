@@ -40,7 +40,8 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
         public override void AI()
         {
             Vector2 direction = Projectile.ai[0].ToRotationVector2();
-            float[] samples = Collision.LaserScan(Projectile.Center, direction, 1f, MaximumBeamLength, 3);
+            float[] samples = new float[3];
+            Collision.LaserScan(Projectile.Center, direction, 1f, MaximumBeamLength, samples);
             beamLength = (samples[0] + samples[1] + samples[2]) / samples.Length;
 
             Lighting.AddLight(Projectile.Center, 0.15f, 0.65f, 1f);
