@@ -53,9 +53,9 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
             }
 
             MiscShaderData shader = GameShaders.Misc["MagicMissile"];
+            shader.UseImage0(TextureAssets.Projectile[194]);
             shader.UseImage1(TextureAssets.Projectile[192]);
             shader.UseImage2(TextureAssets.Projectile[193]);
-            shader.UseImage3(TextureAssets.Projectile[194]);
             shader.UseColor(new Color(120, 210, 255));
             shader.UseShaderSpecificData(new Vector4(
                 (float)(Main.GameUpdateCount % 30) / 30f,
