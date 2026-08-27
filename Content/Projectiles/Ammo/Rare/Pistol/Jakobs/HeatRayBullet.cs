@@ -1,13 +1,25 @@
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ID;
+using Terraria.GameContent;
+using Terraria.Graphics;
+using Terraria.Graphics.Shaders;
 using Terraria.ModLoader;
 
 namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
 {
     public class HeatRayBullet : ModProjectile
     {
+        private VertexStrip vertexStrip = new VertexStrip();
+
         public override string Texture => "Terraria/Images/Projectile_" + ProjectileID.MagicMissile;
+
+        public override void SetStaticDefaults()
+        {
+            ProjectileID.Sets.TrailCacheLength[Type] = 24;
+            ProjectileID.Sets.TrailingMode[Type] = 2;
+        }
 
         public override void SetDefaults()
         {
@@ -26,18 +38,46 @@ namespace Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs
         public override void AI()
         {
             Projectile.rotation = Projectile.velocity.ToRotation();
-
-            Dust trail = Dust.NewDustPerfect(
-                Projectile.Center,
-                DustID.PurpleTorch,
-                -Projectile.velocity * 0.05f,
-                0,
-                new Color(120, 210, 255),
-                0.9f
-            );
-            trail.noGravity = true;
-
             Lighting.AddLight(Projectile.Center, 0.15f, 0.65f, 1f);
+        }
+
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Vector2[] positions = new Vector2[Projectile.oldPos.Length];
+            float[] rotations = new float[Projectile.oldRot.Length];
+
+            for (int i = 0; i < positions.Length; i++)
+            {
+                positions[i] = Projectile.oldPos[i] + Projectile.Size / 2f;
+                rotations[i] = Projectile.oldRot[i];
+            }
+
+            MiscShaderData shader = GameShaders.Misc["MagicMissile"];
+            shader.UseImage1(TextureAssets.Projectile[192]);
+            shader.UseImage2(TextureAssets.Projectile[193]);
+            shader.UseImage3(TextureAssets.Projectile[194]);
+            shader.UseColor(new Color(120, 210, 255));
+            shader.UseShaderSpecificData(new Vector4(
+                (float)(Main.GameUpdateCount % 30) / 30f,
+                0f,
+                0f,
+                0f
+            ));
+            shader.Apply();
+
+            vertexStrip.PrepareStrip(
+                positions,
+                rotations,
+                progress => Color.Lerp(new Color(120, 210, 255), Color.White, 1f - progress),
+                progress => MathHelper.Lerp(8f, 0f, progress),
+                -Main.screenPosition,
+                positions.Length,
+                true
+            );
+            vertexStrip.DrawTrail();
+
+            Main.pixelShader.CurrentTechnique.Passes[0].Apply();
+            return false;
         }
 
     }
