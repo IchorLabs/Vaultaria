@@ -31,7 +31,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 
             // Gun properties
             Item.noMelee = true;
-            Item.shootSpeed = 10f;
+            Item.shootSpeed = 50f;
             Item.shoot = ModContent.ProjectileType<HeatRayBullet>();
             Item.useAmmo = ModContent.ItemType<PistolAmmo>();
 
