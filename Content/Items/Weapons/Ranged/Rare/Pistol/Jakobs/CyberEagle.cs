@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Terraria.Audio;
 using Vaultaria.Content.Items.Weapons.Ammo;
+using Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
@@ -31,7 +32,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             // Gun properties
             Item.noMelee = true;
             Item.shootSpeed = 10f;
-            Item.shoot = ProjectileID.LaserMachinegunLaser;
+            Item.shoot = ModContent.ProjectileType<HeatRayBullet>();
             Item.useAmmo = ModContent.ItemType<PistolAmmo>();
 
             // Combat properties
