@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Vaultaria.Common.Globals;
 using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Projectiles.Ammo.Effervescent.Launcher.Torgue;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.Launcher.Bandit;
@@ -165,7 +166,7 @@ namespace Vaultaria.Common.Utilities
         /// <param name="knockback"></param>
         /// <param name="numberOfAdditionalBullets"></param>
         /// <param name="degreeSpread"></param>
-        public static void CloneShots(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback, int numberOfAdditionalBullets, float degreeSpread, int min = 0, int max = 0, bool randomizeVelocity = false)
+        public static void CloneShots(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback, int numberOfAdditionalBullets, float degreeSpread, int min = 0, int max = 0, bool randomizeVelocity = false, float spreadMultiplier = 1f)
         {
             if(player.whoAmI == Main.myPlayer)
             {
@@ -185,6 +186,8 @@ namespace Vaultaria.Common.Utilities
                         10 => +45,
                         _ => degreeSpread, // Default
                     };
+
+                    degreeSpread *= spreadMultiplier;
 
                     // Define a slight spread angle for the bullets (e.g., degreeSpread = 5, 5 degrees total spread)
                     float spreadAngle = MathHelper.ToRadians(degreeSpread); // Convert degrees to radians

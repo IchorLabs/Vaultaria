@@ -72,6 +72,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
         {
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots bullets that are extremely fast");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "I politely request you do not T4s-R me, good sir.");
         }
     }

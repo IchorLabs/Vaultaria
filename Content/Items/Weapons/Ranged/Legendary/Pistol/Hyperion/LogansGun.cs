@@ -72,6 +72,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive-Fire Rockets", ItemText.VaultarianColours.Incendiary);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "Gun, Gunner!");
         }
     }

@@ -77,6 +77,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Hyperion
         {
             ItemText.MultiShotText(tooltips, Item, 12);
             ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "Man your own jackhammer.");
         }
     }

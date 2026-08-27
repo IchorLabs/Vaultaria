@@ -58,6 +58,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
         {
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Deals 25% increased damage to enemies with more than 50% of their maximum health");
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "I don't do second chances.");
             ItemText.CursedText(tooltips, Mod, "Exodus");
         }

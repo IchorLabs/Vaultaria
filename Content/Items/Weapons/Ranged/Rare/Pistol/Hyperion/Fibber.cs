@@ -80,6 +80,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
             ItemText.Text(tooltips, Mod, "Tooltip3", "+3000% Damage");
             ItemText.Text(tooltips, Mod, "Tooltip4", "Firing Increases Accuracy");
             ItemText.Text(tooltips, Mod, "Tooltip5", "On tile collision, the initial Projectile splits into 10 Projectiles", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip6", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "Would I lie to you?");
         }
 

@@ -60,6 +60,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
         {
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Screams while firing and greatly reduces movement speed", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "In Spain, stays mainly on the plain.");
         }
     }

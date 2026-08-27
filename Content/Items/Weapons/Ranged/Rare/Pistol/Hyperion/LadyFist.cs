@@ -77,6 +77,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
             }
 
             ItemText.Text(tooltips, Mod, "Tooltip3", "Given after completing 30 Angler quests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip4", "Increases accuracy with sustained fire!");
 
             ItemText.RedText(tooltips, Mod, "Love is a Lady Finger. True love is a Lady Fist.");
         }

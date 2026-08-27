@@ -13,6 +13,7 @@ using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs;
+using Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Maliwan;
 using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Common.Globals
@@ -25,15 +26,25 @@ namespace Vaultaria.Common.Globals
         private const float HyperionMaximumSpread = 20f;
         private const float HyperionAccuracyGain = 0.08f;
         private const float HyperionAccuracyDecay = 0.0025f;
+        private const float HyperionAccuracyCap = 0.9f;
+        private const float BaseWeaponSpread = 1.5f;
+        private const float WeaponMaximumInaccuracy = 0.35f;
+        private const float WeaponInaccuracyGain = 0.005f;
+        private const float WeaponInaccuracyDecay = 0.02f;
 
         private float hyperionAccuracy;
+        private float weaponInaccuracy;
         private int colCounter = 0;
 
         public override void HoldItem(Item item, Player player)
         {
             if (IsHyperionWeapon(item))
             {
-                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, 1f);
+                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, HyperionAccuracyCap);
+            }
+            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0 && item.ModItem is not Pimpernel)
+            {
+                weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy - WeaponInaccuracyDecay, 0f, WeaponMaximumInaccuracy);
             }
 
             base.HoldItem(item, player);
@@ -68,11 +79,13 @@ namespace Vaultaria.Common.Globals
                     velocity = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
                 }
 
-                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy + HyperionAccuracyGain, 0f, 1f);
+                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy + HyperionAccuracyGain, 0f, HyperionAccuracyCap);
             }
             else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0)
             {
-                velocity = velocity.RotatedByRandom(MathHelper.ToRadians(1.5f));
+                float spread = BaseWeaponSpread * (1f + weaponInaccuracy);
+                velocity = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
+                weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy + WeaponInaccuracyGain, 0f, WeaponMaximumInaccuracy);
             }
 
             base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
@@ -160,6 +173,11 @@ namespace Vaultaria.Common.Globals
         private bool IsHyperionWeapon(Item item)
         {
             return item.ModItem?.GetType().Namespace?.Contains(".Hyperion", StringComparison.Ordinal) == true;
+        }
+
+        public static float GetHyperionAccuracy(Item item)
+        {
+            return item.GetGlobalItem<GlobalItems>().hyperionAccuracy;
         }
     }
 }

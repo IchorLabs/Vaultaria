@@ -58,6 +58,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Hyperion
         {
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Rich Mahogany Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip3", "Increases accuracy with sustained fire!");
         }
     }
 }
