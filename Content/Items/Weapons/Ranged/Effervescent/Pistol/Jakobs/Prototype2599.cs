@@ -157,7 +157,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
             ItemText.MultiShotText(tooltips, Item, 4);
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Pistol Ammo\nFires as fast as you can pull the trigger... but not too fast");
             ItemText.Text(tooltips, Mod, "Tooltip2", "An ode to Maxine", ItemText.VaultarianColours.RedText);
-            ItemText.RedText(tooltips, Mod, "Tooltip3", "- Developer Note: This weapon is a tribute to my daughter.", ItemText.VaultarianColours.Healing);
+            ItemText.RedText(tooltips, Mod, "- Developer Note: This weapon is a tribute to my daughter.", ItemText.VaultarianColours.Healing);
         }
     }
 }
