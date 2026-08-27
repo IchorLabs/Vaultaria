@@ -1226,6 +1226,7 @@ Projectiles: {
 	IncendiaryExplosion.DisplayName: Incendiary Explosion
 	CryoExplosion.DisplayName: Cryo Explosion
 	CorrosiveExplosion.DisplayName: Corrosive Explosion
+	HeatRayBullet.DisplayName: Heat Ray Bullet
 }
 
 Buffs: {
