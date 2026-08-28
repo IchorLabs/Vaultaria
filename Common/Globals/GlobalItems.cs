@@ -13,7 +13,6 @@ using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs;
-using Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Maliwan;
 using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Common.Globals
@@ -42,7 +41,7 @@ namespace Vaultaria.Common.Globals
             {
                 hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, HyperionAccuracyCap);
             }
-            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0 && item.ModItem is not Pimpernel)
+            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0 && player.itemAnimation == 0)
             {
                 weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy - WeaponInaccuracyDecay, 0f, WeaponMaximumInaccuracy);
             }

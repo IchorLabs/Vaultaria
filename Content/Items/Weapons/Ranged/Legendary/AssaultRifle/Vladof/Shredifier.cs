@@ -5,12 +5,21 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Vaultaria.Content.Items.Materials;
 using System.Collections.Generic;
+using System;
 using Vaultaria.Common.Utilities;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 {
     public class Shredifier : VaultarianItem
     {
+        private const float StartingUseTime = 15f;
+        private const float MaximumFireRateUseTime = 4f;
+        private const float FireRateGain = 0.5f;
+        private const float FireRateDecay = 1f;
+        private const float MildSpread = 2f;
+
+        private float currentUseTime = StartingUseTime;
+
         protected override Sounds[] ItemSounds => [];
 
         public override void SetStaticDefaults()
@@ -39,8 +48,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
             Item.crit = 21;
             Item.DamageType = DamageClass.Ranged;
 
-            Item.useTime = 5;
-            Item.useAnimation = 5;
+            Item.useTime = (int)StartingUseTime;
+            Item.useAnimation = (int)StartingUseTime;
             Item.reuseDelay = 0;
             Item.autoReuse = true;
 
@@ -49,11 +58,39 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
             SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
+        public override void HoldItem(Player player)
+        {
+            if (player.itemAnimation == 0)
+            {
+                currentUseTime = MathF.Min(currentUseTime + FireRateDecay, StartingUseTime);
+            }
+
+            Item.useTime = (int)MathF.Ceiling(currentUseTime);
+            Item.useAnimation = Item.useTime;
+        }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            Projectile.NewProjectile(source, position - new Vector2(0, -7), velocity, type, damage, knockback, player.whoAmI);
+            currentUseTime = MathF.Max(currentUseTime - FireRateGain, MaximumFireRateUseTime);
 
-            return true;
+            for (int shot = 0; shot < 2; shot++)
+            {
+                Vector2 shotVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(MildSpread));
+
+                Projectile.NewProjectile(
+                    source,
+                    shot == 0
+                        ? position - new Vector2(0, -3)
+                        : position - new Vector2(0, 4),
+                    shotVelocity,
+                    type,
+                    damage,
+                    knockback,
+                    player.whoAmI
+                );
+            }
+
+            return false;
         }
 
         public override void AddRecipes()

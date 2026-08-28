@@ -3,7 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
-using Vaultaria.Content.Items.Weapons.Ammo;
+using System;
 using System.Collections.Generic;
 using Vaultaria.Content.Projectiles.Ammo.Rare.AssaultRifle.Vladof;
 using Vaultaria.Common.Utilities;
@@ -30,18 +30,18 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
             // Gun properties
             Item.noMelee = true;
-            Item.shootSpeed = 13;
-            Item.shoot = ProjectileID.HeatRay;
-            Item.mana = 4;
+            Item.shootSpeed = 14;
+            Item.shoot = ModContent.ProjectileType<OlPainfulHeatRay>();
+            Item.mana = 1;
 
             // Combat properties
             Item.knockBack = 1f;
-            Item.damage = 20;
-            Item.crit = 0;
+            Item.damage = 12;
+            Item.crit = 1;
             Item.DamageType = DamageClass.Magic;
 
-            Item.useTime = 15;
-            Item.useAnimation = 15;
+            Item.useTime = (int)StartingUseTime;
+            Item.useAnimation = (int)StartingUseTime;
             Item.reuseDelay = 4;
             Item.autoReuse = true;
 
@@ -50,9 +50,47 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
             SetItemSound(Item, Sounds.GenericLaser, 60);
         }
 
+        private const float StartingUseTime = 15f;
+        private const float MaximumFireRateUseTime = 5f;
+        private const float FireRateGain = 0.5f;
+        private const float FireRateDecay = 1f;
+        private const float BaseWeaponSpread = 1.5f;
+        private const float MaximumInaccuracy = 0.35f;
+        private const float InaccuracyGain = 0.005f;
+        private const float InaccuracyDecay = 0.02f;
+
+        private float currentUseTime = StartingUseTime;
+        private float currentInaccuracy;
+
+        public override void HoldItem(Player player)
+        {
+            if (player.itemAnimation == 0)
+            {
+                currentUseTime = MathF.Min(currentUseTime + FireRateDecay, StartingUseTime);
+                currentInaccuracy = MathHelper.Clamp(currentInaccuracy - InaccuracyDecay, 0f, MaximumInaccuracy);
+            }
+
+            Item.useTime = (int)MathF.Ceiling(currentUseTime);
+            Item.useAnimation = Item.useTime;
+        }
+
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            ItemEffects.CloneShots(player, source, position, velocity, type, damage, knockback, 3, 5, 4, 7);
+            currentUseTime = MathF.Max(currentUseTime - FireRateGain, MaximumFireRateUseTime);
+            currentInaccuracy = MathHelper.Clamp(currentInaccuracy + InaccuracyGain, 0f, MaximumInaccuracy);
+
+            float spread = BaseWeaponSpread * (1f + currentInaccuracy);
+            velocity = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
+
+            Projectile.NewProjectileDirect(
+                source,
+                position,
+                velocity,
+                ModContent.ProjectileType<OlPainfulHeatRay>(),
+                damage,
+                knockback,
+                player.whoAmI
+            );
 
             return false;
         }
@@ -64,7 +102,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots 3 lasers", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots a ricocheting laser", ItemText.VaultarianColours.Information);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Skyware Chests", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "Come on in... Ol' Painful is waiting.");
         }
