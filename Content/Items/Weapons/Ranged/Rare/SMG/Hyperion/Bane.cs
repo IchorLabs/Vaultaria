@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
 {
     public class Bane : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.Bane };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.Bane, 30);
         }
 
         public override Vector2? HoldoutOffset()
@@ -65,3 +64,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Hyperion
         }
     }
 }
+

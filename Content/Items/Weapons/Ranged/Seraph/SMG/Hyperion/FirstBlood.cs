@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -11,7 +11,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
 {
     public class FirstBlood : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.HyperionSMG };
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            SetItemSound(Item, Sounds.HyperionSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -64,3 +63,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion
         }
     }
 }
+

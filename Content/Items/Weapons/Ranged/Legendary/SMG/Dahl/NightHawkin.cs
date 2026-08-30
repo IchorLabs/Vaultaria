@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
 {
     public class NightHawkin : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.DahlSMGBurst };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.DahlSMGBurst, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -82,3 +81,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Dahl
         }
     }
 }
+

@@ -22,7 +22,7 @@ namespace Vaultaria.Common.Globals
         public int firedWeaponPrefixID;
         public override bool InstancePerEntity => true;
 
-        private const float HyperionMaximumSpread = 20f;
+        private const float HyperionMaximumSpread = 40f;
         private const float HyperionAccuracyGain = 0.08f;
         private const float HyperionAccuracyDecay = 0.0025f;
         private const float HyperionAccuracyCap = 0.9f;

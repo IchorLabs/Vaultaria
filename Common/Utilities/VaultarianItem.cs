@@ -85,6 +85,11 @@ namespace Vaultaria.Common.Utilities
             VladofLauncher,
             VladofPistol,
             VladofSniper,
+            BiggSuccVariation1,
+            BiggSuccVariation2,
+            BiggSuccVariation3,
+            BiggSuccVariation4,
+            BiggSuccVariation5,
         }
 
         public override bool? UseItem(Player player)
@@ -119,11 +124,26 @@ namespace Vaultaria.Common.Utilities
 
         public static void SetItemSound(Item item, Sounds sound, int instances = 60)
         {
+            float pitch = GetRandomPitch(); // Apply slight pitch variation for realistic weapon sound variation
             item.UseSound = new SoundStyle($"Vaultaria/Common/Sounds/{sound}") 
             {
                 // Allow up to 60 concurrent instances of the sound to play. 
                 // This makes fast firing sound layered and prevents harsh cutoffs.
-                MaxInstances = instances
+                MaxInstances = instances,
+                Pitch = pitch
+            };
+        }
+
+        private static float GetRandomPitch()
+        {
+            // Subtle pitch variations (±7%) for realistic weapon sound variation
+            // This mimics how real weapons have slight tonal differences on each shot
+            int variation = Main.rand.Next(3); // 0 = normal, 1 = pitch up, 2 = pitch down
+            return variation switch
+            {
+                1 => 0.07f,  // Slightly pitched up
+                2 => -0.07f, // Slightly pitched down
+                _ => 0f      // Normal pitch
             };
         }
 

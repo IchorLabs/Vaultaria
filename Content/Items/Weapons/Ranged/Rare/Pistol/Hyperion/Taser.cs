@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -14,7 +14,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 {
     public class Taser : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.GenericLaser };
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.GenericLaser, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -77,3 +76,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
         }
     }
 }
+

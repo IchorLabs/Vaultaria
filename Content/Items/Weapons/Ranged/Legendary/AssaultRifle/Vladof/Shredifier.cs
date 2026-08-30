@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -20,7 +20,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
         private float currentUseTime = StartingUseTime;
 
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.VladofAR };
 
         public override void SetStaticDefaults()
         {
@@ -55,7 +55,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(gold: 4);
-            SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
         public override void HoldItem(Player player)
@@ -119,3 +118,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -14,7 +14,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 {
     public class Boomacorn : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.Boomacorn };
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.Boomacorn, 120);
         }
 
         public override bool CanUseItem(Player player)
@@ -91,3 +90,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Jakobs
         }
     }
 }
+

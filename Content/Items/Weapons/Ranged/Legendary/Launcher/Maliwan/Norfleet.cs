@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
 {
     public class Norfleet : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.Norfleet };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(platinum: 1);
-            SetItemSound(Item, Sounds.Norfleet, 120);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -87,3 +86,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
         }
     }
 }
+

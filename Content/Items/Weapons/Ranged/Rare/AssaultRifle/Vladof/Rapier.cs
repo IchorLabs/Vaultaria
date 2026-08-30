@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -11,7 +11,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 {
     public class Rapier : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.VladofAR };
 
         public override void SetStaticDefaults()
         {

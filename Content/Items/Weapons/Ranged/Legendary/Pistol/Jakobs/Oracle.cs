@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -11,7 +11,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 {
     public class Oracle : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsPistol };
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
         
         public override Vector2? HoldoutOffset()
@@ -63,3 +62,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs
         }
     }
 }
+

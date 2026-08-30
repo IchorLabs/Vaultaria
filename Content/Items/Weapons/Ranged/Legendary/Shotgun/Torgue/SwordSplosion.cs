@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -14,7 +14,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 {
     public class SwordSplosion : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.TorgueShotgun };
 
         public override void SetStaticDefaults()
         {
@@ -50,7 +50,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.TorgueShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -86,3 +85,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
         }
     }
 }
+

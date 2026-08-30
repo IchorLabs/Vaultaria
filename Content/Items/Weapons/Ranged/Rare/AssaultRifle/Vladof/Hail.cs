@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 {
     public class Hail : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.VladofAR };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
 
             // Other properties
             Item.value = Item.buyPrice(silver: 50);
-            SetItemSound(Item, Sounds.VladofAR, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -63,3 +62,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
         }
     }
 }
+

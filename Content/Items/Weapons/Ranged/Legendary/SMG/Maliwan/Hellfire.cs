@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 {
     public class Hellfire : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanSMG };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.MaliwanSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -71,7 +70,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Incendiary bullets", ItemText.VaultarianColours.Incendiary);
-            ItemText.RedText(tooltips, Mod, "We don't need no fire…");
+            ItemText.RedText(tooltips, Mod, "We don't need no fireâ€¦");
         }
     }
 }
+

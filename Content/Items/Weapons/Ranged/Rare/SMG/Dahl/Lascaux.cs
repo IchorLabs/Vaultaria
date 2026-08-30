@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -11,7 +11,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Dahl
 {
     public class Lascaux : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.LascauxBurst };
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.LascauxBurst, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -62,3 +61,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.SMG.Dahl
         }
     }
 }
+

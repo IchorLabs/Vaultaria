@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 {
     public class Aegis : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanPistol };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(silver: 1);
-            SetItemSound(Item, Sounds.MaliwanPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -64,3 +63,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Maliwan
         }
     }
 }
+

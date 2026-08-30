@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
 {
     public class AkumasDemise : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.ETechSMGSingle };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.ETechSMGSingle, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -62,3 +61,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion
         }
     }
 }
+

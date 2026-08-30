@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -11,7 +11,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 {
     public class GearboxMuckamuck : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsSniper };
 
         public override void SetStaticDefaults()
         {
@@ -46,7 +46,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(copper: 0);
-            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -61,3 +60,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Sniper.Jakobs
         }
     }
 }
+

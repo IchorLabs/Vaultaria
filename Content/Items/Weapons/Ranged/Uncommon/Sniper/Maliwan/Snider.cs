@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
 {
     public class Snider : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanSniper };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(silver: 10);
-            SetItemSound(Item, Sounds.MaliwanSniper, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -64,3 +63,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
         }
     }
 }
+

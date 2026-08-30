@@ -1122,6 +1122,11 @@ Items: {
 		DisplayName: Cyber Eagle
 		Tooltip: ""
 	}
+
+	BigSucc: {
+		Tooltip: ""
+		DisplayName: Big Succ
+	}
 }
 
 Projectiles: {

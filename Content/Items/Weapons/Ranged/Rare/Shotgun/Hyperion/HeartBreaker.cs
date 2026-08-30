@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
 {
     public class HeartBreaker : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.HyperionShotgun };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            SetItemSound(Item, Sounds.HyperionShotgun, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -80,7 +79,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Shotgun.Hyperion
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Shotgun Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip3", "Heals the player on enemy hit", ItemText.VaultarianColours.Healing);
             ItemText.Text(tooltips, Mod, "Tooltip4", "Increases accuracy with sustained fire!");
-            ItemText.RedText(tooltips, Mod, "I don't want to set the world on fire…");
+            ItemText.RedText(tooltips, Mod, "I don't want to set the world on fireâ€¦");
         }
     }
 }
+

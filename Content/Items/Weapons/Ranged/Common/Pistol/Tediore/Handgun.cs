@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
 {
     public class Handgun : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.TediorePistol };
 
         public override void SetStaticDefaults()
         {

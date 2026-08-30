@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,8 +13,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
     public class Gub : VaultarianItem
     {
         // override: This "plugs into" the virtual slot created in the base class. It replaces the null with actual data.
-        // => [...]: Every time the code asks for ItemSounds, it points to this specific list of two sounds. Because it’s a property, it doesn't "run" until it's called in UseItem.
-        protected override Sounds[] ItemSounds => [];
+        // => [...]: Every time the code asks for ItemSounds, it points to this specific list of two sounds. Because itâ€™s a property, it doesn't "run" until it's called in UseItem.
+        protected override Sounds[] ItemSounds => new[] { Sounds.BanditPistol };
 
         public override void SetStaticDefaults()
         {
@@ -50,7 +50,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.BanditPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -66,3 +65,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 {
     public class Zim : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.BanditPistol };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.BanditPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -64,3 +63,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Bandit
         }
     }
 }
+

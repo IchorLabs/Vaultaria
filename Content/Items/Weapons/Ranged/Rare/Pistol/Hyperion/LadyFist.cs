@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 {
     public class LadyFist : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.HyperionPistol };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.HyperionPistol, 60);
         }
 
         public override bool CanUseItem(Player player)
@@ -83,3 +82,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
         }
     }
 }
+

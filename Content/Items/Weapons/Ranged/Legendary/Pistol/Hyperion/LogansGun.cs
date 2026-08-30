@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
 {
     public class LogansGun : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.HyperionPistol };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.HyperionPistol, 60);
         }
 
         public override void AddRecipes()
@@ -77,3 +76,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Hyperion
         }
     }
 }
+

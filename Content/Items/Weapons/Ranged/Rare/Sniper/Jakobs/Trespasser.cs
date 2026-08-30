@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
 {
     public class Trespasser : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsSniper };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 3);
-            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override void AddRecipes()
@@ -75,3 +74,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs
         }
     }
 }
+

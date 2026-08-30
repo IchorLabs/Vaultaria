@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
     public class Law : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsPistol };
 
         public override void SetStaticDefaults()
         {
@@ -49,7 +49,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -94,8 +93,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
                 Item.shootSpeed = 10f;
                 Item.shoot = ProjectileID.Bullet;
                 Item.useAmmo = AmmoID.Bullet;
-                SetItemSound(Item, Sounds.JakobsPistol, 60);
-
                 Item.useTime = 12;
                 Item.useAnimation = 12;
                 Item.reuseDelay = 10;
@@ -141,3 +138,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
         }
     }
 }
+

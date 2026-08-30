@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
 {
     public class Hornet : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.DahlPistolBurst };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.DahlPistolBurst, 60);
             // Item.UseSound = SoundID.Item31;
         }
 
@@ -65,3 +64,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Dahl
         }
     }
 }
+

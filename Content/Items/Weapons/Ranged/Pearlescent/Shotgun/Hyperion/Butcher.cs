@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 {
     public class Butcher : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.HyperionShotgun };
 
         public override void SetStaticDefaults()
         {
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 
             // Other properties
             Item.value = Item.buyPrice(gold: 10);
-            SetItemSound(Item, Sounds.HyperionShotgun, 30);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -94,3 +93,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
 {
     public class Ogre : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.TorgueAR };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
-            SetItemSound(Item, Sounds.TorgueAR, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -71,3 +70,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Torgue
         }
     }
 }
+

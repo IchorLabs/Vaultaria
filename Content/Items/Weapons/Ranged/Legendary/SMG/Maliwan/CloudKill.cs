@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 {
     public class CloudKill : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanSMG };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.MaliwanSMG, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -63,3 +62,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
         }
     }
 }
+

@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
@@ -17,7 +17,7 @@ namespace Vaultaria.Content.Items.Weapons.Magic
 {
     public class PhaselockSpell : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.PhaselockBase };
 
         public override void SetStaticDefaults()
         {

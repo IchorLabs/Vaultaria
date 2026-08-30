@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
 {
     public class Skullmasher : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsSniper };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 5);
-            SetItemSound(Item, Sounds.JakobsSniper, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -70,3 +69,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Jakobs
         }
     }
 }
+

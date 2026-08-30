@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
 {
     public class Prototype2599 : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.JakobsPistol };
 
         private bool altFireMode = false;
 
@@ -51,7 +51,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.JakobsPistol, 60);
         }
 
         // public override bool AltFunctionUse(Player player)
@@ -92,7 +91,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         //         Item.useTurn = false;
 
         //         // Item.UseSound = SoundID.Item31;
-        //         SetItemSound(Item, Sounds.DahlPistolBurst, 60);
+        //
         //     }
         //     else // Quad Shot (normal)
         //     {
@@ -112,7 +111,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         //         Item.autoReuse = true;
         //         Item.useTurn = false;
 
-        //         SetItemSound(Item, Sounds.JakobsPistol, 60);
+        //
         //     }
 
         //     return base.CanUseItem(player);
@@ -161,3 +160,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Pistol.Jakobs
         }
     }
 }
+

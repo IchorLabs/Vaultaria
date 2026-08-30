@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -12,7 +12,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Dahl
 {
     public class Carbine : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.DahlARBurst };
 
         public override void SetStaticDefaults()
         {
@@ -47,7 +47,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Dahl
 
             // Other properties
             Item.value = Item.buyPrice(silver: 10);
-            SetItemSound(Item, Sounds.DahlARBurst, 60);
         }
 
         public override Vector2? HoldoutOffset()
@@ -62,3 +61,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Dahl
         }
     }
 }
+

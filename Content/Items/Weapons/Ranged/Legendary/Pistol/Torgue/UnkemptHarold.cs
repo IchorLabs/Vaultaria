@@ -1,4 +1,4 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -13,7 +13,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
 {
     public class UnkemptHarold : VaultarianItem
     {
-        protected override Sounds[] ItemSounds => [];
+        protected override Sounds[] ItemSounds => new[] { Sounds.TorguePistol };
 
         public override void SetStaticDefaults()
         {
@@ -30,7 +30,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
             Item.rare = ItemRarityID.Yellow;
 
             // Gun properties
-            Item.noMelee = true; // Item not dealing damage while held, we don’t hit mobs in the head with a gun
+            Item.noMelee = true; // Item not dealing damage while held, we donâ€™t hit mobs in the head with a gun
             Item.shootSpeed = 4f; // Speed of a projectile. Mainly measured by eye
             Item.shoot = ModContent.ProjectileType<UHBullet>(); // Shoots this
             Item.useAmmo = ModContent.ItemType<PistolAmmo>(); // Uses this ammo
@@ -48,7 +48,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
 
             // Other properties
             Item.value = Item.buyPrice(gold: 1);
-            SetItemSound(Item, Sounds.TorguePistol, 60);
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -96,3 +95,4 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Torgue
         }
     }
 }
+
