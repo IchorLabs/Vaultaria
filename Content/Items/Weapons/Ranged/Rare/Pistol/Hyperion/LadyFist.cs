@@ -41,8 +41,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
             Item.crit = -4;
             Item.DamageType = DamageClass.Ranged;
 
-            Item.useTime = 25;
-            Item.useAnimation = 25;
+            Item.useTime = 5;
+            Item.useAnimation = 5;
             Item.reuseDelay = 3;
             Item.autoReuse = true;
 

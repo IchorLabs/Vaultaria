@@ -7,11 +7,14 @@ using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Terraria.Audio;
 using Vaultaria.Content.Items.Weapons.Ammo;
+using Vaultaria.Content.Projectiles.Ammo.Rare.Pistol.Jakobs;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
     public class CyberEagle : VaultarianItem
     {
+        public override bool UsesCustomMuzzlePosition => true;
+
         protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanLaserSingle };
 
         public override void SetStaticDefaults()
@@ -31,7 +34,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             // Gun properties
             Item.noMelee = true;
             Item.shootSpeed = 10f;
-            Item.shoot = ProjectileID.LaserMachinegunLaser;
+            Item.shoot = ModContent.ProjectileType<CyberEagleHeatRay>();
             Item.useAmmo = ModContent.ItemType<PistolAmmo>();
 
             // Combat properties
@@ -49,6 +52,16 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 
             // Other properties
             Item.value = Item.buyPrice(gold: 2);
+        }
+
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Vector2 firingDirection = velocity.SafeNormalize(Vector2.UnitX);
+            float barrelDistance = player.direction == 1 ? 60f : 70f;
+            Vector2 barrelPosition = position + firingDirection * barrelDistance;
+            barrelPosition += firingDirection.RotatedBy(-MathHelper.PiOver2) * 5f * player.direction;
+            Projectile.NewProjectile(source, barrelPosition, velocity, type, damage, knockback, player.whoAmI);
+            return false;
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)

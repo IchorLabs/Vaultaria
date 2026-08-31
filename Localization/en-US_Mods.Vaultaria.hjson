@@ -1233,6 +1233,8 @@ Projectiles: {
 	CorrosiveExplosion.DisplayName: Corrosive Explosion
 	HeatRayBullet.DisplayName: Heat Ray Bullet
 	OlPainfulHeatRay.DisplayName: Ol Painful Heat Ray
+	BigSuccGrenade.DisplayName: Big Succ Grenade
+	CyberEagleHeatRay.DisplayName: Cyber Eagle Heat Ray
 }
 
 Buffs: {
@@ -1583,6 +1585,11 @@ Configs: {
 		ExecuteSoundEffect: {
 			Label: Execute Sound Effect
 			Tooltip: Enable this to have the swoosh sound effect play when in Deception
+		}
+
+		DisableWeaponAccuracyGimmicks: {
+			Label: Disable Weapon Accuracy Gimmicks
+			Tooltip: ""
 		}
 	}
 }

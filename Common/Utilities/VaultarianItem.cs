@@ -10,6 +10,8 @@ namespace Vaultaria.Common.Utilities
         // => null: This is an expression-bodied getter. It is shorthand for get { return null; }. It ensures that by default, an item has no randomized sounds.
         protected virtual Sounds[]? ItemSounds => null;
 
+        public virtual bool UsesCustomMuzzlePosition => false;
+
         public enum Sounds
         {
             LegendaryDrop,

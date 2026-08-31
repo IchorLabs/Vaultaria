@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Vaultaria.Common.Configs;
 using Vaultaria.Common.Utilities;
 using Vaultaria.Content.Buffs.GunEffects;
 using Vaultaria.Content.Buffs.SkillEffects;
@@ -22,14 +23,15 @@ namespace Vaultaria.Common.Globals
         public int firedWeaponPrefixID;
         public override bool InstancePerEntity => true;
 
-        private const float HyperionMaximumSpread = 40f;
-        private const float HyperionAccuracyGain = 0.08f;
-        private const float HyperionAccuracyDecay = 0.0025f;
-        private const float HyperionAccuracyCap = 0.9f;
-        private const float BaseWeaponSpread = 1.5f;
-        private const float WeaponMaximumInaccuracy = 0.35f;
-        private const float WeaponInaccuracyGain = 0.005f;
-        private const float WeaponInaccuracyDecay = 0.02f;
+        private const float HyperionMaximumSpread = 40f; // Starting spread in degrees before any shots are fired.
+        private const float HyperionAccuracyGain = 0.075f; // Accuracy gained per shot; 1f is perfectly accurate.
+        private const float HyperionAccuracyDecay = 0.0025f; // Accuracy lost each tick after the player stops firing.
+        private const float HyperionAccuracyCap = 1f; // Maximum accuracy value, where 1f removes all Hyperion spread.
+        private const float BaseWeaponSpread = 1f; // Starting spread in degrees for non-Hyperion projectile weapons.
+        private const float WeaponMaximumSpread = 10f; // Maximum spread in degrees for non-Hyperion weapons at full inaccuracy.
+        private const float WeaponMaximumInaccuracy = 0.5f; // Maximum inaccuracy value, limiting spread to halfway between base and maximum.
+        private const float WeaponInaccuracyGain = 0.015f; // Inaccuracy gained per non-Hyperion shot.
+        private const float WeaponInaccuracyDecay = 0.005f; // Inaccuracy removed each tick after firing ends.
 
         private float hyperionAccuracy;
         private float weaponInaccuracy;
@@ -37,11 +39,18 @@ namespace Vaultaria.Common.Globals
 
         public override void HoldItem(Item item, Player player)
         {
-            if (IsHyperionWeapon(item))
+            if (ModContent.GetInstance<VaultariaConfig>().DisableWeaponAccuracyGimmicks)
+            {
+                hyperionAccuracy = 0f;
+                weaponInaccuracy = 0f;
+                return;
+            }
+
+            if (IsHyperionWeapon(item) && !player.controlUseItem && player.itemAnimation == 0)
             {
                 hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, HyperionAccuracyCap);
             }
-            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0 && player.itemAnimation == 0)
+            else if (UsesProjectile(item) && !player.controlUseItem && player.itemAnimation == 0)
             {
                 weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy - WeaponInaccuracyDecay, 0f, WeaponMaximumInaccuracy);
             }
@@ -70,7 +79,15 @@ namespace Vaultaria.Common.Globals
 
         public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            if (IsHyperionWeapon(item) && item.useAmmo != 0)
+            ApplyMuzzlePosition(item, ref position, velocity);
+
+            if (ModContent.GetInstance<VaultariaConfig>().DisableWeaponAccuracyGimmicks)
+            {
+                base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
+                return;
+            }
+
+            if (IsHyperionWeapon(item) && UsesProjectile(item))
             {
                 float spread = HyperionMaximumSpread * (1f - hyperionAccuracy);
                 if (spread > 0f)
@@ -80,9 +97,9 @@ namespace Vaultaria.Common.Globals
 
                 hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy + HyperionAccuracyGain, 0f, HyperionAccuracyCap);
             }
-            else if (item.DamageType == DamageClass.Ranged && item.useAmmo != 0)
+            else if (UsesProjectile(item))
             {
-                float spread = BaseWeaponSpread * (1f + weaponInaccuracy);
+                float spread = MathHelper.Lerp(BaseWeaponSpread, WeaponMaximumSpread, weaponInaccuracy);
                 velocity = velocity.RotatedByRandom(MathHelper.ToRadians(spread));
                 weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy + WeaponInaccuracyGain, 0f, WeaponMaximumInaccuracy);
             }
@@ -172,6 +189,30 @@ namespace Vaultaria.Common.Globals
         private bool IsHyperionWeapon(Item item)
         {
             return item.ModItem?.GetType().Namespace?.Contains(".Hyperion", StringComparison.Ordinal) == true;
+        }
+
+        private bool UsesProjectile(Item item)
+        {
+            return item.damage > 0 && item.shoot != ProjectileID.None;
+        }
+
+        private void ApplyMuzzlePosition(Item item, ref Vector2 position, Vector2 velocity)
+        {
+            if (item.ModItem is not VaultarianItem vaultarianItem ||
+                vaultarianItem.UsesCustomMuzzlePosition ||
+                !IsVaultariaRangedWeapon(item) ||
+                velocity == Vector2.Zero)
+            {
+                return;
+            }
+
+            float barrelDistance = item.width * item.scale * 0.9f;
+            position += velocity.SafeNormalize(Vector2.UnitX) * barrelDistance;
+        }
+
+        private bool IsVaultariaRangedWeapon(Item item)
+        {
+            return item.ModItem?.GetType().Namespace?.Contains(".Content.Items.Weapons.Ranged.", StringComparison.Ordinal) == true;
         }
 
         public static float GetHyperionAccuracy(Item item)
