@@ -25,6 +25,8 @@ namespace Vaultaria.Common.Globals
         public int firedWeaponPrefixID;
         public override bool InstancePerEntity => true;
 
+        public const bool EnableCursorHoldStyle = false;
+
         private const float HyperionMaximumSpread = 40f; // Starting spread in degrees before any shots are fired.
         private const float HyperionAccuracyGain = 0.075f; // Accuracy gained per shot; 1f is perfectly accurate.
         private const float HyperionAccuracyDecay = 0.0025f; // Accuracy lost each tick after the player stops firing.
@@ -38,6 +40,7 @@ namespace Vaultaria.Common.Globals
         private float hyperionAccuracy;
         private float weaponInaccuracy;
         private int colCounter = 0;
+        private ulong lastProjectileShotTick;
 
         public override void HoldItem(Item item, Player player)
         {
@@ -48,11 +51,12 @@ namespace Vaultaria.Common.Globals
                 return;
             }
 
-            if (IsHyperionWeapon(item) && !player.controlUseItem && player.itemAnimation == 0)
+            bool firingIntervalElapsed = Main.GameUpdateCount - lastProjectileShotTick >= (ulong)Math.Max(item.useTime, 1);
+            if (IsHyperionWeapon(item) && firingIntervalElapsed)
             {
                 hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay, 0f, HyperionAccuracyCap);
             }
-            else if (UsesProjectile(item) && !player.controlUseItem && player.itemAnimation == 0)
+            else if (UsesProjectile(item) && firingIntervalElapsed)
             {
                 weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy - WeaponInaccuracyDecay, 0f, WeaponMaximumInaccuracy);
             }
@@ -72,7 +76,7 @@ namespace Vaultaria.Common.Globals
 
         public override void UseStyle(Item item, Player player, Rectangle heldItemFrame)
         {
-            if (item.ModItem?.Mod != Mod || item.ModItem is DestroyersEye or WarriorsTail ||
+            if (!EnableCursorHoldStyle || item.ModItem?.Mod != Mod || item.ModItem is DestroyersEye or WarriorsTail ||
                 (item.DamageType != DamageClass.Ranged && item.DamageType != DamageClass.Magic))
             {
                 return;
@@ -85,14 +89,19 @@ namespace Vaultaria.Common.Globals
             }
 
             player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
-            float aimRotation = aimDirection.ToRotation();
-            player.itemRotation = (aimDirection * player.direction).ToRotation();
+            float aimRotation = aimDirection.ToRotation() + GetVisualAimDeviation(item);
+            Vector2 visualAimDirection = aimRotation.ToRotationVector2();
+            player.itemRotation = (visualAimDirection * player.direction).ToRotation();
             player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, aimRotation - MathHelper.PiOver2);
-            player.itemLocation.Y -= 6f;
         }
 
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+            if (UsesProjectile(item))
+            {
+                lastProjectileShotTick = Main.GameUpdateCount;
+            }
+
             CloudOfLead(item, player, source, position, velocity, damage, knockback);
 
             Redistribution(item, player);
@@ -107,6 +116,8 @@ namespace Vaultaria.Common.Globals
                 base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
                 return;
             }
+
+            RecoverAccuracyBeforeShot(item);
 
             if (IsHyperionWeapon(item) && UsesProjectile(item))
             {
@@ -279,6 +290,34 @@ namespace Vaultaria.Common.Globals
         public static float GetHyperionAccuracy(Item item)
         {
             return item.GetGlobalItem<GlobalItems>().hyperionAccuracy;
+        }
+
+        public static float GetVisualAimDeviation(Item item)
+        {
+            GlobalItems globalItem = item.GetGlobalItem<GlobalItems>();
+            float inaccuracy = globalItem.IsHyperionWeapon(item)
+                ? 1f - globalItem.hyperionAccuracy
+                : globalItem.weaponInaccuracy / WeaponMaximumInaccuracy;
+            return MathF.Sin((float)Main.GameUpdateCount * 0.35f + item.type) * MathHelper.ToRadians(6f) * inaccuracy;
+        }
+
+        private void RecoverAccuracyBeforeShot(Item item)
+        {
+            ulong elapsedTicks = Main.GameUpdateCount - lastProjectileShotTick;
+            ulong recoveryTicks = elapsedTicks > (ulong)item.useTime
+                ? elapsedTicks - (ulong)item.useTime
+                : 0;
+
+            if (IsHyperionWeapon(item))
+            {
+                hyperionAccuracy = MathHelper.Clamp(hyperionAccuracy - HyperionAccuracyDecay * recoveryTicks, 0f, HyperionAccuracyCap);
+            }
+            else
+            {
+                weaponInaccuracy = MathHelper.Clamp(weaponInaccuracy - WeaponInaccuracyDecay * recoveryTicks, 0f, WeaponMaximumInaccuracy);
+            }
+
+            lastProjectileShotTick = Main.GameUpdateCount;
         }
     }
 }

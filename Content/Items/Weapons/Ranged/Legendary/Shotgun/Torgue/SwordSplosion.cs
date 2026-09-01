@@ -5,6 +5,7 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Vaultaria.Content.Items.Materials;
 using System.Collections.Generic;
+using Vaultaria.Common.Globals;
 using Vaultaria.Common.Utilities;
 using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue;
@@ -72,15 +73,19 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
 
         public override void UseStyle(Player player, Rectangle heldItemFrame)
         {
+            if (!GlobalItems.EnableCursorHoldStyle)
+            {
+                return;
+            }
+
             Vector2 aimDirection = Main.MouseWorld - player.MountedCenter;
             player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
 
-            float aimRotation = aimDirection.ToRotation();
-            float itemRotation = (aimDirection * player.direction).ToRotation();
+            float aimRotation = aimDirection.ToRotation() + GlobalItems.GetVisualAimDeviation(Item);
+            float itemRotation = (aimRotation.ToRotationVector2() * player.direction).ToRotation();
 
             player.itemRotation = itemRotation;
             player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, aimRotation - MathHelper.PiOver2);
-            player.itemLocation.Y -= 6f;
         }
 
         public override Vector2? HoldoutOffset()
