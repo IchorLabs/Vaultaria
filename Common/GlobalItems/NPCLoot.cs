@@ -436,12 +436,12 @@ namespace Vaultaria.Common.GlobalItems
         private void DropMiscItems(GlobalLoot globalLoot)
         {
             // Ammo
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<PistolAmmo>(), 20, 1, 25));
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<SubmachineGunAmmo>(), 20, 1, 25));
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<AssaultRifleAmmo>(), 25, 1, 25));
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<ShotgunAmmo>(), 25, 1, 25));
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<SniperAmmo>(), 30, 1, 10));
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<LauncherAmmo>(), 30, 1, 10));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<PistolAmmo>(), 20, 1, 25));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<SubmachineGunAmmo>(), 20, 1, 25));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<AssaultRifleAmmo>(), 25, 1, 25));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<ShotgunAmmo>(), 25, 1, 25));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<SniperAmmo>(), 30, 1, 10));
+            globalLoot.Add(new AmmoDropRule(ModContent.ItemType<LauncherAmmo>(), 30, 1, 10));
 
             // Eridium
             globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<Eridium>(), 100, 1, 2));

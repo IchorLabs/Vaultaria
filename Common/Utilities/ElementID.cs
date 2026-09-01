@@ -57,5 +57,9 @@ namespace Vaultaria.Common.Utilities
         public static readonly short RadiationProjectile = ProjectileID.GoldenShowerFriendly;
         public static short RadiationExplosion => (short)ModContent.ProjectileType<RadiationExplosion>();
         public static readonly int RadiationBuff = ModContent.BuffType<RadiationBuff>();
+
+        // Dark Magic Element
+        public static readonly int DarkMagicPrefix = ModContent.PrefixType<DarkMagic>();
+        public static readonly int DarkMagicBuff = ModContent.BuffType<DarkMagicBuff>();
     }
 }

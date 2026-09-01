@@ -36,6 +36,7 @@ namespace Vaultaria.Common.Utilities
             ElementalID.IncendiaryPrefix,
             ElementalID.CryoPrefix,
             ElementalID.RadiationPrefix,
+            ElementalID.DarkMagicPrefix,
         };
         
         public static readonly HashSet<int> elementalBuff = new HashSet<int>
@@ -47,6 +48,7 @@ namespace Vaultaria.Common.Utilities
             ElementalID.IncendiaryBuff,
             ElementalID.CryoBuff,
             ElementalID.RadiationBuff,
+            ElementalID.DarkMagicBuff,
         };
 
         public static readonly Dictionary<int, short> prefixToProjectile = new Dictionary<int, short>
@@ -445,6 +447,19 @@ namespace Vaultaria.Common.Utilities
                 {
                     SetElementOnNPC(target, hit, elementalMultiplier, player, elementalProjectile, elementalBuff, elementalBuffTime);
                 }
+            }
+        }
+
+        /// <summary>
+        /// Same idea as <see cref="HandleElementalProjOnNPC"/>, but for elements (like Dark Magic) that are purely a debuff with no accompanying elemental damage projectile.
+        /// </summary>
+        public static void HandleElementalDebuffOnlyOnNPC(Projectile projectile, Player player, NPC target, float elementalChance, int elementalPrefix, int buffType, int buffTime)
+        {
+            int prefixID = projectile.GetGlobalProjectile<ElementalGlobalProjectile>().firedWeaponPrefixID;
+
+            if (prefixID == elementalPrefix && player.whoAmI == Main.myPlayer && SetElementalChance(elementalChance))
+            {
+                target.AddBuff(buffType, buffTime);
             }
         }
 

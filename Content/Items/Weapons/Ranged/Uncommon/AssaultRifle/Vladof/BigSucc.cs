@@ -13,8 +13,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
 {
     public class BigSucc : VaultarianItem
     {
-        public override bool UsesCustomMuzzlePosition => true;
-
         private static readonly Sounds[] PrimaryFireSounds =
         {
             Sounds.BiggSuccVariation1,
@@ -44,7 +42,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
             Item.noMelee = true;
             Item.shootSpeed = 10;
             Item.shoot = ProjectileID.Bullet;
-            Item.useAmmo = ModContent.ItemType<AssaultRifleAmmo>();
+            Item.useAmmo = AmmoID.Bullet;
 
             // Combat properties
             Item.knockBack = 0.2f;
@@ -81,12 +79,14 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
                 Item.shoot = ModContent.ProjectileType<BigSuccGrenade>();
                 Item.shootSpeed = 7.8f;
                 Item.UseSound = SoundID.Item61;
+                Item.useAmmo = ModContent.ItemType<AssaultRifleAmmo>();
             }
             else
             {
                 Item.damage = 3;
                 Item.shoot = ProjectileID.Bullet;
                 Item.shootSpeed = 10f;
+                Item.useAmmo = AmmoID.Bullet;
                 SetItemSound(Item, PrimaryFireSounds[Main.rand.Next(PrimaryFireSounds.Length)]);
             }
 
@@ -121,6 +121,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.Text(tooltips, Mod);
+            ItemText.Text(tooltips, Mod, "Tooltip", "Left Click fires regular bullets", ItemText.VaultarianColours.Information);
             ItemText.Text(tooltips, Mod, "Tooltip", "Right Click fires an underbarrel grenade launcher that consumes 30 Assault Rifle Ammo", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "What dat underbarrel do?");
         }

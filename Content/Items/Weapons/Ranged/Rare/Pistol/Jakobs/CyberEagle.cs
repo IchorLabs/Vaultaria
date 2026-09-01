@@ -13,8 +13,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
 {
     public class CyberEagle : VaultarianItem
     {
-        public override bool UsesCustomMuzzlePosition => true;
-
         protected override Sounds[] ItemSounds => new[] { Sounds.MaliwanLaserSingle };
 
         public override void SetStaticDefaults()

@@ -1288,6 +1288,11 @@ Buffs: {
 		Description: Take Radiation damage over time and Explode on death
 	}
 
+	DarkMagicBuff: {
+		DisplayName: Dark Magic
+		Description: Restores 2% of damage dealt against this enemy back as health
+	}
+
 	DeceptionBuff: {
 		DisplayName: Deception
 		Description: And I disappear / A ghost amidst the combat / Preparing to strike.
@@ -1423,6 +1428,7 @@ Prefixes: {
 	Masher.DisplayName: Masher
 	RangerMasher.DisplayName: Masher
 	RedSuit.DisplayName: Red Suit
+	DarkMagic.DisplayName: Dark Magic
 }
 
 NPCs: {
@@ -1538,6 +1544,11 @@ Configs: {
 		EridiumDropRateMultiplier: {
 			Label: Eridium Drop Rate Multiplier
 			Tooltip: Multiplies the Eridium drop rate from bosses
+		}
+
+		AmmoDropRateMultiplier: {
+			Label: Ammo Drop Rate Multiplier
+			Tooltip: Multiplies how often modded ammo drops from enemies. Set to 0 to disable ammo drops entirely
 		}
 
 		SlagDamageMultiplier: {

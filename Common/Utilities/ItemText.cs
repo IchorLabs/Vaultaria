@@ -17,6 +17,7 @@ namespace Vaultaria.Common.Utilities
             Slag,
             Cryo,
             Radiation,
+            DarkMagic,
             Healing,
             RedText,
             CursedText,
@@ -34,6 +35,7 @@ namespace Vaultaria.Common.Utilities
             { VaultarianColours.Slag, new Color(207, 164, 245) }, // Purple
             { VaultarianColours.Cryo, new Color(131, 235, 228) }, // Light Blue
             { VaultarianColours.Radiation, new Color(227, 205, 109) }, // Light Yellow
+            { VaultarianColours.DarkMagic, new Color(196, 30, 58) }, // Crimson Red - placeholder, update with exact hex if provided
             { VaultarianColours.Healing, new Color(245, 201, 239) }, // Pink
             { VaultarianColours.RedText, Color.Red }, // Red
             { VaultarianColours.CursedText, new Color(0, 249, 199) }, // Cyan

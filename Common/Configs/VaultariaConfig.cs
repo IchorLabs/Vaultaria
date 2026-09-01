@@ -56,5 +56,11 @@ namespace Vaultaria.Common.Configs
         [Range(0.0f, 100.0f)]
         [Increment(0.5f)]
         public float ChubbySpawnChance;
+
+        [DefaultValue(1.0f)]
+        [Range(0.0f, 1.0f)]
+        [Increment(0.1f)]
+        [Description("Multiplies how often modded ammo drops from enemies. 1.0 is normal, 0.0 disables ammo drops entirely")]
+        public float AmmoDropRateMultiplier;
     }
 }

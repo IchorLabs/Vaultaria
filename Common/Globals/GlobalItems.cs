@@ -9,6 +9,7 @@ using Vaultaria.Common.Utilities;
 using Vaultaria.Content.Buffs.GunEffects;
 using Vaultaria.Content.Buffs.SkillEffects;
 using Vaultaria.Content.Items.Accessories.Skills;
+using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion;
@@ -79,8 +80,6 @@ namespace Vaultaria.Common.Globals
 
         public override void ModifyShootStats(Item item, Player player, ref Vector2 position, ref Vector2 velocity, ref int type, ref int damage, ref float knockback)
         {
-            ApplyMuzzlePosition(item, ref position, velocity);
-
             if (ModContent.GetInstance<VaultariaConfig>().DisableWeaponAccuracyGimmicks)
             {
                 base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
@@ -105,6 +104,27 @@ namespace Vaultaria.Common.Globals
             }
 
             base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
+        }
+
+        public override bool? CanChooseAmmo(Item weapon, Item ammo, Player player)
+        {
+            if (weapon.ModItem is not VaultarianItem || !IsVaultariaRangedWeapon(weapon) || IsMultiFunctionWeapon(weapon))
+            {
+                return null;
+            }
+
+            if (IsLauncherWeapon(weapon))
+            {
+                return ammo.ammo == AmmoID.Rocket || ammo.type == ModContent.ItemType<LauncherAmmo>() ? true : null;
+            }
+
+            int? categoryAmmoType = GetCategoryAmmoType(weapon);
+            if (categoryAmmoType == null)
+            {
+                return null;
+            }
+
+            return ammo.ammo == AmmoID.Bullet || ammo.type == categoryAmmoType.Value ? true : null;
         }
 
         public override bool CanConsumeAmmo(Item weapon, Item ammo, Player player)
@@ -196,23 +216,42 @@ namespace Vaultaria.Common.Globals
             return item.damage > 0 && item.shoot != ProjectileID.None;
         }
 
-        private void ApplyMuzzlePosition(Item item, ref Vector2 position, Vector2 velocity)
-        {
-            if (item.ModItem is not VaultarianItem vaultarianItem ||
-                vaultarianItem.UsesCustomMuzzlePosition ||
-                !IsVaultariaRangedWeapon(item) ||
-                velocity == Vector2.Zero)
-            {
-                return;
-            }
-
-            float barrelDistance = item.width * item.scale * 0.9f;
-            position += velocity.SafeNormalize(Vector2.UnitX) * barrelDistance;
-        }
-
         private bool IsVaultariaRangedWeapon(Item item)
         {
             return item.ModItem?.GetType().Namespace?.Contains(".Content.Items.Weapons.Ranged.", StringComparison.Ordinal) == true;
+        }
+
+        private bool IsLauncherWeapon(Item item)
+        {
+            return item.ModItem?.GetType().Namespace?.Contains(".Launcher", StringComparison.Ordinal) == true;
+        }
+
+        private bool IsMultiFunctionWeapon(Item item)
+        {
+            if (item.ModItem == null)
+            {
+                return false;
+            }
+
+            // Any weapon that overrides AltFunctionUse has a distinct right-click behaviour and is excluded from dual ammo.
+            return item.ModItem.GetType().GetMethod(nameof(ModItem.AltFunctionUse))?.DeclaringType != typeof(ModItem);
+        }
+
+        private int? GetCategoryAmmoType(Item item)
+        {
+            string? ns = item.ModItem?.GetType().Namespace;
+            if (ns == null)
+            {
+                return null;
+            }
+
+            if (ns.Contains(".Pistol", StringComparison.Ordinal)) return ModContent.ItemType<PistolAmmo>();
+            if (ns.Contains(".AssaultRifle", StringComparison.Ordinal)) return ModContent.ItemType<AssaultRifleAmmo>();
+            if (ns.Contains(".Shotgun", StringComparison.Ordinal)) return ModContent.ItemType<ShotgunAmmo>();
+            if (ns.Contains(".SMG", StringComparison.Ordinal)) return ModContent.ItemType<SubmachineGunAmmo>();
+            if (ns.Contains(".Sniper", StringComparison.Ordinal)) return ModContent.ItemType<SniperAmmo>();
+
+            return null;
         }
 
         public static float GetHyperionAccuracy(Item item)
