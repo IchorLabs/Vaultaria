@@ -3,7 +3,6 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
-using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Projectiles.Ammo.Seraph.SMG.Maliwan;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
@@ -32,13 +31,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Maliwan
             Item.noMelee = true;
             Item.shootSpeed = 9f;
             Item.shoot = ModContent.ProjectileType<FlorentineBullet>();
-            Item.useAmmo = ModContent.ItemType<SubmachineGunAmmo>();
+            Item.mana = 4;
 
             // Combat properties
             Item.knockBack = 2.3f;
             Item.damage = 28;
             Item.crit = 0;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Magic;
 
             Item.useTime = 7;
             Item.useAnimation = 7;
@@ -77,7 +76,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 4 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Has a chance to deal bonus Slag & Shock damage", ItemText.VaultarianColours.Slag);
             ItemText.RedText(tooltips, Mod, "Double trouble.");
         }

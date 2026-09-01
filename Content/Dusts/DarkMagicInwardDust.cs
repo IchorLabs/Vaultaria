@@ -22,6 +22,13 @@ namespace Vaultaria.Content.Dusts
             {
                 Vector2 toTarget = npc.Center - dust.position;
                 float distance = toTarget.Length();
+
+                if (distance > 48f)
+                {
+                    dust.active = false;
+                    return false;
+                }
+
                 float closeness = 1f - MathHelper.Clamp(distance / 48f, 0f, 1f);
 
                 dust.velocity = toTarget.SafeNormalize(Vector2.Zero) * MathHelper.Lerp(0.6f, 3.5f, closeness);

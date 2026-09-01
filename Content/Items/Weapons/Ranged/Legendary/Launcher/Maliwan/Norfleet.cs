@@ -5,7 +5,6 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
-using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.Launcher.Maliwan;
 using Vaultaria.Content.Prefixes.Weapons;
 
@@ -33,13 +32,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
             Item.noMelee = true;
             Item.shootSpeed = 5;
             Item.shoot = ModContent.ProjectileType<NorfleetRocket>();
-            Item.useAmmo = ModContent.ItemType<LauncherAmmo>();
+            Item.mana = 40;
 
             // Combat properties
             Item.knockBack = 2.3f;
             Item.damage = 200;
             Item.crit = 0;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Magic;
 
             Item.useTime = 45;
             Item.useAnimation = 45;
@@ -62,16 +61,6 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
             return new Vector2(-45f, 3f);
         }
 
-        public override bool CanConsumeAmmo(Item ammo, Player player)
-        {
-            for (int i = 0; i < 24; i++)
-            {
-                player.ConsumeItem(ammo.type, false);
-            }
-
-            return true;
-        }
-
         public override bool AllowPrefix(int pre)
         {
             return pre != ModContent.PrefixType<RangerTrickshot>();
@@ -80,7 +69,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.MultiShotText(tooltips, Item, 3);
-            ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 40 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots 3 elemental orbs that deal massive damage", ItemText.VaultarianColours.Master);
             ItemText.RedText(tooltips, Mod, "Blows up everything!");
         }

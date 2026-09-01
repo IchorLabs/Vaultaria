@@ -1,8 +1,10 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using Microsoft.Build.Evaluation;
 using System.Collections.Generic;
@@ -18,9 +20,11 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
         private int explosiveBuff = ElementalID.ExplosiveBuff;
         private int buffTime = 180;
 
+        public override string Texture => "Vaultaria/Content/Projectiles/Ammo/Legendary/Shotgun/Torgue/SwordSplosionKnife";
+
         public override void SetStaticDefaults()
         {
-            Main.projFrames[Projectile.type] = 4;
+            Main.projFrames[Projectile.type] = 1;
         }
 
         public override void SetDefaults()
@@ -28,7 +32,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
             base.SetDefaults();
             // Size
             Projectile.Size = new Vector2(8, 8);
-            Projectile.scale = 1.6f;
+            Projectile.scale = 3f;
 
             // Damage
             Projectile.damage = 1;
@@ -42,15 +46,41 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
             Projectile.timeLeft = 300;
             Projectile.ignoreWater = true;
             Projectile.tileCollide = true;
-            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.DamageType = DamageClass.Melee;
         }
 
         public override void AI()
         {
             base.AI();
-            ItemEffects.FrameRotator(7, Projectile);
 
+            if (Projectile.localAI[0] == 0f)
+            {
+                Projectile.localAI[0] = 1f;
+                Projectile.ai[0] = 0.2f + (Projectile.identity % 3) * 0.1f;
+            }
+
+            Projectile.rotation += Projectile.ai[0];
             Projectile.velocity.Y += 0.175f;
+        }
+
+        public override bool PreDraw(ref Color lightColor)
+        {
+            Texture2D texture = TextureAssets.Projectile[Type].Value;
+            Rectangle frame = texture.Frame(1, Main.projFrames[Type], 0, Projectile.frame);
+            Vector2 origin = frame.Size() / 2f;
+
+            Main.EntitySpriteDraw(
+                texture,
+                Projectile.Center - Main.screenPosition,
+                frame,
+                lightColor,
+                Projectile.rotation,
+                origin,
+                Projectile.scale,
+                SpriteEffects.None,
+                0);
+
+            return false;
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
@@ -95,7 +125,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Shotgun.Torgue
 
         public override Vector3 SetProjectileLightColour()
         {
-            return new Vector3(194, 215, 255);
+            return Vector3.Zero;
         }
      
         public override List<string> GetElement()

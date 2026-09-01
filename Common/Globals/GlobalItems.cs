@@ -15,6 +15,7 @@ using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Pistol.Jakobs;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion;
 using Vaultaria.Content.Items.Weapons.Ranged.Rare.Sniper.Jakobs;
+using Vaultaria.Content.Items.Weapons.Magic;
 using Vaultaria.Content.Prefixes.Weapons;
 
 namespace Vaultaria.Common.Globals
@@ -67,6 +68,27 @@ namespace Vaultaria.Common.Globals
             }
 
             return base.UseItem(item, player);
+        }
+
+        public override void UseStyle(Item item, Player player, Rectangle heldItemFrame)
+        {
+            if (item.ModItem?.Mod != Mod || item.ModItem is DestroyersEye or WarriorsTail ||
+                (item.DamageType != DamageClass.Ranged && item.DamageType != DamageClass.Magic))
+            {
+                return;
+            }
+
+            Vector2 aimDirection = Main.MouseWorld - player.MountedCenter;
+            if (aimDirection == Vector2.Zero)
+            {
+                return;
+            }
+
+            player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
+            float aimRotation = aimDirection.ToRotation();
+            player.itemRotation = (aimDirection * player.direction).ToRotation();
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, aimRotation - MathHelper.PiOver2);
+            player.itemLocation.Y -= 6f;
         }
 
         public override bool Shoot(Item item, Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)

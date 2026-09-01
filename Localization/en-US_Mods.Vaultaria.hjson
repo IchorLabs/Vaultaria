@@ -1235,6 +1235,8 @@ Projectiles: {
 	OlPainfulHeatRay.DisplayName: Ol Painful Heat Ray
 	BigSuccGrenade.DisplayName: Big Succ Grenade
 	CyberEagleHeatRay.DisplayName: Cyber Eagle Heat Ray
+	DarkMagicExplosion.DisplayName: Dark Magic Explosion
+	TaserHeatRay.DisplayName: Taser Heat Ray
 }
 
 Buffs: {

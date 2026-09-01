@@ -3,6 +3,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Vaultaria.Common.Globals;
+using Vaultaria.Common.Enemies.Mobs;
 using Terraria.DataStructures;
 using System;
 using Vaultaria.Content.Buffs.Prefixes.Elements;
@@ -92,7 +93,8 @@ namespace Vaultaria.Common.Utilities
             {ElementalID.SlagBuff, ElementalID.SlagExplosion},
             {ElementalID.ExplosiveBuff, ElementalID.RoundExplosiveProjectile},
             {ElementalID.CryoBuff, ElementalID.CryoExplosion},
-            {ElementalID.RadiationBuff, ElementalID.RadiationExplosion}
+            {ElementalID.RadiationBuff, ElementalID.RadiationExplosion},
+            {ElementalID.DarkMagicBuff, ElementalID.DarkMagicExplosion}
         };
 
         // ********************************************
@@ -225,6 +227,16 @@ namespace Vaultaria.Common.Utilities
         /// <param name="buffTime"></param>
         public static void SetElementOnNPC(NPC target, NPC.HitInfo hit, float elementalMultiplier, Player player, short elementalProjectile, int buffType, int buffTime)
         {
+            if (buffType == ElementalID.ShockBuff)
+            {
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    target.AddBuff(buffType, ShockBuff.Duration);
+                }
+
+                return;
+            }
+
             int elementalDamage = 0;
             float baseDamage = hit.SourceDamage;
 
@@ -259,6 +271,16 @@ namespace Vaultaria.Common.Utilities
 
         public static void SetElementOnNPC(NPC target, float elementalMultiplier, Player player, short elementalProjectile, int buffType, int buffTime)
         {
+            if (buffType == ElementalID.ShockBuff)
+            {
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    target.AddBuff(buffType, ShockBuff.Duration);
+                }
+
+                return;
+            }
+
             int elementalDamage = 0;
 
             SetElementalDamage(1, elementalMultiplier, out elementalDamage);
@@ -309,6 +331,16 @@ namespace Vaultaria.Common.Utilities
         /// <param name="buffTime"></param>
         public static void SetElementOnPlayer(Player target, Player.HurtInfo info, float elementalMultiplier, Player player, short elementalProjectile, int buffType, int buffTime)
         {
+            if (buffType == ElementalID.ShockBuff)
+            {
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    target.AddBuff(buffType, ShockBuff.Duration);
+                }
+
+                return;
+            }
+
             int elementalDamage = 0;
             float baseDamage = info.SourceDamage;
 
@@ -342,6 +374,16 @@ namespace Vaultaria.Common.Utilities
 
         public static void SetElementOnPlayer(Player target, float elementalMultiplier, Player player, short elementalProjectile, int buffType, int buffTime)
         {
+            if (buffType == ElementalID.ShockBuff)
+            {
+                if (player.whoAmI == Main.myPlayer)
+                {
+                    target.AddBuff(buffType, ShockBuff.Duration);
+                }
+
+                return;
+            }
+
             int elementalDamage = 0;
 
             SetElementalDamage(1, elementalMultiplier, out elementalDamage);
@@ -480,6 +522,13 @@ namespace Vaultaria.Common.Utilities
         /// <param name="buffTime"></param>
         public static void BloodSplode(NPC target, NPC.HitInfo hit, float elementalMultiplier, short elementalProjectile, int buffType, int buffTime)
         {
+            if (buffType == ElementalID.ShockBuff)
+            {
+                ShockGlobalNPC.SpawnShockBurst(target);
+                target.AddBuff(buffType, ShockBuff.Duration);
+                return;
+            }
+
             int elementalDamage = 0;
             float baseDamage = hit.SourceDamage;
 

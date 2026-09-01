@@ -61,5 +61,6 @@ namespace Vaultaria.Common.Utilities
         // Dark Magic Element
         public static readonly int DarkMagicPrefix = ModContent.PrefixType<DarkMagic>();
         public static readonly int DarkMagicBuff = ModContent.BuffType<DarkMagicBuff>();
+        public static short DarkMagicExplosion => (short)ModContent.ProjectileType<DarkMagicExplosion>();
     }
 }

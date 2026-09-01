@@ -5,7 +5,6 @@ using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
-using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Maliwan;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
@@ -32,13 +31,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
             Item.noMelee = true;
             Item.shootSpeed = 18;
             Item.shoot = ModContent.ProjectileType<CloudBullet>();
-            Item.useAmmo = ModContent.ItemType<SubmachineGunAmmo>();
+            Item.mana = 3;
 
             // Combat properties
             Item.knockBack = 2.3f;
             Item.damage = 11;
             Item.crit = 6;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Magic;
 
             Item.useTime = 8;
             Item.useAnimation = 8;
@@ -56,7 +55,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 3 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Corrosive clouds", ItemText.VaultarianColours.Corrosive);
             ItemText.RedText(tooltips, Mod, "Now, you will rise.");
         }

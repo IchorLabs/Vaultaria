@@ -19,29 +19,43 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Sniper.Vladof
         private int shockBuff = ElementalID.ShockBuff;
         private int buffTime = 60;
 
+        public override string Texture => $"Terraria/Images/Projectile_{ProjectileID.HeatRay}";
+
         public override void SetDefaults()
         {
             base.SetDefaults();
-            // Size
-            Projectile.Size = new Vector2(80, 8);
-
-            // Damage
-            Projectile.friendly = true;
-            Projectile.hostile = false;
-            Projectile.penetrate = 1;
+            Projectile.CloneDefaults(ProjectileID.HeatRay);
             Projectile.aiStyle = 0;
-
-            // Bullet Config
-            Projectile.timeLeft = 600;
-            Projectile.ignoreWater = true;
-            Projectile.tileCollide = true;
-            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.DamageType = DamageClass.Magic;
         }
         
         public override void AI()
         {
             base.AI();
+            CreateHeatRayTrail();
+        }
+
+        private void CreateHeatRayTrail()
+        {
             Projectile.rotation = Projectile.velocity.ToRotation();
+            Vector2 direction = Projectile.velocity.SafeNormalize(Vector2.UnitX);
+            Vector2 sideways = direction.RotatedBy(MathHelper.PiOver2);
+
+            for (int i = 0; i < 6; i++)
+            {
+                int dustType = (i % 5) switch
+                {
+                    0 => DustID.BlueTorch,
+                    1 => DustID.MushroomSpray,
+                    2 => DustID.HallowSpray,
+                    3 => DustID.YellowTorch,
+                    _ => DustID.IchorTorch
+                };
+                Dust dust = Dust.NewDustDirect(Projectile.Center - direction * (i * 2f) + sideways * Main.rand.NextFloat(-0.75f, 0.75f), 0, 0, dustType, 0f, 0f, 0, default, Main.rand.NextFloat(0.8f, 1.2f));
+                dust.noGravity = true;
+                dust.velocity = -Projectile.velocity * 0.1f + Main.rand.NextVector2Circular(0.25f, 0.25f);
+                dust.rotation = Main.rand.NextFloat(6.283185f);
+            }
         }
 
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)

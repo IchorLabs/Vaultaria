@@ -7,7 +7,6 @@ using Vaultaria.Content.Items.Materials;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.AssaultRifle.Vladof;
-using Vaultaria.Content.Items.Weapons.Ammo;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 {
@@ -33,13 +32,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
             Item.noMelee = true;
             Item.shootSpeed = 18;
             Item.shoot = ModContent.ProjectileType<BlackoutBullet>();
-            Item.useAmmo = ModContent.ItemType<AssaultRifleAmmo>();
+            Item.mana = 5;
 
             // Combat properties
             Item.knockBack = 2.3f;
             Item.damage = 40;
             Item.crit = 16;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Magic;
 
             Item.useTime = 7;
             Item.useAnimation = 7;
@@ -57,7 +56,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
+            ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 5 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly fires Explosive-Slag rounds", ItemText.VaultarianColours.Explosive);
             ItemText.RedText(tooltips, Mod, "It says it in chat.");
         }

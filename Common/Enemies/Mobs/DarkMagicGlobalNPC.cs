@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Vaultaria.Common.Utilities;
@@ -14,6 +15,17 @@ namespace Vaultaria.Common.Enemies.Mobs
 
         private float pendingDamage;
         private int payoutTimer;
+
+        public override void DrawEffects(NPC npc, ref Color drawColor)
+        {
+            base.DrawEffects(npc, ref drawColor);
+
+            if (npc.HasBuff(ElementalID.DarkMagicBuff))
+            {
+                float pulse = 0.2f + (float)((System.Math.Sin(Main.GameUpdateCount * 0.08f) + 1f) * 0.075f);
+                drawColor = Color.Lerp(drawColor, ItemText.VaultarianColours.DarkMagic.GetVaultarianColor(), pulse);
+            }
+        }
 
         public override void OnHitByItem(NPC npc, Player player, Item item, NPC.HitInfo hit, int damageDone)
         {

@@ -4,7 +4,6 @@ using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
 using Vaultaria.Content.Items.Materials;
-using Vaultaria.Content.Items.Weapons.Ammo;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
 using Vaultaria.Content.Projectiles.Ammo.Legendary.Sniper.Vladof;
@@ -18,6 +17,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 1;
+            ItemID.Sets.ItemsThatAllowRepeatedRightClick[Type] = true;
         }
 
         public override void SetDefaults()
@@ -31,15 +31,15 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
 
             // Gun properties
             Item.noMelee = true;
-            Item.shootSpeed = 30f;
+            Item.shootSpeed = 10f;
             Item.shoot = ModContent.ProjectileType<ShockblastElBullet>();
-            Item.useAmmo = ModContent.ItemType<SniperAmmo>();
+            Item.mana = 12;
 
             // Combat properties
             Item.knockBack = 1f;
             Item.damage = 70;
             Item.crit = 0;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Magic;
 
             Item.useTime = 10;
             Item.useAnimation = 10;
@@ -61,13 +61,13 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
         {
             if (player.altFunctionUse == 2) // Right-click
             {
-                Item.DamageType = DamageClass.Ranged;
+                Item.DamageType = DamageClass.Magic;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.knockBack = 2.3f;
                 Item.noMelee = true;
-                Item.shootSpeed = 20f;
+                Item.shootSpeed = 10f;
                 Item.shoot = ModContent.ProjectileType<ShockblastExBullet>();
-                Item.useAmmo = ModContent.ItemType<SniperAmmo>();
+                Item.mana = 30;
                 SetItemSound(Item, Sounds.ETechLauncher, 60);
 
                 Item.damage = 200;
@@ -80,12 +80,12 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
             }
             else // Left-click
             {
-                Item.DamageType = DamageClass.Ranged;
+                Item.DamageType = DamageClass.Magic;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noMelee = true;
-                Item.shootSpeed = 30f;
+                Item.shootSpeed = 10f;
                 Item.shoot = ModContent.ProjectileType<ShockblastElBullet>();
-                Item.useAmmo = ModContent.ItemType<SniperAmmo>();
+                Item.mana = 12;
                 SetItemSound(Item, Sounds.ETechSniperSingle, 60);
 
                 Item.damage = 70;
@@ -100,24 +100,20 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Sniper.Vladof
             return base.CanUseItem(player);
         }
 
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        {
+            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+            return false;
+        }
+
         public override Vector2? HoldoutOffset()
         {
             return new Vector2(-15f, 0f);
         }
 
-        public override bool CanConsumeAmmo(Item ammo, Player player)
-        {
-            for (int i = 0; i < 2; i++)
-            {
-                player.ConsumeItem(ammo.type, false);
-            }
-
-            return true;
-        }
-
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            ItemText.Text(tooltips, Mod, "tooltip1", "Consumes 3 Sniper Ammo per shot");
+            ItemText.Text(tooltips, Mod, "tooltip1", "Uses 12 mana per left-click or 30 mana per right-click");
             ItemText.Text(tooltips, Mod, "tooltip2", "Left-click to shoot fast Shock e-tech rounds", ItemText.VaultarianColours.Shock);
             ItemText.Text(tooltips, Mod, "tooltip3", "Right-click to shoot more powerful Explosive-Shock rounds", ItemText.VaultarianColours.Explosive);
             ItemText.RedText(tooltips, Mod, "Blast them to smithereens!");

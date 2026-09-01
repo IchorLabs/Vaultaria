@@ -26,6 +26,7 @@ namespace Vaultaria.Common.Enemies.Mobs
             int slag = ModContent.BuffType<SlagBuff>();
             int cryo = ModContent.BuffType<CryoBuff>();
             int radiation = ModContent.BuffType<RadiationBuff>();
+            int darkMagic = ModContent.BuffType<DarkMagicBuff>();
 
             if(Utilities.Utilities.IsWearing(player, ModContent.ItemType<Bloodsplosion>()))
             {
@@ -57,8 +58,12 @@ namespace Vaultaria.Common.Enemies.Mobs
                 {
                     BloodSplosion(npc, hit, radiation);
                 }
+                if(npc.HasBuff(darkMagic))
+                {
+                    BloodSplosion(npc, hit, darkMagic);
+                }
                 
-                if(!npc.HasBuff(incendiary) && !npc.HasBuff(shock) &&!npc.HasBuff(corrosive) &&!npc.HasBuff(slag) &&!npc.HasBuff(cryo) &&!npc.HasBuff(radiation))
+                if(!npc.HasBuff(incendiary) && !npc.HasBuff(shock) &&!npc.HasBuff(corrosive) &&!npc.HasBuff(slag) &&!npc.HasBuff(cryo) &&!npc.HasBuff(radiation) && !npc.HasBuff(darkMagic))
                 {
                     BloodSplosion(npc, hit, explosive);
                 }

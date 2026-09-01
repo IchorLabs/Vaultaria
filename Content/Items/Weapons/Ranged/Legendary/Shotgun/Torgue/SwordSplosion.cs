@@ -28,6 +28,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
             Item.Size = new Vector2(67, 30);
             Item.scale = 0.95f;
             Item.useStyle = ItemUseStyleID.Shoot;
+            Item.useTurn = false;
             Item.rare = ItemRarityID.LightPurple;
 
             // Gun properties
@@ -40,7 +41,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
             Item.knockBack = 2.3f;
             Item.damage = 30;
             Item.crit = 6;
-            Item.DamageType = DamageClass.Ranged;
+            Item.DamageType = DamageClass.Melee;
 
             Item.useTime = 20;
             Item.useAnimation = 20;
@@ -69,6 +70,18 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
             return true;
         }
 
+        public override void UseStyle(Player player, Rectangle heldItemFrame)
+        {
+            Vector2 aimDirection = Main.MouseWorld - player.MountedCenter;
+            player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
+
+            float aimRotation = aimDirection.ToRotation();
+            float itemRotation = (aimDirection * player.direction).ToRotation();
+
+            player.itemRotation = itemRotation;
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, aimRotation - MathHelper.PiOver2);
+            player.itemLocation.Y -= 6f;
+        }
 
         public override Vector2? HoldoutOffset()
         {
