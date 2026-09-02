@@ -1127,6 +1127,11 @@ Items: {
 		Tooltip: ""
 		DisplayName: Big Succ
 	}
+
+	BansheeClaw: {
+		Tooltip: ""
+		DisplayName: Banshee Claw
+	}
 }
 
 Projectiles: {
@@ -1237,6 +1242,7 @@ Projectiles: {
 	CyberEagleHeatRay.DisplayName: Cyber Eagle Heat Ray
 	DarkMagicExplosion.DisplayName: Dark Magic Explosion
 	TaserHeatRay.DisplayName: Taser Heat Ray
+	BansheeClawJab.DisplayName: Banshee Claw Jab
 }
 
 Buffs: {
