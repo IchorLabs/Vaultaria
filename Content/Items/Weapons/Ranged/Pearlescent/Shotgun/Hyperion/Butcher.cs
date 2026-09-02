@@ -81,7 +81,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Pearlescent.Shotgun.Hyperion
 
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-16f, 3f);
+            return new Vector2(-5f, 0f);
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
