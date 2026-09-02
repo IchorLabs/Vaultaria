@@ -24,11 +24,14 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             Item.damage = 50;
             Item.knockBack = 5f;
             Item.crit = 6;
+            
+            // Left-click swing (default)
             Item.useStyle = ItemUseStyleID.Swing;
             Item.useTime = 70;
             Item.useAnimation = 70;
             Item.autoReuse = true;
             Item.useTurn = true;
+            
             Item.value = Item.buyPrice(gold: 1);
             Item.rare = ItemRarityID.LightRed;
             Item.UseSound = SoundID.Item1;
@@ -46,28 +49,27 @@ namespace Vaultaria.Content.Items.Weapons.Melee
 
         public override bool CanUseItem(Player player)
         {
-            bool isJab = player.altFunctionUse == 2;
-
-            Item.useStyle = isJab ? ItemUseStyleID.Shoot : ItemUseStyleID.Swing;
-            Item.useTime = isJab ? 12 : 70;
-            Item.useAnimation = isJab ? 12 : 70;
-            Item.useTurn = !isJab;
-            Item.noMelee = isJab;
-            Item.noUseGraphic = isJab;
-            Item.shoot = isJab ? ModContent.ProjectileType<BansheeClawJab>() : ProjectileID.None;
-            Item.shootSpeed = isJab ? 8f : 0f;
-
-            if (isJab)
+            if (player.altFunctionUse == 2) // Right-click (shortsword jab with dash)
             {
-                player.velocity.X = player.direction * 4f;
+                Item.useStyle = ItemUseStyleID.Shoot;
+                Item.useTime = 12;
+                Item.useAnimation = 12;
+                Item.noMelee = true;
+                Item.noUseGraphic = true;
+                Item.shoot = ModContent.ProjectileType<BansheeClawJab>();
+                Item.shootSpeed = 12f;
+            }
+            else // Left-click (native swing)
+            {
+                Item.useStyle = ItemUseStyleID.Swing;
+                Item.useTime = 70;
+                Item.useAnimation = 70;
+                Item.noMelee = false;
+                Item.noUseGraphic = false;
+                Item.shoot = ProjectileID.None;
             }
 
             return base.CanUseItem(player);
-        }
-
-        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-        {
-            return true;
         }
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
@@ -81,7 +83,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Inflicts Dark Magic", ItemText.VaultarianColours.DarkMagic);
-            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to jab forward", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to jab and dash toward cursor", ItemText.VaultarianColours.Information);
         }
     }
 }

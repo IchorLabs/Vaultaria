@@ -1243,6 +1243,7 @@ Projectiles: {
 	DarkMagicExplosion.DisplayName: Dark Magic Explosion
 	TaserHeatRay.DisplayName: Taser Heat Ray
 	BansheeClawJab.DisplayName: Banshee Claw Jab
+	BansheeClawSwing.DisplayName: Banshee Claw Swing
 }
 
 Buffs: {
