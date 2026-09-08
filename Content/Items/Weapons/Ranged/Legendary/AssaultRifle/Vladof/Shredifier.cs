@@ -106,7 +106,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.AssaultRifle.Vladof
 
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-10f, -10f);
+            return new Vector2(-10f, -4f);
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
