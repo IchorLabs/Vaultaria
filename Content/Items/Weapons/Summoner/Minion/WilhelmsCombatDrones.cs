@@ -103,6 +103,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Minion
             ItemText.Text(tooltips, Mod, "Tooltip2", "Wolf attacks enemies", ItemText.VaultarianColours.Radiation);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Saint regenerates your health", ItemText.VaultarianColours.Healing);
             ItemText.RedText(tooltips, Mod, "You killed Wilhelm...?");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

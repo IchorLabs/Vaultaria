@@ -58,6 +58,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Jakobs
         {
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Golden Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

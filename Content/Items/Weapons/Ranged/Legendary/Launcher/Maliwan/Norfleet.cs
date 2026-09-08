@@ -72,6 +72,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Maliwan
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 40 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots 3 elemental orbs that deal massive damage", ItemText.VaultarianColours.Master);
             ItemText.RedText(tooltips, Mod, "Blows up everything!");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

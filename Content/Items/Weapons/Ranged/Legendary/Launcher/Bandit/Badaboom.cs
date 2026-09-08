@@ -83,6 +83,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Bandit
             ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 25 Launcher Ammo per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Allows for rocket jumping", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "Multi-kill.\nYoooo, the skip dude.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

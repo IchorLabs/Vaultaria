@@ -16,6 +16,7 @@ using Vaultaria.Content.Items.Accessories.Relics;
 using Vaultaria.Content.Items.Accessories.Shields;
 using Vaultaria.Content.Items.Accessories.Skills;
 using Vaultaria.Content.Items.Materials;
+using Vaultaria.Content.Items.Placeables.Ores;
 using Vaultaria.Content.Items.Weapons.Ammo;
 using Vaultaria.Content.Items.Weapons.Magic;
 using Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue;
@@ -444,13 +445,14 @@ namespace Vaultaria.Common.GlobalItems
             globalLoot.Add(new AmmoDropRule(ModContent.ItemType<LauncherAmmo>(), 30, 1, 10));
 
             // Eridium
-            globalLoot.Add(ItemDropRule.Common(ModContent.ItemType<Eridium>(), 100, 1, 2));
+            globalLoot.Add(ItemDropRule.ByCondition(new NonBossEridiumCondition(), ModContent.ItemType<EridiumFragment>(), 100, 1, 2));
+            globalLoot.Add(ItemDropRule.ByCondition(new BossEridiumCondition(), ModContent.ItemType<Eridium>(), 100, 1, 2));
         }
 
         private void Attunements(GlobalLoot globalLoot)
         {
             globalLoot.Add(ItemDropRule.ByCondition(new SoulFireCondition(), ModContent.ItemType<SoulFire>(), 1000, 1, 1));
-            globalLoot.Add(ItemDropRule.ByCondition(new ShockraCondition(), ModContent.ItemType<Shockra>(), 1000, 1, 1));
+            globalLoot.Add(ItemDropRule.ByCondition(new ShockraCondition(), ModContent.ItemType<Shockra>(), 2000, 1, 1));
             globalLoot.Add(ItemDropRule.ByCondition(new BlightTigerCondition(), ModContent.ItemType<BlightTiger>(), 1000, 1, 1));
             globalLoot.Add(ItemDropRule.ByCondition(new MindBlownCondition(), ModContent.ItemType<MindBlown>(), 1000, 1, 1));
             globalLoot.Add(ItemDropRule.ByCondition(new CorruptedSpiritCondition(), ModContent.ItemType<CorruptedSpirit>(), 1000, 1, 1));

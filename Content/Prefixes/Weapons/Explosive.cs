@@ -2,6 +2,7 @@ using Terraria;
 using Terraria.ModLoader;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
+using Vaultaria.Common.Configs;
 using Vaultaria.Common.Systems;
 using Vaultaria.Common.Utilities;
 
@@ -51,6 +52,13 @@ namespace Vaultaria.Content.Prefixes.Weapons
             {
                 OverrideColor = ItemText.VaultarianColours.Explosive.GetVaultarianColor()
             };
+            if (!ModContent.GetInstance<VaultariaConfig>().DisableReworkTooltips)
+            {
+                yield return new TooltipLine(Mod, "ExplosiveRework", "Explosive will be recieving a rework in an upcoming update!")
+                {
+                    OverrideColor = ItemText.VaultarianColours.Explosive.GetVaultarianColor()
+                };
+            }
         }
 	}
 }

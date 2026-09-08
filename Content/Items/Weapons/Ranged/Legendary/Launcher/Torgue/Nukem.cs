@@ -70,6 +70,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Launcher.Torgue
             ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Fires a nuke", ItemText.VaultarianColours.Explosive);
             ItemText.RedText(tooltips, Mod, "Name dropper.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

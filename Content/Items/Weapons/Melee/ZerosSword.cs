@@ -135,6 +135,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
             ItemText.Text(tooltips, Mod, "Tooltip1", "0", ItemText.VaultarianColours.Information);
             ItemText.Text(tooltips, Mod, "Tooltip1", "When paired with the Deception potion's buff,\nyou gain the ability to dash towards enemies at your mouse", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "How hilarious\nYou just set off my trap card\nYour death approaches.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

@@ -59,6 +59,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Rare
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Creates a singularity on impact, pulling in nearby enemies", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "Suck! Suck! Suck!");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

@@ -64,6 +64,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Shotgun.Bandit
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.MultiShotText(tooltips, Item, 6);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
         }

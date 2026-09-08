@@ -36,6 +36,10 @@ namespace Vaultaria.Common.Configs
         [Description("removes accuracy and inaccuracy changes with sustained fire")]
         public bool DisableWeaponAccuracyGimmicks;
 
+        [DefaultValue(false)]
+        [Description("disables all rework tooltips")]
+        public bool DisableReworkTooltips;
+
         // --- Optional Integer Setting ---
         [DefaultValue(1)] // Default value is 1 (no multiplier)
         [Range(1, 10)] // Optional: Defines the min/max slider range in the UI

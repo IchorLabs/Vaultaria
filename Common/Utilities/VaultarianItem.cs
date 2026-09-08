@@ -92,6 +92,16 @@ namespace Vaultaria.Common.Utilities
             BiggSuccVariation5,
         }
 
+        public override void SetDefaults()
+        {
+            base.SetDefaults();
+
+            if (ItemSounds is { Length: > 0 })
+            {
+                SoundVariator(Item, ItemSounds);
+            }
+        }
+
         public override bool? UseItem(Player player)
         {
             if(ItemSounds != null) // Needs a null check cause the array itself is null

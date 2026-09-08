@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
@@ -34,6 +35,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl
             Item.shootSpeed = 20;
             Item.shoot = ProjectileID.HeatRay;
             Item.mana = 10;
+            Item.UseSound = null;
 
             // Combat properties
             Item.knockBack = 1f;
@@ -52,6 +54,9 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Dahl
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
+            SetItemSound(Item, Sounds.GenericLaser, 60);
+            SoundEngine.PlaySound(Item.UseSound.Value, player.Center);
+
             Projectile.NewProjectileDirect(
                 source,
                 position,

@@ -27,6 +27,7 @@ namespace Vaultaria.Content.Items.Materials
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "The second fragment of the Warrior's Vault Key");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Found in Locked Gold Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

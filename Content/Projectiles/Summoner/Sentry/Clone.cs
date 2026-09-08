@@ -69,7 +69,19 @@ namespace Vaultaria.Content.Projectiles.Summoner.Sentry
                 Projectile.velocity.Y = 16f;
             }
 
-            bool notABadItem = item.type != ModContent.ItemType<DigiClone>() && item.type != ModContent.ItemType<EridianFabricator>() && item.type != ModContent.ItemType<BuzzAxe>() && item.type != ModContent.ItemType<BreathOfTerramorphous>() && item.type != ModContent.ItemType<DestroyersEye>() && item.type != ModContent.ItemType<WarriorsTail>() && item.type != ItemID.LastPrism;
+            bool notABadItem = modItem is not EridianFabricator &&
+                               item.type != ModContent.ItemType<DigiClone>() &&
+                               item.type != ModContent.ItemType<EridianFabricator>() &&
+                               item.type != ModContent.ItemType<BuzzAxe>() &&
+                               item.type != ModContent.ItemType<BreathOfTerramorphous>() &&
+                               item.type != ModContent.ItemType<DestroyersEye>() &&
+                               item.type != ModContent.ItemType<WarriorsTail>() &&
+                               item.type != ItemID.LastPrism;
+
+            if (!notABadItem)
+            {
+                return;
+            }
 
             if(item.DamageType == DamageClass.Ranged && notABadItem)
             {

@@ -66,6 +66,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Throws 3 Corrosive homing skulls", ItemText.VaultarianColours.Corrosive);
             ItemText.RedText(tooltips, Mod, "To you I am past, a story to tell.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

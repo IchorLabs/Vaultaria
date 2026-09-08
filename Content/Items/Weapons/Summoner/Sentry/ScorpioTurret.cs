@@ -87,6 +87,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
             ItemText.Text(tooltips, Mod, "Tooltip4", "Spawns hearts randomly every 10 seconds", ItemText.VaultarianColours.Healing);
             ItemText.Text(tooltips, Mod, "Tooltip5", "Found in Locked Shadow Chests", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "LOOK OUT! BADASS LOADER!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

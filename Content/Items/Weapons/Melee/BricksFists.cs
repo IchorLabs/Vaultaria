@@ -75,6 +75,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Throws a flurry of fists");
             ItemText.RedText(tooltips, Mod, "SLAB... Did you... Did you just jump of the BUZZARD'S NEST?!\nGOD DAMN YOU MAKE ME PROUD!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

@@ -112,6 +112,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
             ItemText.Text(tooltips, Mod, "Tooltip2", "Left-Click to shoot a 16-Round Burst of Radiation orbs", ItemText.VaultarianColours.Radiation);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Right-Click to shoot a 16-Round Burst of Cryo orbs", ItemText.VaultarianColours.Cryo);
             ItemText.RedText(tooltips, Mod, "Harness the 4th state of matter.");   
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

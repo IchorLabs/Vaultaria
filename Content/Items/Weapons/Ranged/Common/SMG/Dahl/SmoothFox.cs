@@ -59,6 +59,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.SMG.Dahl
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 round burst");
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

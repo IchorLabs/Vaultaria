@@ -98,6 +98,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
             ItemText.Text(tooltips, Mod, "Tooltip4", "    \tA homing slag ball per second", ItemText.VaultarianColours.Slag);
             ItemText.Text(tooltips, Mod, "Tooltip5", "    \tA Cluster Rocket per 2 seconds", ItemText.VaultarianColours.Explosive);
             ItemText.RedText(tooltips, Mod, "Ten years of Dahl military experience at your service.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

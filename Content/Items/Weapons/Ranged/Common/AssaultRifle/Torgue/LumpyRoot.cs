@@ -53,7 +53,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue
 
         public override Vector2? HoldoutOffset()
         {
-            return new Vector2(-13f, 3.5f);
+            return new Vector2(-13f, -2f);
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
@@ -61,6 +61,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Torgue
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Assault Rifle Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Explosive bullets, damaging enemies twice!", ItemText.VaultarianColours.Explosive);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

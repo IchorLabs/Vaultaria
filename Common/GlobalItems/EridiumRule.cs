@@ -3,6 +3,7 @@ using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 using Vaultaria.Common.Configs;
 using Vaultaria.Content.Items.Materials;
+using Vaultaria.Content.Items.Placeables.Ores;
 using System.Collections.Generic;
 using System;
 
@@ -26,7 +27,10 @@ namespace Vaultaria.Common.GlobalItems
 
             int amount = Main.rand.Next(min, max + 1);
 
-            CommonCode.DropItem(info, ModContent.ItemType<Eridium>(), amount);
+            int itemType = info.npc.boss
+                ? ModContent.ItemType<Eridium>()
+                : ModContent.ItemType<EridiumFragment>();
+            CommonCode.DropItem(info, itemType, amount);
 
             return new ItemDropAttemptResult { State = ItemDropAttemptResultState.Success };
         }
@@ -36,5 +40,23 @@ namespace Vaultaria.Common.GlobalItems
 
         // Not Used
         public void ReportDroprates(List<DropRateInfo> a, DropRateInfoChainFeed b) {}
+    }
+
+    public class NonBossEridiumCondition : IItemDropRuleCondition, IProvideItemConditionDescription
+    {
+        public bool CanDrop(DropAttemptInfo info) => info.npc != null && !info.npc.boss;
+
+        public string GetConditionDescription() => "Dropped by non-boss enemies";
+
+        public bool CanShowItemDropInUI() => true;
+    }
+
+    public class BossEridiumCondition : IItemDropRuleCondition, IProvideItemConditionDescription
+    {
+        public bool CanDrop(DropAttemptInfo info) => info.npc != null && info.npc.boss;
+
+        public string GetConditionDescription() => "Dropped by bosses";
+
+        public bool CanShowItemDropInUI() => true;
     }
 }

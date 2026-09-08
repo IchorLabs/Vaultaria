@@ -58,6 +58,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.SMG.Hyperion
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Increases accuracy with sustained fire!");
             ItemText.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

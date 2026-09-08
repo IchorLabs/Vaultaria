@@ -88,6 +88,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = true;
+                Item.noUseGraphic = true;
                 Item.shootSpeed = 17f;
                 Item.shoot = ModContent.ProjectileType<HandgunGrenade>();
 
@@ -106,6 +107,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noMelee = true;
+                Item.noUseGraphic = false;
                 Item.shootSpeed = 17f;
                 Item.shoot = ProjectileID.Bullet;
 
@@ -131,6 +133,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Tediore
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw the Pistol, unleashing a high damage explosion!", ItemText.VaultarianColours.Explosive);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Wooden Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

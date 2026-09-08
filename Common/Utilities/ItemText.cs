@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using Vaultaria.Common.Configs;
 using System.Collections.Generic;
 
 namespace Vaultaria.Common.Utilities
@@ -59,6 +60,11 @@ namespace Vaultaria.Common.Utilities
 
         public static void Text(List<TooltipLine> tooltips, Mod mod, string name = "Tooltip1", string tooltip = "Uses any normal bullet type as ammo")
         {
+            if (name == "Rework" && ModContent.GetInstance<VaultariaConfig>().DisableReworkTooltips)
+            {
+                return;
+            }
+
             tooltips.Add(new TooltipLine(mod, name, tooltip));
         }
 
@@ -76,6 +82,16 @@ namespace Vaultaria.Common.Utilities
             {
                 OverrideColor = VaultarianColours.RedText.GetVaultarianColor()
             });
+        }
+
+        public static void ReworkText(List<TooltipLine> tooltips, Mod mod)
+        {
+            if (ModContent.GetInstance<VaultariaConfig>().DisableReworkTooltips)
+            {
+                return;
+            }
+
+            Text(tooltips, mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
 
         public static void CursedText(List<TooltipLine> tooltips, Mod mod, string tooltip)

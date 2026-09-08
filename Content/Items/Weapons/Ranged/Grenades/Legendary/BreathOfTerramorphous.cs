@@ -65,6 +65,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
             ItemText.Text(tooltips, Mod, "Tooltip1", "Is highly effective on the floor");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Creates Fire explosions on impact for 5 seconds", ItemText.VaultarianColours.Incendiary);
             ItemText.RedText(tooltips, Mod, "His breath was of fire…");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

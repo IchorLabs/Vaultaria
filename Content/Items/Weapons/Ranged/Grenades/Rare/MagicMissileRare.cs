@@ -82,6 +82,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Rare
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Throws out 2 Slag balls that home in on an enemy and explode on impact", ItemText.VaultarianColours.Slag);
             ItemText.RedText(tooltips, Mod, "No wand required. Just point and shoot.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

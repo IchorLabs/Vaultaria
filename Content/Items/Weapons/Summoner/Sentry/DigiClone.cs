@@ -137,6 +137,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Sentry
             }
 
             ItemText.RedText(tooltips, Mod, "I know that fella. We went to the same assassin bars.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
 
         public override bool AllowPrefix(int pre)

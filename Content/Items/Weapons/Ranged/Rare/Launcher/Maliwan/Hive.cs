@@ -69,6 +69,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Launcher.Maliwan
             ItemText.Text(tooltips, Mod, "ToolTip1", "Consumes 25 Launcher Ammo per shot");
             ItemText.Text(tooltips, Mod, "ToolTip3", "After a second, the initial projectile will spawn Corrosive homing rockets", ItemText.VaultarianColours.Corrosive);
             ItemText.RedText(tooltips, Mod, "Full of bees.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

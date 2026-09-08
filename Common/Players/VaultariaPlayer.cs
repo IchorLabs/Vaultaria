@@ -39,6 +39,7 @@ using Vaultaria.Common.Configs;
 using Vaultaria.Content.Buffs.MagicEffects;
 using Vaultaria.Content.Items.Weapons.Ranged.Seraph.SMG.Hyperion;
 using Vaultaria.Content.NPCs.Town.Claptrap;
+using Vaultaria.Content.Items.Tools;
 using Vaultaria.Common.Systems;
 using System.Linq;
 using static System.Array;
@@ -55,6 +56,7 @@ namespace Vaultaria.Common.Players
 
         // 1. Persistence Flag: Saved with the character file.
         public bool hasInitialized = false;
+        public bool hasReceivedUpdate12Note = false;
 
         // 2. The Hook: Runs when the character first loads or enters the world.
         public override void OnEnterWorld()
@@ -77,6 +79,12 @@ namespace Vaultaria.Common.Players
                     // Set the flag to true so this code doesn't run again on the next login.
                     hasInitialized = true;
                 }
+
+                if (!hasReceivedUpdate12Note)
+                {
+                    Player.QuickSpawnItem(Player.GetSource_None(), ModContent.ItemType<ThankYouNote>(), 1);
+                    hasReceivedUpdate12Note = true;
+                }
             }
         }
 
@@ -84,11 +92,13 @@ namespace Vaultaria.Common.Players
         public override void SaveData(TagCompound tag)
         {
             tag.Add("hasInitialized", hasInitialized);
+            tag.Add("hasReceivedUpdate12Note", hasReceivedUpdate12Note);
         }
 
         public override void LoadData(TagCompound tag)
         {
             hasInitialized = tag.GetBool("hasInitialized");
+            hasReceivedUpdate12Note = tag.GetBool("hasReceivedUpdate12Note");
         }
 
         public override void UpdateDead()

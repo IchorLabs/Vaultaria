@@ -28,7 +28,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.SMG.Tediore
         {
             base.SetDefaults();
             // Size
-            Projectile.Size = new Vector2(25, 25);
+            Projectile.Resize(12, 12);
             Projectile.scale = 2.1f;
 
             // Damage

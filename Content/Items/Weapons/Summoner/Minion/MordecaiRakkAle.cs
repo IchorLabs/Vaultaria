@@ -89,6 +89,7 @@ namespace Vaultaria.Content.Items.Weapons.Summoner.Minion
             ItemText.Text(tooltips, Mod, "Tooltip1", "Summons Bloodwing to fight for you");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Has a chance to inflict a random element on enemies");
             ItemText.RedText(tooltips, Mod, "Oh, where the hell is... argh, I had a violin somewhere,\nI was gonna play it all sarcastically... goddammit, it was gonna be awesome.\nBLAKE! WHERE'S THE BLOODY VIOLIN?!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

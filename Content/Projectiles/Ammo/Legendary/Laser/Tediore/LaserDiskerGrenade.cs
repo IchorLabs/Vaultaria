@@ -28,7 +28,7 @@ namespace Vaultaria.Content.Projectiles.Ammo.Legendary.Laser.Tediore
         {
             base.SetDefaults();
             // Size
-            Projectile.Size = new Vector2(54, 54);
+            Projectile.Resize(20, 20);
             Projectile.scale = 1f;
 
             // Damage

@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
+using Vaultaria.Content.Items.Placeables.Ores;
 
 namespace Vaultaria.Content.Items.Materials
 {
@@ -31,6 +32,14 @@ namespace Vaultaria.Content.Items.Materials
             Item.useTurn = true;
             Item.createTile = ModContent.TileType<Tiles.Bars.Eridium>();
             Item.placeStyle = 0;
+        }
+
+        public override void AddRecipes()
+        {
+            CreateRecipe()
+                .AddIngredient<EridiumFragment>(4)
+                .AddTile(TileID.Furnaces)
+                .Register();
         }
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)

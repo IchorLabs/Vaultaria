@@ -74,7 +74,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
             if (altFireMode)
             {
                 // Spawn the grenade manually
-                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BabyMakerGrenade>(), damage, knockback, player.whoAmI);
+                int projectileIndex = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<BabyMakerGrenade>(), damage, knockback, player.whoAmI);
+                Main.projectile[projectileIndex].Center = position;
                 return false; // prevent vanilla bullet spawn
             }
 
@@ -92,6 +93,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = true;
+                Item.noUseGraphic = true;
                 Item.shootSpeed = 17f;
                 Item.shoot = ModContent.ProjectileType<BabyMakerGrenade>();
 
@@ -113,6 +115,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noMelee = true;
+                Item.noUseGraphic = false;
                 Item.shootSpeed = 17f;
                 Item.shoot = ProjectileID.Bullet;
 
@@ -138,6 +141,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Tediore
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw an explosive SMG");
             ItemText.RedText(tooltips, Mod, "Who's a widdle gunny-wunny?");   
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

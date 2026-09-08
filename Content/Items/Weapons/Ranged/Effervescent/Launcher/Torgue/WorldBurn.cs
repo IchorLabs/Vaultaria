@@ -70,6 +70,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Effervescent.Launcher.Torgue
             ItemText.Text(tooltips, Mod, "Tooltip1", "Consumes 20 Launcher Ammo per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots a more powerful Fiery nuke", ItemText.VaultarianColours.Incendiary);
             ItemText.RedText(tooltips, Mod, "War does not compute.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

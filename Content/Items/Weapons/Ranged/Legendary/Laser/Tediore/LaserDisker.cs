@@ -73,7 +73,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
             if (altFireMode)
             {
                 // Spawn the grenade manually
-                Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<LaserDiskerGrenade>(), damage, knockback, player.whoAmI);
+                int projectileIndex = Projectile.NewProjectile(source, position, velocity, ModContent.ProjectileType<LaserDiskerGrenade>(), damage, knockback, player.whoAmI);
+                Main.projectile[projectileIndex].Center = position;
                 return false; // prevent vanilla bullet spawn
             }
 
@@ -91,6 +92,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
                 Item.DamageType = DamageClass.Magic;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = true;
+                Item.noUseGraphic = true;
                 Item.shootSpeed = 17f;
                 Item.shoot = ModContent.ProjectileType<LaserDiskerGrenade>();
 
@@ -110,6 +112,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
                 Item.DamageType = DamageClass.Magic;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noMelee = true;
+                Item.noUseGraphic = false;
                 Item.shootSpeed = 17f;
                 Item.shoot = ModContent.ProjectileType<LaserDiskerBullet>();
                 Item.mana = 20;
@@ -136,6 +139,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore
             ItemText.Text(tooltips, Mod, "ToolTip1", "Shoots Explosive Laser Disks", ItemText.VaultarianColours.Explosive);
             ItemText.Text(tooltips, Mod, "ToolTip2", "Right-Click to throw the weapon", ItemText.VaultarianColours.Explosive);
             ItemText.RedText(tooltips, Mod, "Shazbot!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

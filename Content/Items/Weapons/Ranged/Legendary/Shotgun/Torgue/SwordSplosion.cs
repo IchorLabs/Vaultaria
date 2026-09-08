@@ -81,7 +81,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Torgue
             Vector2 aimDirection = Main.MouseWorld - player.MountedCenter;
             player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
 
-            float aimRotation = aimDirection.ToRotation() + GlobalItems.GetVisualAimDeviation(Item);
+            float aimRotation = aimDirection.ToRotation() - Item.GetGlobalItem<GlobalItems>().GetVisualRecoil(Item) * player.direction;
             float itemRotation = (aimRotation.ToRotationVector2() * player.direction).ToRotation();
 
             player.itemRotation = itemRotation;

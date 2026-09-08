@@ -114,6 +114,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Jakobs
             ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to do a melee attack");
             ItemText.Text(tooltips, Mod, "Tooltip3", "Gives you lifesteal if Order is also equipped", ItemText.VaultarianColours.Healing);
             ItemText.RedText(tooltips, Mod, "De Da.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
 
         private void HasOrderOn(Player player, int damageDone)

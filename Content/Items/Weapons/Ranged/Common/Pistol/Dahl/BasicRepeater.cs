@@ -72,6 +72,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.Pistol.Dahl
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "ToolTip2", "Fires a basic 3 round burst");
             ItemText.RedText(tooltips, Mod, "Wait a minute - you're not dead!\nYES! Now I can get off this glacier!\nClaptrap, your metaphorical ship has finally come in!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

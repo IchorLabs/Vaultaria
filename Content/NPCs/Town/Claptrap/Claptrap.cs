@@ -38,6 +38,7 @@ using Vaultaria.Content.Items.Placeables.Vaults;
 using Vaultaria.Content.Items.Weapons.Ranged.Legendary.Laser.Tediore;
 using Vaultaria.Content.Items.Accessories.Skills;
 using Vaultaria.Common.Utilities;
+using Vaultaria.Content.Items.Tools;
 
 namespace Vaultaria.Content.NPCs.Town.Claptrap
 {
@@ -436,6 +437,7 @@ namespace Vaultaria.Content.NPCs.Town.Claptrap
 				.Add<GearboxRenegade>()
 				.Add<GearboxMuckamuck>()
 				.Add<VaultHuntersRelic>()
+				.Add<ThankYouNote>()
 				.Add<Ranger>()
 				.Add<Foresight>()
 				.Add<KillingBlow>()

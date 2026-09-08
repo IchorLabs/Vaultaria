@@ -64,6 +64,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Legendary
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Throws a grenade that heals the player on enemy hit", ItemText.VaultarianColours.Healing);
             ItemText.RedText(tooltips, Mod, "A skilful leech is better far, than half a hundred men of war.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

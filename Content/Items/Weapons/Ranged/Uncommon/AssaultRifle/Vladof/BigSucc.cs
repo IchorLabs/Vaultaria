@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework;
+using System;
 using Vaultaria.Content.Items.Materials;
 using System.Collections.Generic;
 using Vaultaria.Common.Utilities;
@@ -23,6 +24,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
         };
 
         private bool altFireMode;
+        private int visualRecoilTimer;
 
         public override void SetStaticDefaults()
         {
@@ -33,7 +35,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
         {
             base.SetDefaults();
             // Visual properties
-            Item.Size = new Vector2(-10f, 4f);
+            Item.Size = new Vector2(134f, 30f);
             Item.scale = 2f;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.rare = ItemRarityID.Green;
@@ -72,6 +74,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
         public override bool CanUseItem(Player player)
         {
             altFireMode = player.altFunctionUse == 2;
+            visualRecoilTimer = 6;
 
             if (altFireMode)
             {
@@ -91,6 +94,29 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.AssaultRifle.Vladof
             }
 
             return base.CanUseItem(player);
+        }
+
+        public override void UseStyle(Player player, Rectangle heldItemFrame)
+        {
+            if (player.whoAmI != Main.myPlayer)
+            {
+                return;
+            }
+
+            Vector2 aimDirection = Main.MouseWorld - player.MountedCenter;
+            if (aimDirection == Vector2.Zero)
+            {
+                return;
+            }
+
+            player.ChangeDir(aimDirection.X >= 0f ? 1 : -1);
+            Vector2 visualAimDirection = aimDirection.SafeNormalize(Vector2.UnitX);
+            player.itemRotation = (visualAimDirection * player.direction).ToRotation();
+            player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, aimDirection.ToRotation() - MathHelper.PiOver2);
+
+            float recoilProgress = visualRecoilTimer / 6f;
+            player.itemLocation -= visualAimDirection * (8f * recoilProgress);
+            visualRecoilTimer = Math.Max(visualRecoilTimer - 1, 0);
         }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)

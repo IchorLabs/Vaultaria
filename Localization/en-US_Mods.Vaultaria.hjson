@@ -10,7 +10,11 @@ Tiles: {
 	PedestalTile2.MapEntry: Vault of the Destroyer
 	PedestalTile1.MapEntry: Vault of the Warrior
 	Eridium.MapEntry: Eridium
+	EridiumOre.MapEntry: Eridium Ore
+	MoonstoneDeposit.MapEntry: Moonstone Deposit
 }
+
+WorldGen.EridiumOrePassMessage: Generating Eridium ore
 
 Items: {
 	MarcusVendingMachine: {
@@ -1132,6 +1136,26 @@ Items: {
 		Tooltip: ""
 		DisplayName: Banshee Claw
 	}
+
+	EridiumFragment: {
+		DisplayName: Eridium Fragment
+		Tooltip: ""
+	}
+
+	MoonstoneShard: {
+		Tooltip: ""
+		DisplayName: Moonstone Shard
+	}
+
+	ThankYouNote: {
+		DisplayName: Thank You Note
+		Tooltip: ""
+	}
+
+	T4sr: {
+		DisplayName: T4sr
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -1610,6 +1634,11 @@ Configs: {
 		DisableWeaponAccuracyGimmicks: {
 			Label: Disable Weapon Accuracy Gimmicks
 			Tooltip: ""
+		}
+
+		DisableReworkTooltips: {
+			Tooltip: ""
+			Label: Disable Rework Tooltips
 		}
 	}
 }

@@ -11,7 +11,7 @@ using Vaultaria.Content.Items.Materials;
 
 namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.Pistol.Hyperion
 {
-    public class Taser : VaultarianItem
+    public class T4sr : VaultarianItem
     {
         protected override Sounds[] ItemSounds => new[] { Sounds.GenericLaser };
 

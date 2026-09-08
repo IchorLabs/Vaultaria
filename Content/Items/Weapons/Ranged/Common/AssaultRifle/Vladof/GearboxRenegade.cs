@@ -57,6 +57,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Common.AssaultRifle.Vladof
         {
             ItemText.Text(tooltips, Mod);
             ItemText.RedText(tooltips, Mod, "Courtesy of being a Premiere Club member.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

@@ -17,6 +17,28 @@ namespace Vaultaria.Common.Utilities
 {
     public static class ItemEffects
     {
+        public static Vector2 GetGunShootPosition(Item item, Player player, Vector2 position, Vector2 velocity)
+        {
+            Vector2 direction = velocity.SafeNormalize(Vector2.UnitX);
+            Vector2 holdoutOffset = item.ModItem?.HoldoutOffset() ?? Vector2.Zero;
+            float forwardOffset = item.width * item.scale * 0.5f + Abs(holdoutOffset.X);
+            float sideOffset = holdoutOffset.Y;
+
+            position += direction * forwardOffset;
+            position += direction.RotatedBy(-MathHelper.PiOver2) * (sideOffset * player.direction);
+            return position;
+        }
+
+        public static bool GunShootThingy(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback, float forwardOffset, float sideOffset)
+        {
+            Vector2 direction = velocity.SafeNormalize(Vector2.UnitX);
+            position += direction * forwardOffset;
+            position += direction.RotatedBy(-MathHelper.PiOver2) * (sideOffset * player.direction);
+
+            Projectile.NewProjectile(source, position, velocity, type, damage, knockback, player.whoAmI);
+            return false;
+        }
+
         public static Vector2 RandomizeProjectileVelocity(Vector2 velocity)
         {
             return velocity * Main.rand.NextFloat(0.7f, 1.1f);

@@ -131,6 +131,7 @@ namespace Vaultaria.Content.Items.Weapons.Melee
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Right-Click to throw an explosive buzz axe");
             ItemText.RedText(tooltips, Mod, "I'M THE CONDUCTOR OF THE POOP TRAIN!!!");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

@@ -124,6 +124,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Rare.AssaultRifle.Vladof
             ItemText.Text(tooltips, Mod, "ToolTip2", "+200% Melee Damage");
             ItemText.Text(tooltips, Mod, "ToolTip3", "Right-Click to do a melee attack");
             ItemText.RedText(tooltips, Mod, "As I end the refrain, thrust home.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
             ItemText.CursedText(tooltips, Mod, "Curse of the Porcelain Fist!\n(Take 3x more damage)");
         }
     }

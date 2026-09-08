@@ -71,6 +71,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses SMG Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Incendiary bullets", ItemText.VaultarianColours.Incendiary);
             ItemText.RedText(tooltips, Mod, "We don't need no fireâ€¦");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

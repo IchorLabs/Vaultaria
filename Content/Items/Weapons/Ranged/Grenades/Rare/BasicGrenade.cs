@@ -64,6 +64,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Grenades.Rare
         {
             ItemText.Text(tooltips, Mod, "Tooltip1", "Allows for grenade jumping", ItemText.VaultarianColours.Information);
             ItemText.RedText(tooltips, Mod, "Double your fun.");
+            ItemText.ReworkText(tooltips, Mod);
         }
     }
 }

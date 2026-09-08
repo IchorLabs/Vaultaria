@@ -83,6 +83,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Swing;
                 Item.noMelee = true;
+                Item.noUseGraphic = true;
                 Item.shootSpeed = 5f;
                 Item.shoot = ModContent.ProjectileType<HomingDeliverance>();
 
@@ -104,6 +105,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
                 Item.DamageType = DamageClass.Ranged;
                 Item.useStyle = ItemUseStyleID.Shoot;
                 Item.noMelee = true;
+                Item.noUseGraphic = false;
                 Item.shootSpeed = 10f;
                 Item.shoot = ProjectileID.Bullet;
 
@@ -129,7 +131,8 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
             {
                 int homingProjectileType = ModContent.ProjectileType<HomingDeliverance>();
 
-                Projectile.NewProjectile(source, position, velocity, homingProjectileType, damage, knockback, player.whoAmI);
+                int projectileIndex = Projectile.NewProjectile(source, position, velocity, homingProjectileType, damage, knockback, player.whoAmI);
+                Main.projectile[projectileIndex].Center = position;
                 
                 return false;
             }
@@ -145,6 +148,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.Shotgun.Tediore
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             ItemText.MultiShotText(tooltips, Item, 8);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
             ItemText.Text(tooltips, Mod);
             ItemText.Text(tooltips, Mod, "Tooltip2", "Right-Click to throw a homing shotgun that shoots at enemies");
             ItemText.RedText(tooltips, Mod, "Kiki got a shotgun!");

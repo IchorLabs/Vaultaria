@@ -60,6 +60,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Uncommon.Sniper.Maliwan
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses Sniper Ammo");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Shoots Incendiary Bullets", ItemText.VaultarianColours.Incendiary);
             ItemText.Text(tooltips, Mod, "Tooltip3", "Found in Golden Chests", ItemText.VaultarianColours.Information);
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }

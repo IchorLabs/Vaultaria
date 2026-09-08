@@ -58,6 +58,7 @@ namespace Vaultaria.Content.Items.Weapons.Ranged.Legendary.SMG.Maliwan
             ItemText.Text(tooltips, Mod, "Tooltip1", "Uses 3 mana per shot");
             ItemText.Text(tooltips, Mod, "Tooltip2", "Rapidly shoots Corrosive clouds", ItemText.VaultarianColours.Corrosive);
             ItemText.RedText(tooltips, Mod, "Now, you will rise.");
+            ItemText.Text(tooltips, Mod, "Rework", "Will be recieving a major rework in a upcoming update!");
         }
     }
 }
